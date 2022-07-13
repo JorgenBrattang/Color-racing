@@ -15,6 +15,12 @@ Is where you can get race different colors to see who is the fastest, it's a fun
 
 ## Structure
 
+<details><summary>Structure made with Balsamiq</summary>
+
+![Wireframe from balsamiq](assets/images/README-images/wireframe.png)
+
+</details>
+
 ## Skeleton
 
 ## Surface
