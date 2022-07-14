@@ -20,32 +20,29 @@ addGlobalEventListener("click", "button", e => {
         numbers.splice(targetID, 1)
     }
     console.log('Your id is: ' + targetID)
-    console.log(numbers)
+    
 
     /* Gets the right color from the targetID */
-    let color = 'color_' + targetID
-    console.log(color)
-    e.target.style.backgroundColor = color
+    // let color = 'color_' + targetID
+    // console.log(color)
+    // e.target.style.backgroundColor = selectColor
 
+    console.log(numbers)
+
+    for (number of numbers) {
+        console.log(number)
+        targetOthers = document.getElementById(number)
+        targetOthers.style.backgroundColor = selectColor
+    }
 
 })
 
 /**
- * Type: "click" 
- * 
- * selector: "button"
- * 
- * callback: e =>
- * 
- * Then you can call the e with:
- * 
- * console.log(e)
- * 
- * To Check what you need to change.
- * 
- * Example: 
- * 
- * e.target.style.backgroundColor = 'red';
+ * This function add eventListener to your code. 
+ * Follow the instructions below to make it work.
+ * @param {*} type What type do you want? "click", "mouseover" etc.
+ * @param {*} selector What do you want to target? "button", "div" etc.
+ * @param {*} callback What do you want to have as a callback? e => or similar b =>
  */
 function addGlobalEventListener(type, selector, callback) {
     document.addEventListener(type, e => {
