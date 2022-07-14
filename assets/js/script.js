@@ -29,10 +29,12 @@ addGlobalEventListener("click", "button", e => {
 
     console.log(numbers)
 
-    for (number of numbers) {
-        console.log(number)
-        targetOthers = document.getElementById(number)
-        targetOthers.style.backgroundColor = selectColor
+    if(targetID != 'play') {
+        for (number of numbers) {
+            console.log(number)
+            targetOthers = document.getElementById(number)
+            targetOthers.style.backgroundColor = selectColor
+        }
     }
 
 })
