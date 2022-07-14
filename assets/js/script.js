@@ -4,16 +4,15 @@ const playColor = '#00A97F';
 const color_3 = '#E38C79';
 const color_4 = '#FFBC6C';
 const hoverColor = '#C9C9C9';
-const selectColor = '#393939';
 
+/* Gets all the buttons from DOM */
 const button = document.querySelectorAll('button') 
 
 addGlobalEventListener("click", "button", e => {
     let targetID = e.target.id
     let numbers = [0,1,2,3]
 
-    console.log(targetID)
-
+    /* If the targetID is true, do that. Otherwise take away the ID from the array. */
     if(targetID == 'play') {
         alert('You hit play!')
     } else {
@@ -23,20 +22,20 @@ addGlobalEventListener("click", "button", e => {
     
 
     /* Gets the right color from the targetID */
-    // let color = 'color_' + targetID
-    // console.log(color)
-    // e.target.style.backgroundColor = selectColor
+    let color = 'color_' + targetID
+        e.target.style.backgroundColor = color
 
-    console.log(numbers)
-
+    /* If it isn't the play button, change the colors of the others. */
     if(targetID != 'play') {
         for (number of numbers) {
-            console.log(number)
             targetOthers = document.getElementById(number)
-            targetOthers.style.backgroundColor = selectColor
+            targetOthers.style.opacity = "0.5";
         }
     }
 
+    e.target.style.cssText = 'background-color: ' + color
+
+    return targetID;
 })
 
 /**

@@ -51,9 +51,10 @@ Is where you can get race different colors to see who is the fastest, it's a fun
 
 ## Continued development
 
-## Useful resources
-
 ## Tutorials / used code
+
+- Learn JavaScript Event Listeners In 18 Minutes
+    - https://www.youtube.com/watch?v=XF1_MlZ5l6M
 
 ## Author
 
