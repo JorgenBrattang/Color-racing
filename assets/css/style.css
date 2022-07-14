@@ -30,6 +30,10 @@ header {
     color: #FAF7FF;
 }
 
+i {
+    z-index: -1;
+}
+
 .active {
     background-color: #393939;
 }
@@ -240,6 +244,7 @@ header {
     color:#eee;
     background-color: #00A97F;
     box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    z-index: 0;
 }
 
 /* ------ Instruction container ------ */

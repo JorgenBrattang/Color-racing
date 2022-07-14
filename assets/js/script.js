@@ -6,37 +6,44 @@ const color_4 = '#FFBC6C';
 const hoverColor = '#C9C9C9';
 
 /* Gets all the buttons from DOM */
-const button = document.querySelectorAll('button') 
+// const button = document.querySelectorAll('button') 
 
-addGlobalEventListener("click", "button", e => {
-    let targetID = e.target.id
-    let numbers = [0,1,2,3]
 
-    /* If the targetID is true, do that. Otherwise take away the ID from the array. */
-    if(targetID == 'play') {
-        alert('You hit play!')
-    } else {
-        numbers.splice(targetID, 1)
-    }
-    console.log('Your id is: ' + targetID)
+const button = document.querySelectorAll('.select-container > a') 
+button[2].innerHTML = '<i class="fa-solid fa-play"></i>'
+
+addGlobalEventListener("click", '.select-container > a', e => { 
+    alert('test');
+})
+
+// addGlobalEventListener("click", "div", e => {
+//     let targetID = e.target.id
+//     let numbers = [0,1,2,3]
+
+//     /* If the targetID is true, do that. Otherwise take away the ID from the array. */
+//     if(targetID == 'play') {
+//         button[2].innerHTML = '<i class="fa-solid fa-person-praying"></i>'
+//         document.getElementById(targetID).style.color = 'red'
+//     } else {
+//         numbers.splice(targetID, 1)
+//     }
+//     console.log('Your id is: ' + targetID)
     
 
-    /* Gets the right color from the targetID */
-    let color = 'color_' + targetID
-        e.target.style.backgroundColor = color
+//     /* Gets the right color from the targetID */
+//     let color = 'color_' + targetID
+//         e.target.style.backgroundColor = color
 
-    /* If it isn't the play button, change the colors of the others. */
-    if(targetID != 'play') {
-        for (number of numbers) {
-            targetOthers = document.getElementById(number)
-            targetOthers.style.opacity = "0.5";
-        }
-    }
+//     /* If it isn't the play button, change the colors of the others. */
+//     if(targetID != 'play') {
+//         for (number of numbers) {
+//             targetOthers = document.getElementById(number)
+//             targetOthers.style.opacity = "0.5";
+//         }
+//     }
 
-    e.target.style.cssText = 'background-color: ' + color
-
-    return targetID;
-})
+//     e.target.style.cssText = 'background-color: ' + color
+// })
 
 /**
  * This function add eventListener to your code. 
