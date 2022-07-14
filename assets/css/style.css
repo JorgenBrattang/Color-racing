@@ -30,6 +30,10 @@ header {
     color: #FAF7FF;
 }
 
+.active {
+    background-color: #393939;
+}
+
 /* ------ Race container ------ */
 .race-container {
     grid-row: 2;
