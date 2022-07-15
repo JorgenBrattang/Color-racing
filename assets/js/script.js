@@ -6,11 +6,9 @@ const color_4 = '#FFBC6C'
 const waitColor = '#C9C9C9'
 const backColor = '#393939'
 
-/* Gets all the buttons from DOM */
-// const button = document.querySelectorAll('button') 
-
 /* Selects all the buttons (<a>) in the DOM */
 const button = document.querySelectorAll('.select-container > a') 
+
 /* Gets the play button and sets it to it's default Icon */
 const selectPlay = document.getElementById('play')
 selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
@@ -18,37 +16,36 @@ selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
 /* Gets the horses from the HTML */
 const getColor_0 = document.getElementById("racer_0")
 
-        
 /* Lets the horseWidth to be 1% of 100%, so you can see where your horse starts */
 let colorHeight_0 = 10;
 getColor_0.style.height = colorHeight_0 + "%";
 
-let e = null
-
 addGlobalEventListener("click", '.select-container > a', e => { 
-    let targetID = e.target.id
-    let numbers = [0,1,2,3]
-    let color = 'color_' + targetID
+    const targetID = e.target.id
+    const numbers = [0,1,2,3]
+    const color = 'color_' + targetID
+    const colorID = []
     e.target.style.backgroundColor = color
 
     if(targetID != 'play') {
+        colorID.push(targetID)
         numbers.splice(targetID, 1)
         for (number of numbers) {
             targetOthers = document.getElementById(number)
             targetOthers.style.opacity = "0.5";
         }
         e.target.style.cssText = 'background-color: ' + color 
-        
-        /* I want targetID to get outside of the function */
-        let colorID = []
-        colorID.push(targetID)
-        console.log('This is inside: ' + colorID)
+        console.log(colorID)
+        return colorID
     }
 
-    return colorID
+    if(targetID == 'play') {
+        console.log("You pressed Play")
+        console.log(colorID)
+    }
+
 })
 
-console.log('This is outside: ' + colorID)
 
 function runGame() {
         selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>'
