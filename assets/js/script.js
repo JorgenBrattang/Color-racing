@@ -24,27 +24,32 @@ var colorID = []
 
 addGlobalEventListener("click", '.select-container > a', e => { 
     let targetID = e.target.id
-    const numbers = [0,1,2,3]
+    const colorNumbers = [0,1,2,3]
     const color = 'color_' + targetID
     e.target.style.backgroundColor = color    
     
-
+    /* Checks if you pressed a color instead of play button */
     if(targetID != 'play') {
+        /* Pushes the id of the color into an array */
         colorID.push(targetID)
-        numbers.splice(targetID, 1)
-        for (number of numbers) {
+        /* Takes away the current target ID from the array colorNumbers */
+        colorNumbers.splice(targetID, 1)
+        /* Selects every other color and change their opacity to 0.5 (not selected) */
+        for (number of colorNumbers) {
             targetOthers = document.getElementById(number)
             targetOthers.style.opacity = "0.5";
         }
+        /* Changes the background color of the current chosen color */
         e.target.style.cssText = 'background-color: ' + color 
         console.log('inside if statement colorID = ' + colorID)
     }    
 
+    /* Checks if colorID has to many ID's within the array. */
     if (colorID.length > 1) {
         colorID.shift(); // removes the first element from an array 
     } 
 
-
+    /* Checks if the colorID holds an ID or not. */
     if(colorID.length == 1) {
         if(targetID == 'play') {
             console.log("You pressed Play")
@@ -53,12 +58,12 @@ addGlobalEventListener("click", '.select-container > a', e => {
     } else {
         alert('Choose a color to race with first, then press the big green button!')
     }
-
 })
 
 function runGame() {
         console.log('outside if statement colorID = ' + colorID)
 
+        /* Adds the praying person icon and changes the play button color */
         selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>'
         selectPlay.style.backgroundColor = waitColor
         selectPlay.style.color = backColor
