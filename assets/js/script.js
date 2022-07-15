@@ -42,16 +42,23 @@ addGlobalEventListener("click", '.select-container > a', e => {
 
     if (colorID.length > 1) {
         colorID.shift(); // removes the first element from an array 
-    }
+    } 
 
-    if(targetID == 'play') {
-        console.log("You pressed Play")
-        console.log('outside if statement colorID = ' + colorID)
+
+    if(colorID.length == 1) {
+        if(targetID == 'play') {
+            console.log("You pressed Play")
+            runGame()
+        }
+    } else {
+        alert('Choose a color to race with first, then press the big green button!')
     }
 
 })
 
 function runGame() {
+        console.log('outside if statement colorID = ' + colorID)
+
         selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>'
         selectPlay.style.backgroundColor = waitColor
         selectPlay.style.color = backColor
