@@ -20,12 +20,14 @@ const getColor_0 = document.getElementById("racer_0")
 let colorHeight_0 = 10;
 getColor_0.style.height = colorHeight_0 + "%";
 
+var colorID = []
+
 addGlobalEventListener("click", '.select-container > a', e => { 
-    const targetID = e.target.id
+    let targetID = e.target.id
     const numbers = [0,1,2,3]
     const color = 'color_' + targetID
-    const colorID = []
-    e.target.style.backgroundColor = color
+    e.target.style.backgroundColor = color    
+    
 
     if(targetID != 'play') {
         colorID.push(targetID)
@@ -35,17 +37,19 @@ addGlobalEventListener("click", '.select-container > a', e => {
             targetOthers.style.opacity = "0.5";
         }
         e.target.style.cssText = 'background-color: ' + color 
-        console.log(colorID)
-        return colorID
+        console.log('inside if statement colorID = ' + colorID)
+    }    
+
+    if (colorID.length > 1) {
+        colorID.shift(); // removes the first element from an array 
     }
 
     if(targetID == 'play') {
         console.log("You pressed Play")
-        console.log(colorID)
+        console.log('outside if statement colorID = ' + colorID)
     }
 
 })
-
 
 function runGame() {
         selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>'
