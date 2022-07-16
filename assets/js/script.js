@@ -23,6 +23,8 @@ addGlobalEventListener("click", '.select-container > a', e => {
     let targetID = e.target.id
     const colorNumbers = [0,1,2,3]
     const colorSelect = 'color_' + targetID
+
+    console.log('your ID is ' + targetID)
     
     /* Checks if you pressed a color instead of play button */
     if(targetID != 'play') {
@@ -106,10 +108,15 @@ function runGame() {
         // Create a function/loop between this ---------->>>
         
         /* Sets the interval of the time from the random number for each horse */
-        let setColor_0 = setInterval(a, randomNumberArray[0])
-        let setColor_1 = setInterval(b, randomNumberArray[1])
-        let setColor_2 = setInterval(c, randomNumberArray[2])
-        let setColor_3 = setInterval(d, randomNumberArray[3])
+        // let setColor_0 = setInterval(a, randomNumberArray[0])
+        // let setColor_1 = setInterval(b, randomNumberArray[1])
+        // let setColor_2 = setInterval(c, randomNumberArray[2])
+        // let setColor_3 = setInterval(d, randomNumberArray[3])
+
+        let setColor_0 = setInterval(a, 10)
+        let setColor_1 = setInterval(b, 50)
+        let setColor_2 = setInterval(c, 50)
+        let setColor_3 = setInterval(d, 50)
 
         const winnerArray = []
     
@@ -182,8 +189,30 @@ function runGame() {
 }
 
 function winnerColor(winnerArray) {
+
     if(winnerArray.length === 1) {
         colorFinish[0].style.cssText = 'background-color: ' + winnerArray[0]
+        if(color_0 == winnerArray[0]) {
+            console.log('color_0')
+            let winningID = 0
+            if(winningID == colorID) {
+                alert('You won!')
+            }
+            console.log(colorID)
+        }
+        else if(color_1 == winnerArray[0]) {
+            console.log('color_1')
+            console.log(colorID)
+        }
+        else if(color_2 == winnerArray[0]) {
+            console.log('color_2')
+            console.log(colorID)
+        }
+        else if(color_3 == winnerArray[0]) {
+            console.log('color_3')
+            console.log(colorID)
+        }
+        
     } 
     else if (winnerArray.length === 2) {
         colorFinish[1].style.cssText = 'background-color: ' + winnerArray[1]
@@ -194,6 +223,8 @@ function winnerColor(winnerArray) {
     else if (winnerArray.length === 4) {
         colorFinish[3].style.cssText = 'background-color: ' + winnerArray[3]
     }
+
+
 }
 
 /**
