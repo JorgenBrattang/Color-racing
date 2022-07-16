@@ -106,7 +106,6 @@ i {
 .first--box {
     grid-row: 2;
     width: 50px;
-    background-color: #685465;
     justify-self: center;
     border-radius: 10px;
     box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
@@ -125,7 +124,6 @@ i {
 .second--box {
     grid-row: 2;
     width: 50px;
-    background-color: #A96C7B;
     justify-self: center;
     border-radius: 10px;
     box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
@@ -144,7 +142,6 @@ i {
 .third--box {
     grid-row: 2;
     width: 50px;
-    background-color: #E38C79;
     justify-self: center;
     border-radius: 10px;
     box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
@@ -163,7 +160,6 @@ i {
 .fourth--box {
     grid-row: 2;
     width: 50px;
-    background-color: #FFBC6C;
     justify-self: center;
     border-radius: 10px;
     box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
