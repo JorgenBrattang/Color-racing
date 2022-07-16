@@ -6,6 +6,7 @@ const color_2 = '#E38C79'
 const color_3 = '#FFBC6C'
 const waitColor = '#C9C9C9'
 const textColor = '#393939'
+const resetColor = '#8685EF'
 
 /* Selects all the buttons (<a>) in the DOM */
 const button = document.querySelectorAll('.select-container > a') 
@@ -24,8 +25,6 @@ addGlobalEventListener("click", '.select-container > a', e => {
     const colorNumbers = [0,1,2,3]
     const colorSelect = 'color_' + targetID
 
-    console.log('your ID is ' + targetID)
-    
     /* Checks if you pressed a color instead of play button */
     if(targetID != 'play') {
         /* Pushes the id of the color into an array */
@@ -39,8 +38,6 @@ addGlobalEventListener("click", '.select-container > a', e => {
         }
         /* Changes the background color of the current chosen color */
         e.target.style.cssText = 'background-color: ' + colorSelect 
-
-        console.log("This is colorSelect's value = " + colorSelect)
     }    
 
     /* Checks if colorID has to many ID's within the array. */
@@ -61,11 +58,10 @@ addGlobalEventListener("click", '.select-container > a', e => {
 
 function runGame() {
     /* This will disable all click events on the divs */
-    document.getElementById('0').style.pointerEvents = 'none';
-    document.getElementById('1').style.pointerEvents = 'none';
-    document.getElementById('2').style.pointerEvents = 'none';
-    document.getElementById('3').style.pointerEvents = 'none';
-    document.getElementById('play').style.pointerEvents = 'none';
+    const buttonNumber = [0,1,2,3,'play']
+    for (id of buttonNumber) {
+        document.getElementById(id).style.pointerEvents = 'none';
+    }
     // Create a function/loop between this ---------->>>
 
     /* Gets the colors from the HTML */
@@ -208,6 +204,17 @@ function winnerColor(winnerArray) {
     }
     else if (winnerArray.length === 4) {
         colorFinish[3].style.cssText = 'background-color: ' + winnerArray[3]
+
+        
+        /* This will enable all click events on the divs */
+        const buttonNumber = [0,1,2,3,'play']
+        for (id of buttonNumber) {
+            document.getElementById(id).style.pointerEvents = 'auto';
+        }
+
+        selectPlay.innerHTML = '<i class="fa-solid fa-rotate-left"></i>'
+        selectPlay.style.backgroundColor = resetColor
+        selectPlay.style.color = textColor
     }
 
 
