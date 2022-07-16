@@ -22,8 +22,7 @@ var colorID = []
 addGlobalEventListener("click", '.select-container > a', e => { 
     let targetID = e.target.id
     const colorNumbers = [0,1,2,3]
-    const color = 'color_' + targetID
-    e.target.style.backgroundColor = color    
+    const colorSelect = 'color_' + targetID
     
     /* Checks if you pressed a color instead of play button */
     if(targetID != 'play') {
@@ -37,8 +36,9 @@ addGlobalEventListener("click", '.select-container > a', e => {
             targetOthers.style.opacity = "0.5";
         }
         /* Changes the background color of the current chosen color */
-        e.target.style.cssText = 'background-color: ' + color 
-        console.log('inside if statement colorID = ' + colorID)
+        e.target.style.cssText = 'background-color: ' + colorSelect 
+
+        console.log("This is colorSelect's value = " + colorSelect)
     }    
 
     /* Checks if colorID has to many ID's within the array. */
@@ -112,7 +112,7 @@ function runGame() {
         let setColor_3 = setInterval(d, randomNumberArray[3])
 
         const winnerArray = []
-
+    
         /**
          * Gets the interval speed for colors and checks if its not 100% keep going.
          */
@@ -120,8 +120,8 @@ function runGame() {
             /* Checks if the length of the race is finished (100%) */
             if (colorHeight_0 >= 100) {
                 clearInterval(setColor_0)
-                winnerArray.push(0)
-                console.log(winnerArray)
+                winnerArray.push(color_0)
+                winnerColor(winnerArray)
             } else {
                 /* if it isn't finished, keep on going. */
                 colorHeight_0++
@@ -136,8 +136,8 @@ function runGame() {
             /* Checks if the length of the race is finished (100%) */
             if (colorHeight_1 >= 100) {
                 clearInterval(setColor_1)
-                winnerArray.push(1)
-                console.log(winnerArray)
+                winnerArray.push(color_1)
+                winnerColor(winnerArray)
             } else {
                 /* if it isn't finished, keep on going. */
                 colorHeight_1++
@@ -152,8 +152,8 @@ function runGame() {
             /* Checks if the length of the race is finished (100%) */
             if (colorHeight_2 >= 100) {
                 clearInterval(setColor_2)
-                winnerArray.push(2)
-                console.log(winnerArray)
+                winnerArray.push(color_2)
+                winnerColor(winnerArray)
             } else {
                 /* if it isn't finished, keep on going. */
                 colorHeight_2++
@@ -168,18 +168,32 @@ function runGame() {
             /* Checks if the length of the race is finished (100%) */
             if (colorHeight_3 >= 100) {
                 clearInterval(setColor_3)
-                winnerArray.push(3)
-                console.log(winnerArray)
+                winnerArray.push(color_3)
+                winnerColor(winnerArray)
             } else {
                 /* if it isn't finished, keep on going. */
                 colorHeight_3++
                 getColor_3.style.height = colorHeight_3 + "%"
             }
         }
-
-        
         // Create a function/loop between this <<<----------
+    
         
+}
+
+function winnerColor(winnerArray) {
+    if(winnerArray.length === 1) {
+        colorFinish[0].style.cssText = 'background-color: ' + winnerArray[0]
+    } 
+    else if (winnerArray.length === 2) {
+        colorFinish[1].style.cssText = 'background-color: ' + winnerArray[1]
+    }
+    else if (winnerArray.length === 3) {
+        colorFinish[2].style.cssText = 'background-color: ' + winnerArray[2]
+    }
+    else if (winnerArray.length === 4) {
+        colorFinish[3].style.cssText = 'background-color: ' + winnerArray[3]
+    }
 }
 
 /**
