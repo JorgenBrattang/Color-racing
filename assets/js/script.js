@@ -51,9 +51,8 @@ addGlobalEventListener("click", '.select-container > a', e => {
     /* Checks if the colorID holds an ID or not. */
     if(colorID.length == 1) {
         if(targetID == 'play') {
-            console.log("You pressed Play")
-            
             runGame()
+            
         }
     } else {
         alert('Choose a color to race with first, then press the big green button!')
@@ -61,6 +60,12 @@ addGlobalEventListener("click", '.select-container > a', e => {
 })
 
 function runGame() {
+    /* This will disable all click events on the divs */
+    document.getElementById('0').style.pointerEvents = 'none';
+    document.getElementById('1').style.pointerEvents = 'none';
+    document.getElementById('2').style.pointerEvents = 'none';
+    document.getElementById('3').style.pointerEvents = 'none';
+    document.getElementById('play').style.pointerEvents = 'none';
     // Create a function/loop between this ---------->>>
 
     /* Gets the colors from the HTML */
@@ -85,9 +90,6 @@ function runGame() {
     selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>'
     selectPlay.style.backgroundColor = waitColor
     selectPlay.style.color = textColor
-
-
-
 
     // Creates an empty array
     const randomNumberArray = []
