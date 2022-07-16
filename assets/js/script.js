@@ -9,7 +9,7 @@ const textColor = '#393939'
 
 /* Selects all the buttons (<a>) in the DOM */
 const button = document.querySelectorAll('.select-container > a') 
-
+/* Selects all the class="first--box" etc (<div>) in the DOM */
 const colorFinish = document.querySelectorAll('.placement-container > div > div')
 
 /* Gets the play button and sets it to it's default Icon */
@@ -61,131 +61,123 @@ addGlobalEventListener("click", '.select-container > a', e => {
 })
 
 function runGame() {
+    // Create a function/loop between this ---------->>>
 
-        // Create a function/loop between this ---------->>>
+    /* Gets the colors from the HTML */
+    const getColor_0 = document.getElementById("racer_0")
+    const getColor_1 = document.getElementById("racer_1")
+    const getColor_2 = document.getElementById("racer_2")
+    const getColor_3 = document.getElementById("racer_3")
 
-        /* Gets the colors from the HTML */
-        const getColor_0 = document.getElementById("racer_0")
-        const getColor_1 = document.getElementById("racer_1")
-        const getColor_2 = document.getElementById("racer_2")
-        const getColor_3 = document.getElementById("racer_3")
-
-        /* Lets the colorHeight to be 10% of 100%, so you can see where your colors starts */
-        let colorHeight_0 = 10;
-        getColor_0.style.height = colorHeight_0 + "%";
-        let colorHeight_1 = 10;
-        getColor_1.style.height = colorHeight_1 + "%";
-        let colorHeight_2 = 10;
-        getColor_2.style.height = colorHeight_2 + "%";
-        let colorHeight_3 = 10;
-        getColor_3.style.height = colorHeight_3 + "%";
-        
-        // Create a function/loop between this <<<----------
-
-        /* Adds the praying person icon and changes the play button color */
-        selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>'
-        selectPlay.style.backgroundColor = waitColor
-        selectPlay.style.color = textColor
-
-
-
-
-        // Creates an empty array
-        const randomNumberArray = []
-
-        do {
-            // Generating random number between 35 and 85
-            const randomNumber = Math.floor(Math.random() * 50) + 35
-            
-            // Checks if the number is included in the array, if not push it into it.
-            if (!randomNumberArray.includes(randomNumber)) {
-                randomNumberArray.push(randomNumber)
-            }
-        // create 4 numbers for the array
-        } while (randomNumberArray.length < 4)
-
-
-        // Create a function/loop between this ---------->>>
-        
-        /* Sets the interval of the time from the random number for each horse */
-        // let setColor_0 = setInterval(a, randomNumberArray[0])
-        // let setColor_1 = setInterval(b, randomNumberArray[1])
-        // let setColor_2 = setInterval(c, randomNumberArray[2])
-        // let setColor_3 = setInterval(d, randomNumberArray[3])
-
-        let setColor_0 = setInterval(a, 10)
-        let setColor_1 = setInterval(b, 50)
-        let setColor_2 = setInterval(c, 50)
-        let setColor_3 = setInterval(d, 50)
-
-        const winnerArray = []
+    /* Lets the colorHeight to be 10% of 100%, so you can see where your colors starts */
+    let colorHeight_0 = 10;
+    getColor_0.style.height = colorHeight_0 + "%";
+    let colorHeight_1 = 10;
+    getColor_1.style.height = colorHeight_1 + "%";
+    let colorHeight_2 = 10;
+    getColor_2.style.height = colorHeight_2 + "%";
+    let colorHeight_3 = 10;
+    getColor_3.style.height = colorHeight_3 + "%";
     
-        /**
-         * Gets the interval speed for colors and checks if its not 100% keep going.
-         */
-        function a() {
-            /* Checks if the length of the race is finished (100%) */
-            if (colorHeight_0 >= 100) {
-                clearInterval(setColor_0)
-                winnerArray.push(color_0)
-                winnerColor(winnerArray)
-            } else {
-                /* if it isn't finished, keep on going. */
-                colorHeight_0++
-                getColor_0.style.height = colorHeight_0 + "%"
-            }
-        }
+    // Create a function/loop between this <<<----------
 
-        /**
-         * Gets the interval speed for colors and checks if its not 100% keep going.
-         */
-        function b() {
-            /* Checks if the length of the race is finished (100%) */
-            if (colorHeight_1 >= 100) {
-                clearInterval(setColor_1)
-                winnerArray.push(color_1)
-                winnerColor(winnerArray)
-            } else {
-                /* if it isn't finished, keep on going. */
-                colorHeight_1++
-                getColor_1.style.height = colorHeight_1 + "%"
-            }
-        }
+    /* Adds the praying person icon and changes the play button color */
+    selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>'
+    selectPlay.style.backgroundColor = waitColor
+    selectPlay.style.color = textColor
 
-        /**
-         * Gets the interval speed for colors and checks if its not 100% keep going.
-         */
-        function c() {
-            /* Checks if the length of the race is finished (100%) */
-            if (colorHeight_2 >= 100) {
-                clearInterval(setColor_2)
-                winnerArray.push(color_2)
-                winnerColor(winnerArray)
-            } else {
-                /* if it isn't finished, keep on going. */
-                colorHeight_2++
-                getColor_2.style.height = colorHeight_2 + "%"
-            }
-        }
 
-        /**
-         * Gets the interval speed for colors and checks if its not 100% keep going.
-         */
-        function d() {
-            /* Checks if the length of the race is finished (100%) */
-            if (colorHeight_3 >= 100) {
-                clearInterval(setColor_3)
-                winnerArray.push(color_3)
-                winnerColor(winnerArray)
-            } else {
-                /* if it isn't finished, keep on going. */
-                colorHeight_3++
-                getColor_3.style.height = colorHeight_3 + "%"
-            }
-        }
-        // Create a function/loop between this <<<----------
-    
+
+
+    // Creates an empty array
+    const randomNumberArray = []
+
+    do {
+        // Generating random number between 35 and 85
+        const randomNumber = Math.floor(Math.random() * 50) + 35
         
+        // Checks if the number is included in the array, if not push it into it.
+        if (!randomNumberArray.includes(randomNumber)) {
+            randomNumberArray.push(randomNumber)
+        }
+    // create 4 numbers for the array
+    } while (randomNumberArray.length < 4)
+
+
+    // Create a function/loop between this ---------->>>
+    
+    /* Sets the interval of the time from the random number for each horse */
+    let setColor_0 = setInterval(a, randomNumberArray[0])
+    let setColor_1 = setInterval(b, randomNumberArray[1])
+    let setColor_2 = setInterval(c, randomNumberArray[2])
+    let setColor_3 = setInterval(d, randomNumberArray[3])
+
+    const winnerArray = []
+
+    /**
+     * Gets the interval speed for colors and checks if its not 100% keep going.
+     */
+    function a() {
+        /* Checks if the length of the race is finished (100%) */
+        if (colorHeight_0 >= 100) {
+            clearInterval(setColor_0)
+            winnerArray.push(color_0)
+            winnerColor(winnerArray)
+        } else {
+            /* if it isn't finished, keep on going. */
+            colorHeight_0++
+            getColor_0.style.height = colorHeight_0 + "%"
+        }
+    }
+
+    /**
+     * Gets the interval speed for colors and checks if its not 100% keep going.
+     */
+    function b() {
+        /* Checks if the length of the race is finished (100%) */
+        if (colorHeight_1 >= 100) {
+            clearInterval(setColor_1)
+            winnerArray.push(color_1)
+            winnerColor(winnerArray)
+        } else {
+            /* if it isn't finished, keep on going. */
+            colorHeight_1++
+            getColor_1.style.height = colorHeight_1 + "%"
+        }
+    }
+
+    /**
+     * Gets the interval speed for colors and checks if its not 100% keep going.
+     */
+    function c() {
+        /* Checks if the length of the race is finished (100%) */
+        if (colorHeight_2 >= 100) {
+            clearInterval(setColor_2)
+            winnerArray.push(color_2)
+            winnerColor(winnerArray)
+        } else {
+            /* if it isn't finished, keep on going. */
+            colorHeight_2++
+            getColor_2.style.height = colorHeight_2 + "%"
+        }
+    }
+
+    /**
+     * Gets the interval speed for colors and checks if its not 100% keep going.
+     */
+    function d() {
+        /* Checks if the length of the race is finished (100%) */
+        if (colorHeight_3 >= 100) {
+            clearInterval(setColor_3)
+            winnerArray.push(color_3)
+            winnerColor(winnerArray)
+        } else {
+            /* if it isn't finished, keep on going. */
+            colorHeight_3++
+            getColor_3.style.height = colorHeight_3 + "%"
+        }
+    }
+    // Create a function/loop between this <<<----------
 }
 
 function winnerColor(winnerArray) {
@@ -193,24 +185,16 @@ function winnerColor(winnerArray) {
     if(winnerArray.length === 1) {
         colorFinish[0].style.cssText = 'background-color: ' + winnerArray[0]
         if(color_0 == winnerArray[0]) {
-            console.log('color_0')
-            let winningID = 0
-            if(winningID == colorID) {
-                alert('You won!')
-            }
-            console.log(colorID)
+            announceWinner(0)
         }
         else if(color_1 == winnerArray[0]) {
-            console.log('color_1')
-            console.log(colorID)
+            announceWinner(1)
         }
         else if(color_2 == winnerArray[0]) {
-            console.log('color_2')
-            console.log(colorID)
+            announceWinner(2)
         }
         else if(color_3 == winnerArray[0]) {
-            console.log('color_3')
-            console.log(colorID)
+            announceWinner(3)
         }
         
     } 
@@ -225,6 +209,28 @@ function winnerColor(winnerArray) {
     }
 
 
+}
+
+function announceWinner(winID) {
+            if(winID == colorID) {
+                const score = parseInt(document.querySelector(".score--box").innerHTML);
+                plusScore(score);
+            } else {
+                const score = parseInt(document.querySelector(".score--box").innerHTML);
+                minusScore(score);
+            }
+}
+
+function plusScore(score) {
+    score += 5;
+    document.querySelector('.score--box').innerHTML = score
+    return score;
+}
+
+function minusScore(score) {
+    score -= 3;
+    document.querySelector('.score--box').innerHTML = score
+    return score;
 }
 
 /**
