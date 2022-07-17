@@ -256,6 +256,12 @@ footer {
 }
 
 /* ------ @Media queries below 425 px ------ */
+@media screen and (orientation: landscape) {
+    /* To be added! */
+}
+
+
+/* ------ @Media queries below 425 px ------ */
 
 @media screen and (max-width: 425px) {
 
