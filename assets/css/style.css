@@ -11,12 +11,12 @@ body {
     line-height: 1.5;
     letter-spacing: 0.5px;
     display: grid;
-    grid-template-rows: 100px 1fr 100px;
+    grid-template-rows: 25px 1fr;
 }
 
 main {
     grid-row: 2;
-    margin: 0 auto;
+    justify-self: center;
     width: 400px;
     display: grid;
     grid-template-rows: 35px 450px 125px auto 35px;
@@ -177,7 +177,7 @@ i {
 
 .score--box {
     grid-row: 2;
-    width: 100%;
+    width: auto;
     border-radius: 10px;
     box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
     text-align: center;
@@ -253,4 +253,51 @@ footer {
     color: rgba(250, 247, 255, 0.25);
     font-size: 12px;
     text-align: center;
+}
+
+/* ------ @Media queries below 400 px ------ */
+
+@media screen and (max-width: 425px) {
+    main {
+    width: auto;
+    padding: 15px;
+    grid-template-rows: 35px auto 100px auto 35px;
+    row-gap: 15px;
+    }
+
+    .race-container {
+        grid-template-columns: 25px 25px 25px 25px;
+    }
+
+    .select-container {
+        padding: 5px;
+        grid-template-columns: 50px 50px 75px 50px 50px;
+        column-gap: 10px;
+        grid-template-rows: 1fr 75px 1fr;
+    }
+    
+    .color-1--select {
+        height: 50px;
+        margin-top: 12.5px;
+    }
+    
+    .color-2--select {
+        height: 50px;
+        margin-top: 12.5px;
+    }
+    
+    .color-3--select {
+        height: 50px;
+        margin-top: 12.5px;
+    }
+    
+    .color-4--select {
+        height: 50px;
+        margin-top: 12.5px;
+    }
+    
+    .play-button--btn {
+        grid-row: 2;
+        font-size: 24px;
+    }
 }
