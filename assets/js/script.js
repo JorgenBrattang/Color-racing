@@ -51,17 +51,25 @@ addGlobalEventListener("click", '.select-container > a', e => {
     if(targetID == 'reset') {
         /* Deselects the color chosen */
         colorID = []
+
+        /* Sets all the colors back to 100% opacity */
         const colorNumbers = [0,1,2,3]
         for (number of colorNumbers) {
             document.getElementById(number).style.opacity = "1"
+            colorFinish[number].style.cssText = 'background-color: white'
         }
+
+        /* Sets the reset button back to ID of play */
         document.getElementById("reset").setAttribute("id", "play")
+
+        /* Reset the buttons, so you can click them */
         const buttonNumber = [0,1,2,3,'play']
         for (id of buttonNumber) {
             document.getElementById(id).style.pointerEvents = 'auto'
         }
-        selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
-        console.log(targetID)
+
+        /* Sets the icon on Play button */
+        selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'        
     }
 })
 
