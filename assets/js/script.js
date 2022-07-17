@@ -51,6 +51,10 @@ addGlobalEventListener("click", '.select-container > a', e => {
     if(targetID == 'reset') {
         /* Deselects the color chosen */
         colorID = []
+        const colorNumbers = [0,1,2,3]
+        for (number of colorNumbers) {
+            document.getElementById(number).style.opacity = "1"
+        }
         document.getElementById("reset").setAttribute("id", "play")
         const buttonNumber = [0,1,2,3,'play']
         for (id of buttonNumber) {
@@ -203,10 +207,6 @@ function winnerColor(winnerArray) {
         selectPlay.style.backgroundColor = resetColor
         selectPlay.style.color = textColor
 
-        const colorNumbers = [0,1,2,3]
-        for (number of colorNumbers) {
-            document.getElementById(number).style.opacity = "1"
-        }
         /* Changes the play buttons ID to reset */
         document.getElementById("play").setAttribute("id", "reset")
     }
