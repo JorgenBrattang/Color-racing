@@ -1,6 +1,8 @@
 # Color Racing
 Is where you can get race different colors to see who is the fastest, it's a fun way to just have something to do while you wait for something or just want to have a bit of fun.
 
+<a href="https://jorgenbrattang.github.io/Color-racing/" title="Link to live website" rel="nofollow">View live website here!</a>
+
 ## Table of contents
 
 # Overview
