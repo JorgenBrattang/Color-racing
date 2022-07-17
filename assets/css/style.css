@@ -255,9 +255,15 @@ footer {
     text-align: center;
 }
 
-/* ------ @Media queries below 400 px ------ */
+/* ------ @Media queries below 425 px ------ */
 
 @media screen and (max-width: 425px) {
+
+    body {
+        font-size: 14px;
+        grid-template-rows: 0px 1fr;
+    }
+
     main {
     width: auto;
     padding: 15px;
@@ -266,7 +272,7 @@ footer {
     }
 
     .race-container {
-        grid-template-columns: 25px 25px 25px 25px;
+        grid-template-columns: 40px 40px 40px 40px;
     }
 
     .select-container {
@@ -294,6 +300,12 @@ footer {
     .color-4--select {
         height: 50px;
         margin-top: 12.5px;
+    }
+
+    i {
+        pointer-events: none;
+        text-align: center;
+        margin-top: 25px;
     }
     
     .play-button--btn {
