@@ -17,7 +17,7 @@ selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
 /* Sets a global variable for colorID, so we can reuse it outside. */
 var colorID = []
 
-/* Disables the entire website's option to select text */
+/* Disables the entire document's option to select text */
 const disableSelect = (e) => {  
     return false  
   }  
@@ -43,6 +43,7 @@ addGlobalEventListener('click', '.instruction-container > button', e => {
     }
 
 })
+
 
 addGlobalEventListener('click', '.select-container > a', e => { 
     let targetID = e.target.id
