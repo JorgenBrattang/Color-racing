@@ -17,6 +17,13 @@ selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
 /* Sets a global variable for colorID, so we can reuse it outside. */
 var colorID = []
 
+/* Disables the entire website's option to select text */
+const disableSelect = (e) => {  
+    return false  
+  }  
+  document.onselectstart = disableSelect  
+  document.onmousedown = disableSelect
+
 addGlobalEventListener('click', '.instruction-container > button', e => {
     /* Toggle the instructions open and close */
     document.querySelector("#myDropdown").classList.toggle("show")
