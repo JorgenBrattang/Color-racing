@@ -19,7 +19,7 @@ main {
     justify-self: center;
     width: 400px;
     display: grid;
-    grid-template-rows: 35px 450px 125px auto 35px;
+    grid-template-rows: 35px 450px 125px auto 35px 25px;
     row-gap: 15px;
 }
 
@@ -248,6 +248,34 @@ i {
     background: #FAF7FF;
 }
 
+
+/* Button instruction */
+
+.dropContent--btn {
+    font-size: 16px;
+    width: 100%;
+    height: 42px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    text-align: center;
+    color:#eee;
+    background-color: #00A97F;
+    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+  }
+  
+  .dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    padding: 15px;
+  }
+  
+  .show {display: block;}
+
+
 footer {
     grid-row: 5;
     color: rgba(250, 247, 255, 0.25);
@@ -256,8 +284,10 @@ footer {
 }
 
 /* ------ @Media queries below 425 px ------ */
-@media screen and (orientation: landscape) {
-    /* To be added! */
+@media (orientation: landscape) {
+    body {
+        background-color: red;
+    }
 }
 
 

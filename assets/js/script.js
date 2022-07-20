@@ -17,7 +17,11 @@ selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
 /* Sets a global variable for colorID, so we can reuse it outside. */
 var colorID = []
 
-addGlobalEventListener("click", '.select-container > a', e => { 
+addGlobalEventListener('click', '.instruction-container > button', e => {
+    document.querySelector("#myDropdown").classList.toggle("show");
+})
+
+addGlobalEventListener('click', '.select-container > a', e => { 
     let targetID = e.target.id
     const colorNumbers = [0,1,2,3]
     const colorSelect = 'color_' + targetID
