@@ -24,8 +24,16 @@ addGlobalEventListener('click', '.instruction-container > button', e => {
     document.querySelector('#myDropdown').scrollIntoView({
         behavior: 'smooth'
     })
+
+    btn = document.querySelector(".dropContent--btn")
     /* Toggle the button's color with CSS .buttonColor */
-    document.querySelector(".dropContent--btn").classList.toggle("buttonColor")
+    btn.classList.toggle("buttonColor")
+
+    if (btn.innerHTML === "Instructions, press here!") {
+        btn.innerHTML = "Instructions how to play!";
+    } else {
+        btn.innerHTML = "Instructions, press here!";
+    }
 
 })
 
