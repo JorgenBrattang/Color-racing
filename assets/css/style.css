@@ -278,13 +278,12 @@ i {
 
   .buttonColor {background-color: #393939;}
 
-
 footer {
     grid-row: 5;
     color: rgba(250, 247, 255, 0.25);
     font-size: 12px;
     text-align: center;
-} 
+}
 
 @media (orientation: landscape) {
     header {
