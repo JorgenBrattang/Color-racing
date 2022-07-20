@@ -12,13 +12,21 @@ const button = document.querySelectorAll('.select-container > a')
 /* Selects all the class="first--box" etc (<div>) in the DOM */
 const colorFinish = document.querySelectorAll('.placement-container > div > div')
 /* Gets the play button and sets it to it's default Icon */
-const selectPlay = document.getElementById('play')
+const selectPlay = document.querySelector('#play')
 selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
 /* Sets a global variable for colorID, so we can reuse it outside. */
 var colorID = []
 
 addGlobalEventListener('click', '.instruction-container > button', e => {
-    document.querySelector("#myDropdown").classList.toggle("show");
+    /* Toggle the instructions open and close */
+    document.querySelector("#myDropdown").classList.toggle("show")
+    /* Scrolls the user into the selected view. */
+    document.querySelector('#myDropdown').scrollIntoView({
+        behavior: 'smooth'
+    })
+    /* Toggle the button's color with CSS .buttonColor */
+    document.querySelector(".dropContent--btn").classList.toggle("buttonColor")
+
 })
 
 addGlobalEventListener('click', '.select-container > a', e => { 

@@ -275,6 +275,8 @@ i {
   
   .show {display: block;}
 
+  .buttonColor {background-color: #393939;}
+
 
 footer {
     grid-row: 5;
@@ -285,9 +287,6 @@ footer {
 
 /* ------ @Media queries below 425 px ------ */
 @media (orientation: landscape) {
-    body {
-        background-color: red;
-    }
 }
 
 
@@ -301,7 +300,7 @@ footer {
     }
 
     main {
-    width: auto;
+    width: 100%;
     padding: 15px;
     grid-template-rows: 35px auto 100px auto 35px;
     row-gap: 15px;
@@ -312,7 +311,6 @@ footer {
     }
 
     .select-container {
-        padding: 5px;
         grid-template-columns: 50px 50px 75px 50px 50px;
         column-gap: 10px;
         grid-template-rows: 1fr 75px 1fr;
