@@ -7,6 +7,7 @@ const color_3 = '#FFBC6C'
 const waitColor = '#C9C9C9'
 const textColor = '#393939'
 const resetColor = '#8685EF'
+const whiteColor = '#FAF7FF'
 /* Selects all the buttons (<a>) in the DOM */
 const button = document.querySelectorAll('.select-container > a') 
 /* Selects all the class="first--box" etc (<div>) in the DOM */
@@ -293,7 +294,13 @@ function maxRounds(rounds, score) {
         highScore.push(score)
         document.querySelector(".high-score--box").innerHTML = score
         alert('Finish, your scores is: ' + score + ' This is the HighScore ' + highScore)
-    }
+        /* Sets the reset button back to ID of play */
+        document.getElementById("reset").setAttribute("id", "newGame")
+
+        selectPlay.innerHTML = '<i class="fa-solid fa-gamepad"></i>'
+        selectPlay.style.backgroundColor = playColor
+        selectPlay.style.color = whiteColor
+        }
 }
 
 /**
