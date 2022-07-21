@@ -30,24 +30,16 @@ const disableSelect = (e) => {
   document.onselectstart = disableSelect  
   document.onmousedown = disableSelect
 
+if (window.matchMedia("(orientation: landscape)").matches) {
+    toggleInstructions()
+}
+
 addGlobalEventListener('click', '.instruction-container > button', e => {
-    /* Toggle the instructions open and close */
-    document.querySelector("#myDropdown").classList.toggle("show")
     /* Scrolls the user into the selected view. */
     document.querySelector('#myDropdown').scrollIntoView({
         behavior: 'smooth'
     })
-
-    btn = document.querySelector(".dropContent--btn")
-    /* Toggle the button's color with CSS .buttonColor */
-    btn.classList.toggle("buttonColor")
-
-    if (btn.innerHTML === "Instructions, press here!") {
-        btn.innerHTML = "Instructions how to play!";
-    } else {
-        btn.innerHTML = "Instructions, press here!";
-    }
-
+    toggleInstructions()
 })
 
 addGlobalEventListener('click', '.select-container > a', e => { 
@@ -246,6 +238,22 @@ function runGame() {
         }
     }
     // Create a function/loop between this <<<----------
+}
+
+/**
+ * Makes the instruction's text and button change color
+ */
+function toggleInstructions() {
+    /* Toggle the instructions open and close */
+    document.querySelector("#myDropdown").classList.toggle("show")
+    btn = document.querySelector(".dropContent--btn")
+        /* Toggle the button's color with CSS .buttonColor */
+        btn.classList.toggle("buttonColor")
+        if (btn.innerHTML === "Instructions, press here!") {
+            btn.innerHTML = "Instructions how to play!"
+        } else {
+            btn.innerHTML = "Instructions, press here!"
+        }
 }
 
 /**
