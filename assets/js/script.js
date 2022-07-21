@@ -19,7 +19,7 @@ var colorID = []
 /* Sets a global variable for highScore, so we can reuse it outside. */
 var highScore = []
 
-var limitRounds = 3
+var limitRounds = 2
 
 
 /* Disables the entire document's option to select text */
@@ -101,7 +101,10 @@ addGlobalEventListener('click', '.select-container > a', e => {
         }
 
         /* Sets the icon on Play button */
-        selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'        
+        selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
+        
+        const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
+        plusRounds(rounds)
     }
 })
 
@@ -258,9 +261,9 @@ function winnerColor(winnerArray) {
         /* Changes the play buttons ID to reset */
         document.getElementById("play").setAttribute("id", "reset")     
         
-        const score = parseInt(document.querySelector(".score--box").innerHTML)
         const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
-        maxRounds(rounds, score)
+        const score = parseInt(document.querySelector(".score--box").innerHTML)
+        maxRounds(rounds,score)
     }
 }
 
@@ -271,14 +274,11 @@ function winnerColor(winnerArray) {
 function announceWinner(winID) {
             if(winID == colorID) {
                 const score = parseInt(document.querySelector(".score--box").innerHTML)
-                const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
                 plusScore(score)
-                plusRounds(rounds)                
+                               
             } else {
                 const score = parseInt(document.querySelector(".score--box").innerHTML)
-                const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
                 minusScore(score)
-                plusRounds(rounds)
             }
 }
 
@@ -290,9 +290,9 @@ function announceWinner(winID) {
  */
 function maxRounds(rounds, score) {
     if (rounds == limitRounds) {
-        alert('Finish, your scores is: ' + score)
-        // highScore.push(score)
-        // document.querySelector(".high-score--box").innerHTML = score
+        highScore.push(score)
+        document.querySelector(".high-score--box").innerHTML = score
+        alert('Finish, your scores is: ' + score + ' This is the HighScore ' + highScore)
     }
 }
 
@@ -302,13 +302,12 @@ function maxRounds(rounds, score) {
  * @returns 
  */
 function plusRounds(rounds) {
-    if (rounds == (limitRounds - 1)) {
-        // This will not add more rounds now
+    if (rounds == limitRounds) {
+        // Do nothing
     } else {
     rounds += 1;
     document.querySelector('.rounds--box').innerHTML = rounds
     }
-
     return rounds;
 }
 
