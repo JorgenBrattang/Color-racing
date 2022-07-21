@@ -180,10 +180,10 @@ function runGame() {
     } while (randomNumberArray.length < 4)
     // Create a function/loop between this ---------->>>
     /* Sets the interval of the time from the random number for each horse */
-    let setColor_0 = setInterval(a, randomNumberArray[0])
-    let setColor_1 = setInterval(b, randomNumberArray[1])
-    let setColor_2 = setInterval(c, randomNumberArray[2])
-    let setColor_3 = setInterval(d, randomNumberArray[3])
+    let setColor_0 = setInterval(a, 1)
+    let setColor_1 = setInterval(b, 2)
+    let setColor_2 = setInterval(c, 3)
+    let setColor_3 = setInterval(d, 4)
     const winnerArray = []
     /**
      * Gets the interval speed for colors and checks if its not 100% keep going.
@@ -317,8 +317,11 @@ function announceWinner(winID) {
  */
 function maxRounds(rounds, score) {
     if (rounds == limitRounds) {
-        highScore.push(score)
-        document.querySelector(".high-score--box").innerHTML = score
+        if (score > highScore) {
+            highScore.push(score)
+            document.querySelector(".high-score--box").innerHTML = score
+        }
+        document.querySelector(".latest-score--box").innerHTML = score
         alert('Finish, your scores is: ' + score + ' This is the HighScore ' + highScore)
         /* Sets the reset button back to ID of play */
         document.getElementById("reset").setAttribute("id", "newGame")
