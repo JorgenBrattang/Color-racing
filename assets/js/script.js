@@ -100,6 +100,9 @@ addGlobalEventListener('click', '.select-container > a', e => {
     }
 })
 
+/**
+ * This will start the process of the game.
+ */
 function runGame() {
     /* This will disable all click events on the divs */
     const buttonNumber = [0,1,2,3,'play']
@@ -210,6 +213,11 @@ function runGame() {
     // Create a function/loop between this <<<----------
 }
 
+/**
+ * This will give you the outPut where your color is and change the appropriate
+ * fields to let you reset the game after you play.
+ * @param {*} winnerArray Gets the array of winners, first color is the first input.
+ */
 function winnerColor(winnerArray) {
     if(winnerArray.length === 1) {
         colorFinish[0].style.cssText = 'background-color: ' + winnerArray[0]
@@ -247,6 +255,10 @@ function winnerColor(winnerArray) {
     }
 }
 
+/**
+ * This will let you decide what to do when you win or lose the game.
+ * @param {*} winID Gets the winner's ID
+ */
 function announceWinner(winID) {
             if(winID == colorID) {
                 const score = parseInt(document.querySelector(".score--box").innerHTML)
@@ -263,24 +275,44 @@ function announceWinner(winID) {
             }
 }
 
+/**
+ * Limits the amount of rounds to be played
+ * @param {*} rounds - Amount of rounds that you want to play
+ * @param {*} score - This is your score count
+ */
 function maxRounds(rounds, score) {
     if (rounds == 2) {
         alert('Finish, your scores is: ' + score)
     }
 }
 
+/**
+ * This will increase the rounds by 1
+ * @param {*} rounds - Gets the amount of rounds from the DOM
+ * @returns 
+ */
 function plusRounds(rounds) {
     rounds += 1;
     document.querySelector('.rounds--box').innerHTML = rounds
     return rounds;
 }
 
+/**
+ * This will increase the score by 5
+ * @param {*} score - Gets the score from the from the DOM
+ * @returns 
+ */
 function plusScore(score) {
     score += 5;
     document.querySelector('.score--box').innerHTML = score
     return score;
 }
 
+/**
+ * This will decrease the score by 3
+ * @param {*} score - Gets the score from the from the DOM
+ * @returns 
+ */
 function minusScore(score) {
     score -= 3;
     document.querySelector('.score--box').innerHTML = score
