@@ -470,7 +470,7 @@ footer {
     main {
     width: 100%;
     padding: 15px;
-    grid-template-rows: 35px auto 100px auto 35px;
+    grid-template-rows: 35px auto 100px auto auto 35px;
     row-gap: 15px;
     }
 
