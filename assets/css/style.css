@@ -19,7 +19,7 @@ main {
     justify-self: center;
     width: 400px;
     display: grid;
-    grid-template-rows: 35px auto 125px auto 35px 25px;
+    grid-template-rows: 35px auto 125px auto auto auto 25px;
     row-gap: 15px;
 }
 
@@ -53,37 +53,37 @@ i {
     height: auto;
 }
 
-.color-1 {
-    grid-column: 1;
-    background-color: #685465;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-}
+    .color-1 {
+        grid-column: 1;
+        background-color: #685465;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
 
-.color-2 {
-    grid-column: 2;
-    background-color: #A96C7B;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-}
+    .color-2 {
+        grid-column: 2;
+        background-color: #A96C7B;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
 
-.color-3 {
-    grid-column: 3;
-    background-color: #E38C79;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-}
+    .color-3 {
+        grid-column: 3;
+        background-color: #E38C79;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
 
-.color-4 {
-    grid-column: 4;
-    background-color: #FFBC6C;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-}
+    .color-4 {
+        grid-column: 4;
+        background-color: #FFBC6C;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
 
 /* ------ Race container -> Placement container ------ */
 .placement-container {
@@ -94,105 +94,105 @@ i {
     row-gap: 10px;
 }
 
-.first {
-    grid-row: 1;
-    display: grid;
-    grid-template-rows: 1fr 50px;
-}
+    .first {
+        grid-row: 1;
+        display: grid;
+        grid-template-rows: 1fr 50px;
+    }
 
-.first p {
-    grid-row: 1;
-}
+    .first p {
+        grid-row: 1;
+    }
 
-.first--box {
-    grid-row: 2;
-    width: 50px;
-    justify-self: center;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-}
+    .first--box {
+        grid-row: 2;
+        width: 50px;
+        justify-self: center;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
 
-.second {
-    grid-row: 2;
-    display: grid;
-    grid-template-rows: 1fr 50px;
-}
+    .second {
+        grid-row: 2;
+        display: grid;
+        grid-template-rows: 1fr 50px;
+    }
 
-.second p {
-    grid-row: 1;
-}
+    .second p {
+        grid-row: 1;
+    }
 
-.second--box {
-    grid-row: 2;
-    width: 50px;
-    justify-self: center;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-}
+    .second--box {
+        grid-row: 2;
+        width: 50px;
+        justify-self: center;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
 
-.third {
-    grid-row: 3;
-    display: grid;
-    grid-template-rows: 1fr 50px;
-}
+    .third {
+        grid-row: 3;
+        display: grid;
+        grid-template-rows: 1fr 50px;
+    }
 
-.third p {
-    grid-row: 1;
-}
+    .third p {
+        grid-row: 1;
+    }
 
-.third--box {
-    grid-row: 2;
-    width: 50px;
-    justify-self: center;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-}
+    .third--box {
+        grid-row: 2;
+        width: 50px;
+        justify-self: center;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
 
-.fourth {
-    grid-row: 4;
-    display: grid;
-    grid-template-rows: 1fr 50px;
-}
+    .fourth {
+        grid-row: 4;
+        display: grid;
+        grid-template-rows: 1fr 50px;
+    }
 
-.fourth p {
-    grid-row: 1;
-}
+    .fourth p {
+        grid-row: 1;
+    }
 
-.fourth--box {
-    grid-row: 2;
-    width: 50px;
-    justify-self: center;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-}
+    .fourth--box {
+        grid-row: 2;
+        width: 50px;
+        justify-self: center;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
 
-.score {
-    grid-row: 5;
-    display: grid;
-    grid-template-rows: 1fr 50px;
-}
+    .score {
+        grid-row: 5;
+        display: grid;
+        grid-template-rows: 1fr 50px;
+    }
 
-.score p {
-    grid-row: 1;
-}
+    .score p {
+        grid-row: 1;
+    }
 
-.score--box {
-    grid-row: 2;
-    width: auto;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-    text-align: center;
-    padding: 10px;
-}
+    .score--box {
+        grid-row: 2;
+        width: auto;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        text-align: center;
+        padding: 10px;
+    }
 
-.rounds--box {
-    grid-row: 2;
-    width: auto;
-    border-radius: 10px;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-    text-align: center;
-    padding: 10px;
-}
+    .rounds--box {
+        grid-row: 2;
+        width: auto;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        text-align: center;
+        padding: 10px;
+    }
 
 /* ------ Select container ------ */
 .select-container {
@@ -207,52 +207,92 @@ i {
     justify-content: center;
 }
 
-.color-1--select {
-    grid-row: 2;
-    border-radius: 10px;
-    background-color:#685465;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-    border: none;
+    .color-1--select {
+        grid-row: 2;
+        border-radius: 10px;
+        background-color:#685465;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        border: none;
+    }
+
+    .color-2--select {
+        grid-row: 2;
+        border-radius: 10px;
+        background-color:#A96C7B;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        border: none;
+    }
+
+    .color-3--select {
+        grid-row: 2;
+        border-radius: 10px;
+        background-color:#E38C79;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        border: none;
+    }
+
+    .color-4--select {
+        grid-row: 2;
+        border-radius: 10px;
+        background-color:#FFBC6C;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        border: none;
+    }
+
+    .play-button--btn {
+        grid-row: 1/4;
+        border-radius: 50%;
+        border: none;
+        font-size: 32px;
+        text-align: center;
+        color:#eee;
+        background-color: #00A97F;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    }
+
+/* ------ highScore container ------ */
+.high-score-container {
+    grid-row: 4;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: #FAF7FF;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 16px 1fr;
+    column-gap: 15px;
+    row-gap: 5px;
 }
 
-.color-2--select {
-    grid-row: 2;
-    border-radius: 10px;
-    background-color:#A96C7B;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-    border: none;
-}
-
-.color-3--select {
-    grid-row: 2;
-    border-radius: 10px;
-    background-color:#E38C79;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-    border: none;
-}
-
-.color-4--select {
-    grid-row: 2;
-    border-radius: 10px;
-    background-color:#FFBC6C;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-    border: none;
-}
-
-.play-button--btn {
-    grid-row: 1/4;
-    border-radius: 50%;
-    border: none;
-    font-size: 32px;
+.high-score-container p {
+    grid-row: 1;
     text-align: center;
-    color:#eee;
-    background-color: #00A97F;
-    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
 }
+
+    .high-score--box {
+        grid-row: 2;
+        grid-column: 1;
+        width: auto;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .latest-score--box {
+        grid-row: 2;
+        grid-column: 2;
+        width: auto;
+        border-radius: 10px;
+        box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        text-align: center;
+        padding: 10px;
+    }
 
 /* ------ Instruction container ------ */
 .instruction-container {
-    grid-row: 4;
+    grid-row: 5;
     padding: 15px;
     border-radius: 25px;
     background: #FAF7FF;
@@ -269,7 +309,7 @@ i {
     border-radius: 25px;
     border: none;
     text-align: center;
-    color:#eee;
+    color: #FAF7FF;
     background-color: #00A97F;
     box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
     font-family: 'Poppins', sans-serif;
@@ -289,13 +329,18 @@ i {
   .buttonColor {background-color: #393939;}
 
 footer {
-    grid-row: 5;
+    grid-row: 6;
     color: rgba(250, 247, 255, 0.25);
     font-size: 12px;
     text-align: center;
 }
 
 @media (orientation: landscape) {
+
+    body {
+        grid-template-rows: 0 1fr;
+    }
+
     header {
         grid-column: 1/3;
     }
@@ -306,8 +351,8 @@ footer {
         width: auto;
         padding: 15px;
         display: grid;
-        grid-template-rows: 35px 110px 375px 25px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 35px 110px auto auto auto;
+        grid-template-columns: auto auto;
         column-gap: 15px;
         row-gap: 15px;
     }
@@ -317,7 +362,7 @@ footer {
     }
 
     .race-container {
-        grid-row: 2/6;
+        grid-row: 2/4;
         grid-column: 1/2;
     }
 
@@ -348,7 +393,38 @@ footer {
     }
 
     .instruction-container {
-        grid-row: 3/6;
+        grid-row: 3/4;
+    }
+
+    .high-score-container {
+        grid-column: 1/3;
+        grid-row: 4;
+        width: 100%;
+        height: auto;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    #hS {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 10px;
+    }
+
+    .high-score--box {
+        grid-column: 2; 
+        grid-row: 1;
+    }
+
+    #lS {
+        grid-column: 3;
+        grid-row: 1;
+        margin-top: 10px;
+    }
+
+    .latest-score--box {
+        grid-column: 4;
+        grid-row: 1;
     }
 
     .dropContent--btn {
@@ -378,7 +454,7 @@ footer {
 
     footer {
         grid-column: 1/3;
-        grid-row: 6;
+        grid-row: 5;
     } 
 }
 

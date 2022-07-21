@@ -253,19 +253,19 @@ function announceWinner(winID) {
                 const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
                 plusScore(score)
                 plusRounds(rounds)
-                maxRounds(rounds)
+                maxRounds(rounds, score)
             } else {
                 const score = parseInt(document.querySelector(".score--box").innerHTML)
                 const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
                 minusScore(score)
                 plusRounds(rounds)
-                maxRounds(rounds)
+                maxRounds(rounds, score)
             }
 }
 
-function maxRounds(rounds) {
-    if (rounds == 4) {
-        alert('max rounds played')
+function maxRounds(rounds, score) {
+    if (rounds == 2) {
+        alert('Finish, your scores is: ' + score)
     }
 }
 
