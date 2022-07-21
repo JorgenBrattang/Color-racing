@@ -19,7 +19,7 @@ selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
 var colorID = []
 /* Sets a global variable for highScore, so we can reuse it outside. */
 var highScore = []
-
+/* Lets you decide how many rounds are to be played */
 var limitRounds = 2
 
 
@@ -106,6 +106,32 @@ addGlobalEventListener('click', '.select-container > a', e => {
         
         const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
         plusRounds(rounds)
+    }
+
+    if(targetID == 'newGame') {
+        /* Deselects the color chosen */
+        colorID = []
+
+        /* Sets all the colors back to 100% opacity */
+        const colorNumbers = [0,1,2,3]
+        for (number of colorNumbers) {
+            document.getElementById(number).style.opacity = "1"
+            colorFinish[number].style.cssText = 'background-color: white'
+        }
+
+        /* Sets the reset button back to ID of play */
+        document.getElementById("newGame").setAttribute("id", "play")
+
+        /* Reset the buttons, so you can click them */
+        const buttonNumber = [0,1,2,3,'play']
+        for (id of buttonNumber) {
+            document.getElementById(id).style.pointerEvents = 'auto'
+        }
+
+        /* Sets the icon on Play button */
+        selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
+        document.querySelector(".rounds--box").innerHTML = 1
+        document.querySelector(".score--box").innerHTML = 0
     }
 })
 
