@@ -16,6 +16,11 @@ const selectPlay = document.querySelector('#play')
 selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
 /* Sets a global variable for colorID, so we can reuse it outside. */
 var colorID = []
+/* Sets a global variable for highScore, so we can reuse it outside. */
+var highScore = []
+
+var limitRounds = 3
+
 
 /* Disables the entire document's option to select text */
 const disableSelect = (e) => {  
@@ -251,7 +256,11 @@ function winnerColor(winnerArray) {
         selectPlay.style.color = textColor
 
         /* Changes the play buttons ID to reset */
-        document.getElementById("play").setAttribute("id", "reset")
+        document.getElementById("play").setAttribute("id", "reset")     
+        
+        const score = parseInt(document.querySelector(".score--box").innerHTML)
+        const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
+        maxRounds(rounds, score)
     }
 }
 
@@ -264,16 +273,15 @@ function announceWinner(winID) {
                 const score = parseInt(document.querySelector(".score--box").innerHTML)
                 const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
                 plusScore(score)
-                plusRounds(rounds)
-                maxRounds(rounds, score)
+                plusRounds(rounds)                
             } else {
                 const score = parseInt(document.querySelector(".score--box").innerHTML)
                 const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
                 minusScore(score)
                 plusRounds(rounds)
-                maxRounds(rounds, score)
             }
 }
+
 
 /**
  * Limits the amount of rounds to be played
@@ -281,8 +289,10 @@ function announceWinner(winID) {
  * @param {*} score - This is your score count
  */
 function maxRounds(rounds, score) {
-    if (rounds == 2) {
+    if (rounds == limitRounds) {
         alert('Finish, your scores is: ' + score)
+        // highScore.push(score)
+        // document.querySelector(".high-score--box").innerHTML = score
     }
 }
 
@@ -292,8 +302,13 @@ function maxRounds(rounds, score) {
  * @returns 
  */
 function plusRounds(rounds) {
+    if (rounds == (limitRounds - 1)) {
+        // This will not add more rounds now
+    } else {
     rounds += 1;
     document.querySelector('.rounds--box').innerHTML = rounds
+    }
+
     return rounds;
 }
 
