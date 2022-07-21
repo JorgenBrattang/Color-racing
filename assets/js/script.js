@@ -36,9 +36,6 @@ if (window.matchMedia("(orientation: landscape)").matches) {
 
 addGlobalEventListener('click', '.instruction-container > button', e => {
     /* Scrolls the user into the selected view. */
-    document.querySelector('#myDropdown').scrollIntoView({
-        behavior: 'smooth'
-    })
     toggleInstructions()
 })
 
@@ -254,6 +251,9 @@ function toggleInstructions() {
         } else {
             btn.innerHTML = "Instructions, press here!"
         }
+    document.querySelector('#myDropdown').scrollIntoView({
+        behavior: 'smooth'
+    })
 }
 
 /**
