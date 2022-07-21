@@ -44,7 +44,6 @@ addGlobalEventListener('click', '.instruction-container > button', e => {
 
 })
 
-
 addGlobalEventListener('click', '.select-container > a', e => { 
     let targetID = e.target.id
     const colorNumbers = [0,1,2,3]
@@ -250,12 +249,30 @@ function winnerColor(winnerArray) {
 
 function announceWinner(winID) {
             if(winID == colorID) {
-                const score = parseInt(document.querySelector(".score--box").innerHTML);
-                plusScore(score);
+                const score = parseInt(document.querySelector(".score--box").innerHTML)
+                const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
+                plusScore(score)
+                plusRounds(rounds)
+                maxRounds(rounds)
             } else {
-                const score = parseInt(document.querySelector(".score--box").innerHTML);
-                minusScore(score);
+                const score = parseInt(document.querySelector(".score--box").innerHTML)
+                const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
+                minusScore(score)
+                plusRounds(rounds)
+                maxRounds(rounds)
             }
+}
+
+function maxRounds(rounds) {
+    if (rounds == 4) {
+        alert('max rounds played')
+    }
+}
+
+function plusRounds(rounds) {
+    rounds += 1;
+    document.querySelector('.rounds--box').innerHTML = rounds
+    return rounds;
 }
 
 function plusScore(score) {

@@ -19,7 +19,7 @@ main {
     justify-self: center;
     width: 400px;
     display: grid;
-    grid-template-rows: 35px 450px 125px auto 35px 25px;
+    grid-template-rows: 35px auto 125px auto 35px 25px;
     row-gap: 15px;
 }
 
@@ -50,6 +50,7 @@ i {
     grid-template-columns: 50px 50px 50px 50px;
     grid-template-rows: 1fr;
     column-gap: 15px;
+    height: auto;
 }
 
 .color-1 {
@@ -176,6 +177,15 @@ i {
 }
 
 .score--box {
+    grid-row: 2;
+    width: auto;
+    border-radius: 10px;
+    box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+    text-align: center;
+    padding: 10px;
+}
+
+.rounds--box {
     grid-row: 2;
     width: auto;
     border-radius: 10px;
