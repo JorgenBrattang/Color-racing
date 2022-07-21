@@ -361,6 +361,7 @@ footer {
       .dropdown-content {
         display: none;
         padding: 15px;
+        max-width: fit-content;
       }
       
       .show {display: block;}
