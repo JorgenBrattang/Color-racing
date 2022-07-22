@@ -10,17 +10,17 @@ const resetColor = '#8685EF'
 const whiteColor = '#FAF7FF'
 /* Selects all the buttons (<a>) in the DOM */
 const button = document.querySelectorAll('.select-container > a') 
-/* Selects all the class="first--box" etc (<div>) in the DOM */
+/* Selects all the class="first--box" (<div>) in the DOM */
 const colorFinish = document.querySelectorAll('.placement-container > div > div')
-/* Gets the play button and sets it to it's default Icon */
+
 const selectPlay = document.querySelector('#play')
 selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
-
+const roundsBox = document.querySelector('.rounds--box')
 const scoreBox = document.querySelector('.score--box')
-/* Sets a global variable for colorID, so we can reuse it outside. */
+
 var colorID = []
-/* Sets a global variable for highScore, so we can reuse it outside. */
 var highScore = []
+
 /* Lets you decide how many rounds are to be played */
 var limitRounds = 2
 
@@ -94,11 +94,11 @@ addGlobalEventListener('click', '.select-container > a', e => {
         /* Sets the icon on Play button */
         selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
         
-        const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
+        const rounds = parseInt(roundsBox.innerHTML)
         plusRounds(rounds)
 
         /* Takes away the animation from score box */ 
-        document.querySelector('.score--box').style.animation = "none"
+        scoreBox.style.animation = "none"
     }
 
     if(targetID == 'newGame') {
@@ -123,8 +123,10 @@ addGlobalEventListener('click', '.select-container > a', e => {
 
         /* Sets the icon on Play button */
         selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
+
+        /* Resets the score */
         document.querySelector(".rounds--box").innerHTML = 1
-        document.querySelector(".score--box").innerHTML = 0
+        scoreBox.innerHTML = 0
     }
 })
 
@@ -300,8 +302,8 @@ function winnerColor(winnerArray) {
         /* Changes the play buttons ID to reset */
         document.getElementById("play").setAttribute("id", "reset")     
         
-        const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
-        const score = parseInt(document.querySelector(".score--box").innerHTML)
+        const rounds = parseInt(roundsBox.innerHTML)
+        const score = parseInt(scoreBox.innerHTML)
         maxRounds(rounds,score)
     }
 }
@@ -312,10 +314,10 @@ function winnerColor(winnerArray) {
  */
 function announceWinner(winID) {
             if(winID == colorID) {
-                const score = parseInt(document.querySelector(".score--box").innerHTML)
+                const score = parseInt(scoreBox.innerHTML)
                 plusScore(score)
             } else {
-                const score = parseInt(document.querySelector(".score--box").innerHTML)
+                const score = parseInt(scoreBox.innerHTML)
                 minusScore(score)
             }
 }
@@ -352,7 +354,7 @@ function plusRounds(rounds) {
         // Do nothing
     } else {
     rounds += 1;
-    document.querySelector('.rounds--box').innerHTML = rounds
+    roundsBox.innerHTML = rounds
     }
     return rounds;
 }
@@ -364,7 +366,7 @@ function plusRounds(rounds) {
  */
 function plusScore(score) {
     score += 5;
-    document.querySelector('.score--box').innerHTML = score
+    scoreBox.innerHTML = score
     scoreBox.style.animation = "glowingWin 500ms"
     return score;
 }
@@ -376,7 +378,7 @@ function plusScore(score) {
  */
 function minusScore(score) {
     score -= 3;
-    document.querySelector('.score--box').innerHTML = score
+    scoreBox.innerHTML = score
     scoreBox.style.animation = "glowingLose 500ms"
     return score;
 }
