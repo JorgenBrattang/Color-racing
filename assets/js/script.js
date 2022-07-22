@@ -17,6 +17,8 @@ const selectPlay = document.querySelector('#play')
 selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
 const roundsBox = document.querySelector('.rounds--box')
 const scoreBox = document.querySelector('.score--box')
+const highScoreBox = document.querySelector(".high-score--box")
+const latestScoreBox = document.querySelector(".latest-score--box")
 
 var colorID = []
 var highScore = []
@@ -332,9 +334,14 @@ function maxRounds(rounds, score) {
     if (rounds == limitRounds) {
         if (score > highScore) {
             highScore.push(score)
-            document.querySelector(".high-score--box").innerHTML = score
+            highScoreBox.innerHTML = score
+            highScoreBox.style.animation = 'glowingWin 500ms 5'
+            latestScoreBox.style.animation = 'glowingWin 500ms 5'
         }
-        document.querySelector(".latest-score--box").innerHTML = score
+        latestScoreBox.innerHTML = score
+        if (score < highScore) {
+            latestScoreBox.style.animation = 'glowingLose 500ms 3'
+        }
         /* Sets the reset button back to ID of play */
         document.getElementById("reset").setAttribute("id", "newGame")
 
