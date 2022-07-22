@@ -20,7 +20,7 @@ const scoreBox = document.querySelector('.score--box')
 const highScoreBox = document.querySelector(".high-score--box")
 const latestScoreBox = document.querySelector(".latest-score--box")
 
-var colorID = []
+var colorID = null
 var limitRounds = null
 var roundChosen = null
 var highScore = []
@@ -63,14 +63,20 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
     else if (roundChosen == true) {
         /* Checks if you pressed a color instead of play button */
         if(targetID != 'play') {
-            playButton(targetID,colorNumbers,colorSelect,aEvent)
+            colorID = targetID
+            /* Takes away the current target ID from the array colorNumbers */
+            colorNumbers.splice(targetID, 1)
+            /* Selects every other color and change their opacity to 0.5 (not selected) */
+            for (number of colorNumbers) {
+                targetOthers = document.getElementById(number)
+                targetOthers.style.opacity = "0.5";
+            }
+            /* Changes the background color of the current chosen color */
+            aEvent.target.style.cssText = 'background-color: ' + colorSelect 
         }    
-        /* Checks if colorID has to many ID's within the array. */
-        if (colorID.length > 1) {
-            colorID.shift(); // removes the first element from an array 
-        } 
+
         /* Checks if the colorID holds an ID or not. */
-        if(colorID.length == 1) {
+        if(colorID != null) {
             if(targetID == 'play') {
                 runGame()
             }
@@ -102,18 +108,8 @@ addGlobalEventListener('click', '.instruction-container > button', buttonEvent =
  * @param {*} colorSelect - Gets the combined color with targetID
  * @param {*} aEvent - Gets the event
  */
-function playButton(targetID,colorNumbers,colorSelect,aEvent) {
-     /* Pushes the id of the color into an array */
-     colorID.push(targetID)
-     /* Takes away the current target ID from the array colorNumbers */
-     colorNumbers.splice(targetID, 1)
-     /* Selects every other color and change their opacity to 0.5 (not selected) */
-     for (number of colorNumbers) {
-         targetOthers = document.getElementById(number)
-         targetOthers.style.opacity = "0.5";
-     }
-     /* Changes the background color of the current chosen color */
-     aEvent.target.style.cssText = 'background-color: ' + colorSelect 
+function selectColorButton(targetID,colorNumbers,colorSelect,aEvent) {
+     
 }
 
 
