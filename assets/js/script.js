@@ -22,7 +22,7 @@ const latestScoreBox = document.querySelector(".latest-score--box")
 
 var colorID = []
 var limitRounds = []
-var roundChosen = []
+var roundChosen = null
 var highScore = []
 
 /* Disables the entire document's option to select text */
@@ -36,65 +36,87 @@ if (window.matchMedia("(orientation: landscape)").matches) {
     toggleInstructions()
 }
 
-/* Choose the number of rounds */
-addGlobalEventListener('click', '.select-container > a', aEvent => { 
-    let roundID = aEvent.target.id
-    const limitRoundsArray = [2,5,10,15]
+/* Maybe add the roundChosen IF statement within the code instead.... */
+
+if (roundChosen == null) {
+    console.log('roundChosen = ' + roundChosen)
+    addGlobalEventListener('click', '.select-container > a', divEvent => { 
+        roundChosen = true
+        console.log(roundChosen)
+    })
+}
+else if (roundChosen == true) {
+    console.log('roundChosen = ' + roundChosen)
+    addGlobalEventListener('click', '.select-container > a', divEvent => { 
+        roundChosen = null
+        console.log(roundChosen)
+    })
+}
+
+// if(roundChosen == null) {
+//     addGlobalEventListener('click', '.select-container > a', divEvent => { 
+//         let roundID = divEvent.target.id
+//         const limitRoundsArray = [2,5,10,15]
 
 
-    if(roundID != 'play') {
-        limitRounds.push(limitRoundsArray[roundID])
-    }    
+//         if(roundID != 'play') {
+//             limitRounds.push(limitRoundsArray[roundID])
+//         }    
 
-    if (limitRounds.length > 1) {
-        limitRounds.shift()
-    } 
+//         if (limitRounds.length > 1) {
+//             limitRounds.shift()
+//         } 
 
-    if(limitRoundsArray.length > 1) {
-        if(roundID == 'play') {
-            roundChosen.push('true')
-            alert('success you have selected: ' + limitRounds + ' and roundChose is ' + roundChosen)
-        }
-    } else {
-        alert('Choose the amount of rounds first!')
-    }
-})
+//         if(limitRoundsArray.length > 1) {
+//             if(roundID == 'play') {
+//                 roundChosen = 1
+//                 alert('success you have selected: ' + limitRounds + ' and roundChose is ' + roundChosen)
+//             }
+//         } else {
+//             alert('Choose the amount of rounds first!')
+//         }
+//     })
+// }
+
+// else if (roundChosen == 1) {
+//     /* Choose the color to play with */
+//     addGlobalEventListener('click', '.select-container > a', aEvent => { 
+//         let targetID = aEvent.target.id
+//         const colorNumbers = [0,1,2,3]
+//         const colorSelect = 'color_' + targetID
+//         /* Checks if you pressed a color instead of play button */
+//         if(targetID != 'play') {
+//             playButton(targetID,colorNumbers,colorSelect,aEvent)
+//         }    
+//         /* Checks if colorID has to many ID's within the array. */
+//         if (colorID.length > 1) {
+//             colorID.shift(); // removes the first element from an array 
+//         } 
+//         /* Checks if the colorID holds an ID or not. */
+//         if(colorID.length == 1) {
+//             if(targetID == 'play') {
+//                 runGame()
+//             }
+//         } else {
+//             alert('Choose a color to race with first, then press the big green button!')
+//         }
+
+//         if(targetID == 'reset') {
+//             resetGame()
+//         }
+
+//         if(targetID == 'newGame') {
+//             newGame()
+//         }
+//     })
+// }
 
 /* Toggles the instructions to show and hide */
 addGlobalEventListener('click', '.instruction-container > button', buttonEvent => {
     toggleInstructions()
 })
 
-// /* Choose the color to play with */
-// addGlobalEventListener('click', '.select-container > a', aEvent => { 
-//     let targetID = aEvent.target.id
-//     const colorNumbers = [0,1,2,3]
-//     const colorSelect = 'color_' + targetID
-//     /* Checks if you pressed a color instead of play button */
-//     if(targetID != 'play') {
-//         playButton(targetID,colorNumbers,colorSelect,aEvent)
-//     }    
-//     /* Checks if colorID has to many ID's within the array. */
-//     if (colorID.length > 1) {
-//         colorID.shift(); // removes the first element from an array 
-//     } 
-//     /* Checks if the colorID holds an ID or not. */
-//     if(colorID.length == 1) {
-//         if(targetID == 'play') {
-//             runGame()
-//         }
-//     } else {
-//         alert('Choose a color to race with first, then press the big green button!')
-//     }
 
-//     if(targetID == 'reset') {
-//         resetGame()
-//     }
-
-//     if(targetID == 'newGame') {
-//         newGame()
-//     }
-// })
 
 /**
  * This will get all the variables needed to start the process when pressing Play
