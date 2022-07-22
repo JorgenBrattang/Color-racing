@@ -74,63 +74,77 @@ addGlobalEventListener('click', '.select-container > a', e => {
     }
 
     if(targetID == 'reset') {
-        /* Deselects the color chosen */
-        colorID = []
-
-        /* Sets all the colors back to 100% opacity */
-        const colorNumbers = [0,1,2,3]
-        for (number of colorNumbers) {
-            document.getElementById(number).style.opacity = "1"
-            colorFinish[number].style.cssText = 'background-color: white'
-        }
-
-        /* Sets the reset button back to ID of play */
-        document.getElementById("reset").setAttribute("id", "play")
-
-        /* Reset the buttons, so you can click them */
-        const buttonNumber = [0,1,2,3,'play']
-        for (id of buttonNumber) {
-            document.getElementById(id).style.pointerEvents = 'auto'
-        }
-
-        /* Sets the icon on Play button */
-        selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
-        
-        const rounds = parseInt(roundsBox.innerHTML)
-        plusRounds(rounds)
-
-        /* Takes away the animation from score box */ 
-        scoreBox.style.animation = "none"
+        resetGame()
     }
 
     if(targetID == 'newGame') {
-        /* Deselects the color chosen */
-        colorID = []
-
-        /* Sets all the colors back to 100% opacity */
-        const colorNumbers = [0,1,2,3]
-        for (number of colorNumbers) {
-            document.getElementById(number).style.opacity = "1"
-            colorFinish[number].style.cssText = 'background-color: white'
-        }
-
-        /* Sets the reset button back to ID of play */
-        document.getElementById("newGame").setAttribute("id", "play")
-
-        /* Reset the buttons, so you can click them */
-        const buttonNumber = [0,1,2,3,'play']
-        for (id of buttonNumber) {
-            document.getElementById(id).style.pointerEvents = 'auto'
-        }
-
-        /* Sets the icon on Play button */
-        selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
-
-        /* Resets the score */
-        document.querySelector(".rounds--box").innerHTML = 1
-        scoreBox.innerHTML = 0
+        newGame()
     }
 })
+
+/**
+ * This will reset the game, so you can play a new round
+ */
+function resetGame() {
+    /* Deselects the color chosen */
+    colorID = []
+
+    /* Sets all the colors back to 100% opacity */
+    const colorNumbers = [0,1,2,3]
+    for (number of colorNumbers) {
+        document.getElementById(number).style.opacity = "1"
+        colorFinish[number].style.cssText = 'background-color: white'
+    }
+
+    /* Sets the reset button back to ID of play */
+    document.getElementById("reset").setAttribute("id", "play")
+
+    /* Reset the buttons, so you can click them */
+    const buttonNumber = [0,1,2,3,'play']
+    for (id of buttonNumber) {
+        document.getElementById(id).style.pointerEvents = 'auto'
+    }
+
+    /* Sets the icon on Play button */
+    selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
+    
+    const rounds = parseInt(roundsBox.innerHTML)
+    plusRounds(rounds)
+
+    /* Takes away the animation from score box */ 
+    scoreBox.style.animation = "none"
+}
+
+/**
+ * This will start a new game, by resetting everything (like reloading page)
+ */
+function newGame() {
+    /* Deselects the color chosen */
+    colorID = []
+
+    /* Sets all the colors back to 100% opacity */
+    const colorNumbers = [0,1,2,3]
+    for (number of colorNumbers) {
+        document.getElementById(number).style.opacity = "1"
+        colorFinish[number].style.cssText = 'background-color: white'
+    }
+
+    /* Sets the reset button back to ID of play */
+    document.getElementById("newGame").setAttribute("id", "play")
+
+    /* Reset the buttons, so you can click them */
+    const buttonNumber = [0,1,2,3,'play']
+    for (id of buttonNumber) {
+        document.getElementById(id).style.pointerEvents = 'auto'
+    }
+
+    /* Sets the icon on Play button */
+    selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
+
+    /* Resets the score */
+    document.querySelector(".rounds--box").innerHTML = 1
+    scoreBox.innerHTML = 0
+}
 
 /**
  * This will start the process of the game.
@@ -166,8 +180,8 @@ function runGame() {
     const randomNumberArray = []
 
     do {
-        // Generating random number between 35 and 85
-        const randomNumber = Math.floor(Math.random() * 50) + 35
+        // Generating random number
+        const randomNumber = Math.floor(Math.random() * 10) + 15
         
         // Checks if the number is included in the array, if not push it into it.
         if (!randomNumberArray.includes(randomNumber)) {
@@ -177,10 +191,10 @@ function runGame() {
     } while (randomNumberArray.length < 4)
     // Create a function/loop between this ---------->>>
     /* Sets the interval of the time from the random number for each horse */
-    let setColor_0 = setInterval(a, 1)
-    let setColor_1 = setInterval(b, 2)
-    let setColor_2 = setInterval(c, 3)
-    let setColor_3 = setInterval(d, 4)
+    let setColor_0 = setInterval(a, randomNumberArray[0])
+    let setColor_1 = setInterval(b, randomNumberArray[1])
+    let setColor_2 = setInterval(c, randomNumberArray[2])
+    let setColor_3 = setInterval(d, randomNumberArray[3])
     const winnerArray = []
     /**
      * Gets the interval speed for colors and checks if its not 100% keep going.
@@ -324,7 +338,6 @@ function announceWinner(winID) {
             }
 }
 
-
 /**
  * Limits the amount of rounds to be played
  * @param {*} rounds - Amount of rounds that you want to play
@@ -335,12 +348,12 @@ function maxRounds(rounds, score) {
         if (score > highScore) {
             highScore.push(score)
             highScoreBox.innerHTML = score
-            highScoreBox.style.animation = 'glowingWin 500ms 5'
-            latestScoreBox.style.animation = 'glowingWin 500ms 5'
+            highScoreBox.style.animation = 'glowingWin 250ms 3'
+            latestScoreBox.style.animation = 'glowingWin 250ms 3'
         }
         latestScoreBox.innerHTML = score
         if (score < highScore) {
-            latestScoreBox.style.animation = 'glowingLose 500ms 3'
+            latestScoreBox.style.animation = 'glowingLose 250ms 3'
         }
         /* Sets the reset button back to ID of play */
         document.getElementById("reset").setAttribute("id", "newGame")
@@ -374,7 +387,7 @@ function plusRounds(rounds) {
 function plusScore(score) {
     score += 5;
     scoreBox.innerHTML = score
-    scoreBox.style.animation = "glowingWin 500ms"
+    scoreBox.style.animation = "glowingWin 250ms 3"
     return score;
 }
 
@@ -386,7 +399,7 @@ function plusScore(score) {
 function minusScore(score) {
     score -= 3;
     scoreBox.innerHTML = score
-    scoreBox.style.animation = "glowingLose 500ms"
+    scoreBox.style.animation = "glowingLose 250ms 3"
     return score;
 }
 
