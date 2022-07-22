@@ -95,7 +95,7 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
         /* Checks if the colorID holds an ID or not. */
         if(colorID != null) {
             if(targetID == 'play') {
-                runGame()
+                runGame(limitRounds)
             }
         } else {
             alert('Choose a color to race with first, then press the big green button!')
@@ -391,6 +391,7 @@ function announceWinner(winID) {
 function maxRounds(rounds, score) {
     if (rounds == limitRounds) {
         if (score > highScore) {
+            alert('maxRounds is RUNNING!')
             highScore.push(score)
             highScoreBox.innerHTML = score
             highScoreBox.style.animation = 'glowingWin 250ms 3'
