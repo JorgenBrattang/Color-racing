@@ -48,17 +48,7 @@ addGlobalEventListener('click', '.select-container > a', e => {
     const colorSelect = 'color_' + targetID
     /* Checks if you pressed a color instead of play button */
     if(targetID != 'play') {
-        /* Pushes the id of the color into an array */
-        colorID.push(targetID)
-        /* Takes away the current target ID from the array colorNumbers */
-        colorNumbers.splice(targetID, 1)
-        /* Selects every other color and change their opacity to 0.5 (not selected) */
-        for (number of colorNumbers) {
-            targetOthers = document.getElementById(number)
-            targetOthers.style.opacity = "0.5";
-        }
-        /* Changes the background color of the current chosen color */
-        e.target.style.cssText = 'background-color: ' + colorSelect 
+        playButton(targetID,colorNumbers,colorSelect,e)
     }    
     /* Checks if colorID has to many ID's within the array. */
     if (colorID.length > 1) {
@@ -81,6 +71,28 @@ addGlobalEventListener('click', '.select-container > a', e => {
         newGame()
     }
 })
+
+/**
+ * This will get all the variables needed to start the process when pressing Play
+ * @param {*} targetID - Gets the id from e
+ * @param {*} colorNumbers - Gets the number array
+ * @param {*} colorSelect - Gets the combined color with targetID
+ * @param {*} e - Gets the event
+ */
+function playButton(targetID,colorNumbers,colorSelect,e) {
+     /* Pushes the id of the color into an array */
+     colorID.push(targetID)
+     /* Takes away the current target ID from the array colorNumbers */
+     colorNumbers.splice(targetID, 1)
+     /* Selects every other color and change their opacity to 0.5 (not selected) */
+     for (number of colorNumbers) {
+         targetOthers = document.getElementById(number)
+         targetOthers.style.opacity = "0.5";
+     }
+     /* Changes the background color of the current chosen color */
+     e.target.style.cssText = 'background-color: ' + colorSelect 
+}
+
 
 /**
  * This will reset the game, so you can play a new round
