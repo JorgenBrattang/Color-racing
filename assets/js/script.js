@@ -14,7 +14,7 @@ const button = document.querySelectorAll('.select-container > a')
 const colorFinish = document.querySelectorAll('.placement-container > div > div')
 
 const selectPlay = document.querySelector('#play')
-selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
+selectPlay.innerHTML = '<i class="fa-regular fa-hand"></i>'
 const roundsBox = document.querySelector('.rounds--box')
 const scoreBox = document.querySelector('.score--box')
 const highScoreBox = document.querySelector(".high-score--box")
@@ -44,16 +44,33 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
     const colorSelect = 'color_' + targetID
 
     /* IF no round have been chosen, do this! */
-    if (roundChosen == null) {        
+    if (roundChosen == null) {    
             if(targetID != 'play') {
-                // limitRounds.push(limitRoundsArray[targetID])
                 limitRounds = limitRoundsArray[targetID]
+                /* Takes away the current target ID from the array colorNumbers */
+                colorNumbers.splice(targetID, 1)
+                /* Selects every other color and change their opacity to 0.5 (not selected) */
+                for (number of colorNumbers) {
+                    targetOthers = document.getElementById(number)
+                    targetOthers.style.opacity = "0.5";
+                }
+                /* Changes the background color of the current chosen color */
+                aEvent.target.style.cssText = 'background-color: ' + colorSelect 
+                console.log(limitRounds)
             }    
         
             if(limitRounds != null) {
                 if(targetID == 'play') {
+                    selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
                     roundChosen = true
                     console.log('roundChosen = ' + roundChosen + ' and limitRounds = ' + limitRounds)
+
+                    /* Sets all the colors back to 100% opacity */
+                    const colorNumbers = [0,1,2,3]
+                    for (number of colorNumbers) {
+                        document.getElementById(number).style.opacity = "1"
+                        colorFinish[number].style.cssText = 'background-color: white'
+                    }
                 }
             } else {
                 alert('Choose the amount of rounds first!')
@@ -89,7 +106,34 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
         }
 
         if(targetID == 'newGame') {
-            newGame()
+            roundChosen = null
+            limitRounds = null
+            
+            /* Deselects the color chosen */
+            colorID = null
+
+            /* Sets all the colors back to 100% opacity */
+            const colorNumbers = [0,1,2,3]
+            for (number of colorNumbers) {
+                document.getElementById(number).style.opacity = "1"
+                colorFinish[number].style.cssText = 'background-color: white'
+            }
+
+            /* Sets the reset button back to ID of play */
+            document.getElementById("newGame").setAttribute("id", "play")
+
+            /* Reset the buttons, so you can click them */
+            const buttonNumber = [0,1,2,3,'play']
+            for (id of buttonNumber) {
+                document.getElementById(id).style.pointerEvents = 'auto'
+            }
+
+            /* Sets the icon on Hand button */
+            selectPlay.innerHTML = '<i class="fa-regular fa-hand"></i>'
+
+            /* Resets the score */
+            roundsBox.innerHTML = 1
+            scoreBox.innerHTML = 0
         }
     }
 })
@@ -99,26 +143,12 @@ addGlobalEventListener('click', '.instruction-container > button', buttonEvent =
     toggleInstructions()
 })
 
-
-
-/**
- * This will get all the variables needed to start the process when pressing Play
- * @param {*} targetID - Gets the id from e
- * @param {*} colorNumbers - Gets the number array
- * @param {*} colorSelect - Gets the combined color with targetID
- * @param {*} aEvent - Gets the event
- */
-function selectColorButton(targetID,colorNumbers,colorSelect,aEvent) {
-     
-}
-
-
 /**
  * This will reset the game, so you can play a new round
  */
 function resetGame() {
     /* Deselects the color chosen */
-    colorID = []
+    colorID = null
 
     /* Sets all the colors back to 100% opacity */
     const colorNumbers = [0,1,2,3]
@@ -150,34 +180,7 @@ function resetGame() {
  * This will start a new game, by resetting everything (like reloading page)
  */
 function newGame() {
-    /* Deselects the color chosen */
-    colorID = []
-
-    /* Sets all the colors back to 100% opacity */
-    const colorNumbers = [0,1,2,3]
-    for (number of colorNumbers) {
-        document.getElementById(number).style.opacity = "1"
-        colorFinish[number].style.cssText = 'background-color: white'
-    }
-
-    /* Sets the reset button back to ID of play */
-    document.getElementById("newGame").setAttribute("id", "play")
-
-    /* Reset the buttons, so you can click them */
-    const buttonNumber = [0,1,2,3,'play']
-    for (id of buttonNumber) {
-        document.getElementById(id).style.pointerEvents = 'auto'
-    }
-
-    /* Sets the icon on Play button */
-    selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
-
-    /* Resets the score */
-    document.querySelector(".rounds--box").innerHTML = 1
-    scoreBox.innerHTML = 0
-
-    /* Sets the roundChosen back to null */
-    roundChosen = null
+    
 }
 
 /**
