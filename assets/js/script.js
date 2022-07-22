@@ -21,10 +21,9 @@ const highScoreBox = document.querySelector(".high-score--box")
 const latestScoreBox = document.querySelector(".latest-score--box")
 
 var colorID = []
+var limitRounds = []
+var roundChosen = []
 var highScore = []
-
-/* Lets you decide how many rounds are to be played */
-var limitRounds = 2
 
 /* Disables the entire document's option to select text */
 const disableSelect = (e) => {  
@@ -37,49 +36,74 @@ if (window.matchMedia("(orientation: landscape)").matches) {
     toggleInstructions()
 }
 
-addGlobalEventListener('click', '.instruction-container > button', e => {
-    /* Scrolls the user into the selected view. */
+/* Choose the number of rounds */
+addGlobalEventListener('click', '.select-container > a', aEvent => { 
+    let roundID = aEvent.target.id
+    const limitRoundsArray = [2,5,10,15]
+
+
+    if(roundID != 'play') {
+        limitRounds.push(limitRoundsArray[roundID])
+    }    
+
+    if (limitRounds.length > 1) {
+        limitRounds.shift()
+    } 
+
+    if(limitRoundsArray.length > 1) {
+        if(roundID == 'play') {
+            roundChosen.push('true')
+            alert('success you have selected: ' + limitRounds + ' and roundChose is ' + roundChosen)
+        }
+    } else {
+        alert('Choose the amount of rounds first!')
+    }
+})
+
+/* Toggles the instructions to show and hide */
+addGlobalEventListener('click', '.instruction-container > button', buttonEvent => {
     toggleInstructions()
 })
 
-addGlobalEventListener('click', '.select-container > a', e => { 
-    let targetID = e.target.id
-    const colorNumbers = [0,1,2,3]
-    const colorSelect = 'color_' + targetID
-    /* Checks if you pressed a color instead of play button */
-    if(targetID != 'play') {
-        playButton(targetID,colorNumbers,colorSelect,e)
-    }    
-    /* Checks if colorID has to many ID's within the array. */
-    if (colorID.length > 1) {
-        colorID.shift(); // removes the first element from an array 
-    } 
-    /* Checks if the colorID holds an ID or not. */
-    if(colorID.length == 1) {
-        if(targetID == 'play') {
-            runGame()
-        }
-    } else {
-        alert('Choose a color to race with first, then press the big green button!')
-    }
+// /* Choose the color to play with */
+// addGlobalEventListener('click', '.select-container > a', aEvent => { 
+//     let targetID = aEvent.target.id
+//     const colorNumbers = [0,1,2,3]
+//     const colorSelect = 'color_' + targetID
+//     /* Checks if you pressed a color instead of play button */
+//     if(targetID != 'play') {
+//         playButton(targetID,colorNumbers,colorSelect,aEvent)
+//     }    
+//     /* Checks if colorID has to many ID's within the array. */
+//     if (colorID.length > 1) {
+//         colorID.shift(); // removes the first element from an array 
+//     } 
+//     /* Checks if the colorID holds an ID or not. */
+//     if(colorID.length == 1) {
+//         if(targetID == 'play') {
+//             runGame()
+//         }
+//     } else {
+//         alert('Choose a color to race with first, then press the big green button!')
+//     }
 
-    if(targetID == 'reset') {
-        resetGame()
-    }
+//     if(targetID == 'reset') {
+//         resetGame()
+//     }
 
-    if(targetID == 'newGame') {
-        newGame()
-    }
-})
+//     if(targetID == 'newGame') {
+//         newGame()
+//     }
+// })
 
 /**
  * This will get all the variables needed to start the process when pressing Play
  * @param {*} targetID - Gets the id from e
  * @param {*} colorNumbers - Gets the number array
  * @param {*} colorSelect - Gets the combined color with targetID
- * @param {*} e - Gets the event
+ * @param {*} aEvent - Gets the event
  */
-function playButton(targetID,colorNumbers,colorSelect,e) {
+function playButton(targetID,colorNumbers,colorSelect,aEvent) {
      /* Pushes the id of the color into an array */
      colorID.push(targetID)
      /* Takes away the current target ID from the array colorNumbers */
@@ -90,7 +114,7 @@ function playButton(targetID,colorNumbers,colorSelect,e) {
          targetOthers.style.opacity = "0.5";
      }
      /* Changes the background color of the current chosen color */
-     e.target.style.cssText = 'background-color: ' + colorSelect 
+     aEvent.target.style.cssText = 'background-color: ' + colorSelect 
 }
 
 

@@ -93,12 +93,13 @@ i {
     grid-template-rows: repeat(5, 1fr);
     row-gap: 10px;
 }
-
     .first {
         grid-row: 1;
         display: grid;
         grid-template-rows: 1fr 50px;
+        z-index: 0;
     }
+
 
     .first p {
         grid-row: 1;
@@ -110,6 +111,7 @@ i {
         justify-self: center;
         border-radius: 10px;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        padding-top: 10px;
     }
 
     .second {
@@ -128,6 +130,7 @@ i {
         justify-self: center;
         border-radius: 10px;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        padding-top: 10px;
     }
 
     .third {
@@ -146,6 +149,7 @@ i {
         justify-self: center;
         border-radius: 10px;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        padding-top: 10px;
     }
 
     .fourth {
@@ -164,6 +168,7 @@ i {
         justify-self: center;
         border-radius: 10px;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
+        padding-top: 10px;
     }
 
     .score {
