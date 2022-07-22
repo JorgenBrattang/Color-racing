@@ -15,13 +15,14 @@ const colorFinish = document.querySelectorAll('.placement-container > div > div'
 /* Gets the play button and sets it to it's default Icon */
 const selectPlay = document.querySelector('#play')
 selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
+
+const scoreBox = document.querySelector('.score--box')
 /* Sets a global variable for colorID, so we can reuse it outside. */
 var colorID = []
 /* Sets a global variable for highScore, so we can reuse it outside. */
 var highScore = []
 /* Lets you decide how many rounds are to be played */
 var limitRounds = 2
-
 
 /* Disables the entire document's option to select text */
 const disableSelect = (e) => {  
@@ -95,6 +96,9 @@ addGlobalEventListener('click', '.select-container > a', e => {
         
         const rounds = parseInt(document.querySelector(".rounds--box").innerHTML)
         plusRounds(rounds)
+
+        /* Takes away the animation from score box */ 
+        document.querySelector('.score--box').style.animation = "none"
     }
 
     if(targetID == 'newGame') {
@@ -310,7 +314,6 @@ function announceWinner(winID) {
             if(winID == colorID) {
                 const score = parseInt(document.querySelector(".score--box").innerHTML)
                 plusScore(score)
-                               
             } else {
                 const score = parseInt(document.querySelector(".score--box").innerHTML)
                 minusScore(score)
@@ -330,7 +333,6 @@ function maxRounds(rounds, score) {
             document.querySelector(".high-score--box").innerHTML = score
         }
         document.querySelector(".latest-score--box").innerHTML = score
-        alert('Finish, your scores is: ' + score + ' This is the HighScore ' + highScore)
         /* Sets the reset button back to ID of play */
         document.getElementById("reset").setAttribute("id", "newGame")
 
@@ -363,6 +365,7 @@ function plusRounds(rounds) {
 function plusScore(score) {
     score += 5;
     document.querySelector('.score--box').innerHTML = score
+    scoreBox.style.animation = "glowingWin 500ms"
     return score;
 }
 
@@ -374,6 +377,7 @@ function plusScore(score) {
 function minusScore(score) {
     score -= 3;
     document.querySelector('.score--box').innerHTML = score
+    scoreBox.style.animation = "glowingLose 500ms"
     return score;
 }
 
