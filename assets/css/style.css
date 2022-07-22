@@ -111,7 +111,6 @@ i {
         justify-self: center;
         border-radius: 10px;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
-        padding-top: 10px;
     }
 
     .second {
@@ -224,6 +223,12 @@ i {
     }
 
 /* ------ Select container ------ */
+
+a {
+    text-decoration: none;
+    color: #FAF7FF;
+}
+
 .select-container {
     grid-row: 3;
     padding: 15px;
@@ -234,6 +239,7 @@ i {
     column-gap: 15px;
     grid-template-rows: 1fr 50px 1fr;
     justify-content: center;
+    text-align: center;
 }
 
     .color-1--select {
@@ -242,6 +248,7 @@ i {
         background-color:#685465;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
         border: none;
+        padding-top: 12px;
     }
 
     .color-2--select {
@@ -250,6 +257,7 @@ i {
         background-color:#A96C7B;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
         border: none;
+        padding-top: 12px;
     }
 
     .color-3--select {
@@ -258,6 +266,7 @@ i {
         background-color:#E38C79;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
         border: none;
+        padding-top: 12px;
     }
 
     .color-4--select {
@@ -266,6 +275,7 @@ i {
         background-color:#FFBC6C;
         box-shadow:inset -2px -2px 0px 5px rgba(0,0,0,.25);
         border: none;
+        padding-top: 12px;
     }
 
     .play-button--btn {

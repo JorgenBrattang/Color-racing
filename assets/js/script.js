@@ -36,7 +36,6 @@ if (window.matchMedia("(orientation: landscape)").matches) {
     toggleInstructions()
 }
 
-
 addGlobalEventListener('click', '.select-container > a', aEvent => { 
     const targetID = aEvent.target.id
     const limitRoundsArray = [2,5,10,15]
@@ -56,20 +55,21 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
                 }
                 /* Changes the background color of the current chosen color */
                 aEvent.target.style.cssText = 'background-color: ' + colorSelect 
-                console.log(limitRounds)
             }    
         
             if(limitRounds != null) {
                 if(targetID == 'play') {
                     selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
                     roundChosen = true
-                    console.log('roundChosen = ' + roundChosen + ' and limitRounds = ' + limitRounds)
 
                     /* Sets all the colors back to 100% opacity */
                     const colorNumbers = [0,1,2,3]
                     for (number of colorNumbers) {
-                        document.getElementById(number).style.opacity = "1"
+                        changeNumber = document.getElementById(number)
+                        changeNumber.style.opacity = "1"
+                        changeNumber.innerHTML = ''
                         colorFinish[number].style.cssText = 'background-color: white'
+                        
                     }
                 }
             } else {
@@ -106,34 +106,7 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
         }
 
         if(targetID == 'newGame') {
-            roundChosen = null
-            limitRounds = null
-            
-            /* Deselects the color chosen */
-            colorID = null
-
-            /* Sets all the colors back to 100% opacity */
-            const colorNumbers = [0,1,2,3]
-            for (number of colorNumbers) {
-                document.getElementById(number).style.opacity = "1"
-                colorFinish[number].style.cssText = 'background-color: white'
-            }
-
-            /* Sets the reset button back to ID of play */
-            document.getElementById("newGame").setAttribute("id", "play")
-
-            /* Reset the buttons, so you can click them */
-            const buttonNumber = [0,1,2,3,'play']
-            for (id of buttonNumber) {
-                document.getElementById(id).style.pointerEvents = 'auto'
-            }
-
-            /* Sets the icon on Hand button */
-            selectPlay.innerHTML = '<i class="fa-regular fa-hand"></i>'
-
-            /* Resets the score */
-            roundsBox.innerHTML = 1
-            scoreBox.innerHTML = 0
+            newGame(limitRoundsArray)
         }
     }
 })
@@ -179,8 +152,43 @@ function resetGame() {
 /**
  * This will start a new game, by resetting everything (like reloading page)
  */
-function newGame() {
+function newGame(limitRoundsArray) {
+
+    /* Resets the rounds innerHTML to base value */
+    const roundReset = [0,1,2,3]            
+    for (round of roundReset) {
+        changeNumber = document.getElementById(round)
+        changeNumber.innerHTML = `${limitRoundsArray[round]}`
+    }
+
+    roundChosen = null
+    limitRounds = null
     
+    /* Deselects the color chosen */
+    colorID = null
+
+    /* Sets all the colors back to 100% opacity */
+    const colorNumbers = [0,1,2,3]
+    for (number of colorNumbers) {
+        document.getElementById(number).style.opacity = "1"
+        colorFinish[number].style.cssText = 'background-color: white'
+    }
+
+    /* Sets the reset button back to ID of play */
+    document.getElementById("newGame").setAttribute("id", "play")
+
+    /* Reset the buttons, so you can click them */
+    const buttonNumber = [0,1,2,3,'play']
+    for (id of buttonNumber) {
+        document.getElementById(id).style.pointerEvents = 'auto'
+    }
+
+    /* Sets the icon on Hand button */
+    selectPlay.innerHTML = '<i class="fa-regular fa-hand"></i>'
+
+    /* Resets the score */
+    roundsBox.innerHTML = 1
+    scoreBox.innerHTML = 0
 }
 
 /**
