@@ -43,17 +43,14 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
     const colorNumbers = [0,1,2,3]
     const colorSelect = 'color_' + targetID
 
+    /* IF no round have been chosen, do this! */
     if (roundChosen == null) {        
             if(targetID != 'play') {
                 // limitRounds.push(limitRoundsArray[targetID])
                 limitRounds = limitRoundsArray[targetID]
             }    
         
-            if (limitRounds.length > 1) {
-                limitRounds.shift()
-            } 
-        
-            if(limitRoundsArray.length > 1) {
+            if(limitRounds != null) {
                 if(targetID == 'play') {
                     roundChosen = true
                     console.log('roundChosen = ' + roundChosen + ' and limitRounds = ' + limitRounds)
@@ -62,6 +59,7 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
                 alert('Choose the amount of rounds first!')
             }
     }
+    /* IF a round have been chosen, do this! */
     else if (roundChosen == true) {
         /* Checks if you pressed a color instead of play button */
         if(targetID != 'play') {
