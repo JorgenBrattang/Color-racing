@@ -15,7 +15,8 @@ const colorFinish = document.querySelectorAll('.placement-container > div > div'
 
 const selectPlay = document.querySelector('#play')
 selectPlay.innerHTML = '<i class="fa-regular fa-hand"></i>'
-const roundsBox = document.querySelector('.rounds--box')
+const currentRound = document.getElementById('currentRound')
+const selectedRounds = document.getElementById('selectedRounds')
 const scoreBox = document.querySelector('.score--box')
 const highScoreBox = document.querySelector(".high-score--box")
 const latestScoreBox = document.querySelector(".latest-score--box")
@@ -55,6 +56,7 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
                 }
                 /* Changes the background color of the current chosen color */
                 aEvent.target.style.cssText = 'background-color: ' + colorSelect 
+                selectedRounds.innerHTML = limitRounds
             }    
         
             if(limitRounds != null) {
@@ -69,7 +71,6 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
                         changeNumber.style.opacity = "1"
                         changeNumber.innerHTML = ''
                         colorFinish[number].style.cssText = 'background-color: white'
-                        
                     }
                 }
             } else {
@@ -142,7 +143,7 @@ function resetGame() {
     /* Sets the icon on Play button */
     selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
     
-    const rounds = parseInt(roundsBox.innerHTML)
+    const rounds = parseInt(currentRound.innerHTML)
     plusRounds(rounds)
 
     /* Takes away the animation from score box */ 
@@ -162,7 +163,6 @@ function newGame(limitRoundsArray) {
     }
 
     roundChosen = null
-    limitRounds = null
     
     /* Deselects the color chosen */
     colorID = null
@@ -187,7 +187,7 @@ function newGame(limitRoundsArray) {
     selectPlay.innerHTML = '<i class="fa-regular fa-hand"></i>'
 
     /* Resets the score */
-    roundsBox.innerHTML = 1
+    currentRound.innerHTML = 1
     scoreBox.innerHTML = 0
 }
 
@@ -363,7 +363,7 @@ function winnerColor(winnerArray) {
         /* Changes the play buttons ID to reset */
         document.getElementById("play").setAttribute("id", "reset")     
         
-        const rounds = parseInt(roundsBox.innerHTML)
+        const rounds = parseInt(currentRound.innerHTML)
         const score = parseInt(scoreBox.innerHTML)
         maxRounds(rounds,score)
     }
@@ -391,7 +391,6 @@ function announceWinner(winID) {
 function maxRounds(rounds, score) {
     if (rounds == limitRounds) {
         if (score > highScore) {
-            alert('maxRounds is RUNNING!')
             highScore.push(score)
             highScoreBox.innerHTML = score
             highScoreBox.style.animation = 'glowingWin 250ms 3'
@@ -420,7 +419,7 @@ function plusRounds(rounds) {
         // Do nothing
     } else {
     rounds += 1;
-    roundsBox.innerHTML = rounds
+    currentRound.innerHTML = rounds
     }
     return rounds;
 }
