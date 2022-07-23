@@ -36,6 +36,10 @@ i {
     margin-top: 30px;
 }
 
+ol {
+    padding: 5px;
+}
+
 .active {
     background-color: #393939;
 }
