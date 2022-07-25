@@ -60,6 +60,11 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
                 /* Changes the background color of the current chosen color */
                 aEvent.target.style.cssText = 'background-color: #00A97F; opacity: 1;'
                 selectedRounds.innerHTML = limitRounds
+
+                selectBtn = document.querySelector('.play-button--btn')
+                selectBtn.style.backgroundColor = '#00A97F'
+
+                colorBlinkingNone()
             }    
         
             if(limitRounds != null) {
@@ -81,6 +86,8 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
                         changeNumber.innerHTML = ''
                         colorFinish[number].style.cssText = 'background-color: white'
                     }
+
+                    colorBlinkingActive()
                 }
             } else {
                 alert('Choose the amount of rounds first!')
@@ -104,6 +111,8 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
             }
             /* Changes the background color of the current chosen color */
             aEvent.target.style.cssText = `opacity: 1;`
+
+            colorBlinkingNone()
         }    
 
         /* Checks if the colorID holds an ID or not. */
@@ -117,6 +126,7 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
 
         if(targetID == 'reset') {
             resetGame()
+            colorBlinkingActive()
         }
 
         if(targetID == 'newGame') {
@@ -167,10 +177,66 @@ function resetGame() {
  * Sets the background color of the buttons to be ROUNDS color
  */
 function resetColorRounds() {
-    document.querySelector('.color-1--select').style.backgroundColor = '#00A97F'
-    document.querySelector('.color-2--select').style.backgroundColor = '#00A97F'
-    document.querySelector('.color-3--select').style.backgroundColor = '#00A97F'
-    document.querySelector('.color-4--select').style.backgroundColor = '#00A97F'
+    const color1 = document.querySelector('.color-1--select')
+    color1.style.backgroundColor = '#00A97F'
+    color1.style.animation = 'selection 1000ms infinite'
+    
+    const color2 = document.querySelector('.color-2--select')
+    color2.style.backgroundColor = '#00A97F'
+    color2.style.animation = 'selection 1000ms infinite'
+
+    const color3 = document.querySelector('.color-3--select')
+    color3.style.backgroundColor = '#00A97F'
+    color3.style.animation = 'selection 1000ms infinite'
+
+    const color4 = document.querySelector('.color-4--select')
+    color4.style.backgroundColor = '#00A97F'
+    color4.style.animation = 'selection 1000ms infinite'
+}
+
+/**
+ * Sets the blinking on all buttons except PlayButton
+ */
+ function colorBlinkingActive() {
+    const color1 = document.querySelector('.color-1--select')
+    color1.style.animation = 'selection 1000ms infinite'
+    
+    const color2 = document.querySelector('.color-2--select')
+    color2.style.animation = 'selection 1000ms infinite'
+
+    const color3 = document.querySelector('.color-3--select')
+    color3.style.animation = 'selection 1000ms infinite'
+
+    const color4 = document.querySelector('.color-4--select')
+    color4.style.animation = 'selection 1000ms infinite'
+
+    selectBtn = document.querySelector('.play-button--btn')
+    selectBtn.style.animation = 'none'
+
+}
+
+/**
+ * Sets blinking to PlayButton except for color buttons
+ */
+function colorBlinkingNone() {
+    const color1 = document.querySelector('.color-1--select')
+    color1.style.backgroundColor = '#00A97F'
+    color1.style.animation = 'none'
+    
+    const color2 = document.querySelector('.color-2--select')
+    color2.style.backgroundColor = '#00A97F'
+    color2.style.animation = 'none'
+
+    const color3 = document.querySelector('.color-3--select')
+    color3.style.backgroundColor = '#00A97F'
+    color3.style.animation = 'none'
+
+    const color4 = document.querySelector('.color-4--select')
+    color4.style.backgroundColor = '#00A97F'
+    color4.style.animation = 'none'
+
+    selectBtn = document.querySelector('.play-button--btn')
+    selectBtn.style.animation = 'selection 1000ms infinite'
 }
 
 /**
