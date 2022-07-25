@@ -37,6 +37,8 @@ if (window.matchMedia("(orientation: landscape)").matches) {
     toggleInstructions()
 }
 
+resetColorRounds()
+
 addGlobalEventListener('click', '.select-container > a', aEvent => { 
     const targetID = aEvent.target.id
     const limitRoundsArray = [2,5,10,15]
@@ -46,6 +48,7 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
     /* IF no round have been chosen, do this! */
     if (roundChosen == null) {    
             if(targetID != 'play') {
+
                 limitRounds = limitRoundsArray[targetID]
                 /* Takes away the current target ID from the array colorNumbers */
                 colorNumbers.splice(targetID, 1)
@@ -55,12 +58,18 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
                     targetOthers.style.opacity = "0.5";
                 }
                 /* Changes the background color of the current chosen color */
-                aEvent.target.style.cssText = 'background-color: ' + colorSelect 
+                aEvent.target.style.cssText = 'background-color: #00A97F; opacity: 1;'
                 selectedRounds.innerHTML = limitRounds
             }    
         
             if(limitRounds != null) {
                 if(targetID == 'play') {
+                    /* Sets the color to racing select */
+                    document.querySelector('.color-1--select').style.backgroundColor = '#685465'
+                    document.querySelector('.color-2--select').style.backgroundColor = '#A96C7B'
+                    document.querySelector('.color-3--select').style.backgroundColor = '#E38C79'
+                    document.querySelector('.color-4--select').style.backgroundColor = '#FFBC6C'
+
                     selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>'
                     roundChosen = true
 
@@ -81,6 +90,10 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
     else if (roundChosen == true) {
         /* Checks if you pressed a color instead of play button */
         if(targetID != 'play') {
+            document.querySelector('.color-1--select').style.backgroundColor = '#685465'
+            document.querySelector('.color-2--select').style.backgroundColor = '#A96C7B'
+            document.querySelector('.color-3--select').style.backgroundColor = '#E38C79'
+            document.querySelector('.color-4--select').style.backgroundColor = '#FFBC6C'
             colorID = targetID
             /* Takes away the current target ID from the array colorNumbers */
             colorNumbers.splice(targetID, 1)
@@ -90,7 +103,7 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
                 targetOthers.style.opacity = "0.5";
             }
             /* Changes the background color of the current chosen color */
-            aEvent.target.style.cssText = 'background-color: ' + colorSelect 
+            aEvent.target.style.cssText = `opacity: 1;`
         }    
 
         /* Checks if the colorID holds an ID or not. */
@@ -151,9 +164,21 @@ function resetGame() {
 }
 
 /**
+ * Sets the background color of the buttons to be ROUNDS color
+ */
+function resetColorRounds() {
+    document.querySelector('.color-1--select').style.backgroundColor = '#00A97F'
+    document.querySelector('.color-2--select').style.backgroundColor = '#00A97F'
+    document.querySelector('.color-3--select').style.backgroundColor = '#00A97F'
+    document.querySelector('.color-4--select').style.backgroundColor = '#00A97F'
+}
+
+/**
  * This will start a new game, by resetting everything (like reloading page)
  */
 function newGame(limitRoundsArray) {
+
+    resetColorRounds()
 
     /* Resets the rounds innerHTML to base value */
     const roundReset = [0,1,2,3]            
