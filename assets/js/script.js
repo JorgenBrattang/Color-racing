@@ -97,10 +97,7 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
     else if (roundChosen == true) {
         /* Checks if you pressed a color instead of play button */
         if(targetID != 'play') {
-            document.querySelector('.color-1--select').style.backgroundColor = '#685465'
-            document.querySelector('.color-2--select').style.backgroundColor = '#A96C7B'
-            document.querySelector('.color-3--select').style.backgroundColor = '#E38C79'
-            document.querySelector('.color-4--select').style.backgroundColor = '#FFBC6C'
+            resetColorRaces()
             colorID = targetID
             /* Takes away the current target ID from the array colorNumbers */
             colorNumbers.splice(targetID, 1)
@@ -127,10 +124,13 @@ addGlobalEventListener('click', '.select-container > a', aEvent => {
         if(targetID == 'reset') {
             resetGame()
             colorBlinkingActive()
+            resetColorRaces()
         }
 
         if(targetID == 'newGame') {
             newGame(limitRoundsArray)
+            colorBlinkingActive()
+            limitRounds = null
         }
     }
 })
@@ -195,6 +195,23 @@ function resetColorRounds() {
 }
 
 /**
+ * Sets the background color of the buttons to be RACING color
+ */
+ function resetColorRaces() {
+    const color1 = document.querySelector('.color-1--select')
+    color1.style.backgroundColor = '#685465'
+    
+    const color2 = document.querySelector('.color-2--select')
+    color2.style.backgroundColor = '#A96C7B'
+
+    const color3 = document.querySelector('.color-3--select')
+    color3.style.backgroundColor = '#E38C79'
+
+    const color4 = document.querySelector('.color-4--select')
+    color4.style.backgroundColor = '#FFBC6C'
+}
+
+/**
  * Sets the blinking on all buttons except PlayButton
  */
  function colorBlinkingActive() {
@@ -216,23 +233,19 @@ function resetColorRounds() {
 }
 
 /**
- * Sets blinking to PlayButton except for color buttons
+ * Sets blinking to PlayButton except for color/round buttons
  */
 function colorBlinkingNone() {
     const color1 = document.querySelector('.color-1--select')
-    color1.style.backgroundColor = '#00A97F'
     color1.style.animation = 'none'
     
     const color2 = document.querySelector('.color-2--select')
-    color2.style.backgroundColor = '#00A97F'
     color2.style.animation = 'none'
 
     const color3 = document.querySelector('.color-3--select')
-    color3.style.backgroundColor = '#00A97F'
     color3.style.animation = 'none'
 
     const color4 = document.querySelector('.color-4--select')
-    color4.style.backgroundColor = '#00A97F'
     color4.style.animation = 'none'
 
     selectBtn = document.querySelector('.play-button--btn')
