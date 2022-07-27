@@ -18,11 +18,22 @@ To achieve this the developer have to first learn how to do a progressbar and ho
 After that it's straight forward on just placing buttons and get them to control first, how many rounds there is to be played. After that which color to be raced and a loading phase where you have to wait until the race is over. And then start the whole thing over until the chosen number of rounds is achieved so we can get a latest score and possible a high score if that was achieved.
 
 ## Scope
+To achieve the scope of this project the game has to have these criteria:
+- Instructions how to play the game
+- Intuitive design on how and where to press to progress through the game
+- Feedback on when you press something, so you know you picked the right thing
+- Alerts if something the user did in advance, and how to guide them to the right path
+- The achievement when the user finished the game, high score and a latest score
+
+Onces these criteria has been meet the game will function well and have achieved the purpose.
 
 ## Structure
+First the user will arrive at the landing page which you are greeted with the instructions how to play the game, and blinking buttons where you are suppose to press to go about the game.
+
+Each action taken will be meet with an appropriated action to progress the game.
+
 
 ## Skeleton
-
 <details><summary>Skeleton made with Balsamiq</summary>
 
 ![Wireframe from balsamiq](assets/images/README-images/wireframe.png)
