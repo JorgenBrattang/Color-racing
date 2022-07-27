@@ -34,15 +34,20 @@ Each action taken will be meet with an appropriated action to progress the game.
 
 
 ## Skeleton
-<details><summary>Skeleton made with Balsamiq</summary>
+The skeleton was made using <a href="#" title="Link to Balsamiq website">Balsamiq</a>
+<details><summary>Skeleton</summary>
 
 ![Wireframe from balsamiq](assets/images/README-images/wireframe.png)
 
 </details>
 
 ## Surface
+The surface was made using the skeleton, just with some better graphics. 
 
 ## Changes during the design process
+The surface was changed a lot during the development of this project due to feedback from mentor and family, for example the game lacked a goal at first. That came to mind quite quickly after the skeleton was made and what came to be the basic coding of the game. 
+
+The game needed to have a goal, which was declared to be a high score and a latest score. To let the user see what their recent achievements had been, and a way to let the user choose the number of difficulty to gain a higher score which introduced the round selection. After those changes the user feedback needed a simpler way to go about the game which lead to flashing buttons to guide the user towards pressing the right button at the right time.
 
 ## Typography
 
