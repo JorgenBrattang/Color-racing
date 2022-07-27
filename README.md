@@ -50,8 +50,19 @@ The surface was changed a lot during the development of this project due to feed
 The game needed to have a goal, which was declared to be a high score and a latest score. To let the user see what their recent achievements had been, and a way to let the user choose the number of difficulty to gain a higher score which introduced the round selection. After those changes the user feedback needed a simpler way to go about the game which lead to flashing buttons to guide the user towards pressing the right button at the right time.
 
 ## Typography
+For easier reading the developer chose <a href="#" title="Link to google fonts Poppins">Poppins</a> from <a href="#" title="Link to google fonts">Google Fonts</a>, and a backup of sans serif.
 
 ## Color Scheme
+
+<p style="padding: 10px; background-color: #685465">#685465<p>
+<p style="padding: 10px; background-color: #A96C7B">#A96C7B<p>
+<p style="padding: 10px; background-color: #E38C79">#E38C79<p>
+<p style="padding: 10px; background-color: #FFBC6C">#FFBC6C<p>
+<p style="padding: 10px; background-color: #00A97F">#00A97F<p>
+<p style="padding: 10px; background-color: #8685EF">#8685EF<p>
+<p style="padding: 10px; background-color: #FAF7FF; color: black">#FAF7FF<p>
+<p style="padding: 10px; background-color: #C9C9C9">#C9C9C9<p>
+<p style="padding: 10px; background-color: #393939">#393939<p>
 
 ## Features
 
