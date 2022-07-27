@@ -1,96 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Jörgen Brattäng">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Jörgen Brattäng" />
 
         <!-- Google font and font Awesome -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/b66a8a8811.js" crossorigin="anonymous"></script>
-        
-        <link rel="stylesheet" href="assets/css/style-portrait.css">
-        <link rel="stylesheet" href="assets/css/style-landscape.css">
+
+        <link rel="stylesheet" href="assets/css/style-portrait.css" />
+        <link rel="stylesheet" href="assets/css/style-landscape.css" />
         <title>Color Racing!</title>
-        
     </head>
     <body>
         <main>
             <header>
                 <h3>Welcome to Color Racing!</h3>
             </header>
-                <div class="race-container">
-                    <div class="color-1" id="racer_0"></div>
-                    <div class="color-2" id="racer_1"></div>
-                    <div class="color-3" id="racer_2"></div>
-                    <div class="color-4" id="racer_3"></div>
-                    <div class="placement-container">
-                        <div class="first">
-                            <p>1st</p>
-                            <div class="first--box"></div>
-                        </div>
-                        <div class="second">
-                            <p>2nd</p>
-                            <div class="second--box" id="round"></div>
-                        </div>
-                        <div class="third">
-                            <p>3rd</p>
-                            <div class="third--box" id="round"></div>
-                        </div>
-                        <div class="fourth">
-                            <p>4th</p>
-                            <div class="fourth--box" id="round"></div>
-                        </div>
-                        <div class="score">
-                            <p>Score:</p>
-                            <div class="score--box">0</div>
-                        </div>
-                        <div class="rounds">
-                            <p>round:</p>
-                            <div class="rounds--box">
-                                <p id="currentRound">1</p>
-                                <p id="slash">/</p>
-                                <p id="selectedRounds">0</p>
-                            </div>
+            <div class="race-container">
+                <div class="color-1" id="racer_0"></div>
+                <div class="color-2" id="racer_1"></div>
+                <div class="color-3" id="racer_2"></div>
+                <div class="color-4" id="racer_3"></div>
+                <div class="placement-container">
+                    <div class="first">
+                        <p>1st</p>
+                        <div class="first--box"></div>
+                    </div>
+                    <div class="second">
+                        <p>2nd</p>
+                        <div class="second--box"></div>
+                    </div>
+                    <div class="third">
+                        <p>3rd</p>
+                        <div class="third--box"></div>
+                    </div>
+                    <div class="fourth">
+                        <p>4th</p>
+                        <div class="fourth--box"></div>
+                    </div>
+                    <div class="score">
+                        <p>Score:</p>
+                        <div class="score--box">0</div>
+                    </div>
+                    <div class="rounds">
+                        <p>round:</p>
+                        <div class="rounds--box">
+                            <p id="currentRound">1</p>
+                            <p id="slash">/</p>
+                            <p id="selectedRounds">0</p>
                         </div>
                     </div>
                 </div>
-                <div class="select-container" id="wrapper-button">
-                    <a href="#" class="color-1--select" id="0">2</a>
-                    <a href="#" class="color-2--select" id="1">5</a>
-                    <a href="#" class="play-button--btn" id="play"></a>
-                    <a href="#" class="color-3--select" id="2">10</a>
-                    <a href="#" class="color-4--select" id="3">15</a>
+            </div>
+            <div class="select-container" id="wrapper-button">
+                <a href="#" class="color-1--select" id="0">2</a>
+                <a href="#" class="color-2--select" id="1">5</a>
+                <a href="#" class="play-button--btn" id="play"></a>
+                <a href="#" class="color-3--select" id="2">10</a>
+                <a href="#" class="color-4--select" id="3">15</a>
+            </div>
+            <div class="high-score-container">
+                <p id="hS">High Score:</p>
+                <div class="high-score--box">0</div>
+                <p id="lS">Latest Score:</p>
+                <div class="latest-score--box">0</div>
+            </div>
+            <div class="instruction-container">
+                <button class="dropContent--btn">Instructions, press here!</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <ol>
+                        <li>First pick the amount of rounds. Higher amount of rounds the higher the risk, but greater the score.</li>
+                        <li>Select a color from the buttons above this area.</li>
+                        <li>Press the Play button.</li>
+                    </ol>
+                    <p>
+                        <strong>Rules:</strong><br />
+                        Plus (+5) points for picking the winning color.<br />
+                        Minus (-3) points for getting it wrong.
+                    </p>
                 </div>
-                <div class="high-score-container">
-                        <p id="hS">High Score:</p>
-                        <div class="high-score--box">0</div>
-                        <p id="lS">Latest Score:</p>
-                        <div class="latest-score--box">0</div>
-                </div>
-                <div class="instruction-container">
-                    <button class="dropContent--btn">Instructions, press here!</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <ol>
-                            <li>First pick the amount of rounds. Higher amount of rounds the higher the risk, but greater the score.</li>
-                            <li>Select a color from the buttons above this area.</li>
-                            <li>Press the Play button.</li>
-                        </ol>
-                        <p>
-                            <strong>Rules:</strong><br>
-                            Plus (+5) points for picking the winning color.<br>
-                            Minus (-3) points for getting it wrong.
-                        </p>
-                    </div>
-                </div>
+            </div>
             <footer>
                 <p>Color Racing Copyright © 2022</p>
                 <p>Jörgen Brattäng</p>
             </footer>
         </main>
-    <script src="assets/js/script.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
