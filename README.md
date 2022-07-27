@@ -10,6 +10,7 @@ Is where you can get race different colors to see who is the fastest, it's a fun
 # UX
 
 ## Development
+The development of this website started with getting a feel for how I could manage to get colors to race each other, and the logical thing was gravity simulated with a progressbar that goes for 10% to 100%. And for the user to be able to choose which color to race with, and how many tries to try to get it the highest score possible.
 
 ## Strategy
 
