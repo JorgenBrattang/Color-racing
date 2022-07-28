@@ -68,7 +68,11 @@ The style utilizes a range of colors that contrast each other towards the backgr
 The features holds a number of elements that will guide the user throughout the game, so it's easy to follow along. Even without the explanatory text, you can just follow the blinking lights and get a grasp on how the game works.
 
 With that said, here are the features:
-- The first thing you will see onces entering the site will probably be the pillars of colors. Those represents the racing colors that are help up by a standing progressbar. And onces activated these will restart at their starting line and race towards the bottom of their field.
+- The first thing that you may see is the "Welcome to Color Racing! text. Nothing special about this.
+
+(IMG OF THE WELCOME TEXT)
+
+- The first thing after the welcome text you will see onces entering the site will probably be the pillars of colors. Those represents the racing colors that are help up by a standing progressbar. And onces activated these will restart at their starting line and race towards the bottom of their field.
 
 (GIF OF COLOR PILLARS)
 
@@ -98,9 +102,36 @@ With that said, here are the features:
 - As the race is finished, you can see your score changing. If you won you will see a green flashing light that indicates that you picked the right color to win, and if it lost you will see a red flashing light.
     - This will give you points of either plus 5, or negative 3 points.
 
+(GIF OF CHANGING THE SCOREBOARD, ONE FOR PLUS AND ONE FOR NEGATIVE)
 
+- After one round is finished, the user will be meet with the restart race button. Which will like the others start flashing, so the user knows where to press next. And onces pressed the user will need to choose a color again.
+    - It will not start the whole thing over, so the amount of rounds that will be played it's not changing.
 
+(GIF OF PRESSING THE RESTART BUTTON)
 
+- Onces pressed the restart button, the rounds box will now increase with 1. So the user knows that the have progressed and know how many rounds there are left of the game.
+   - Example:  1/5 to 2/5
+
+(GIF OF CHANGING OF THE ROUNDS)
+
+- When the player have reached the whole amount of rounds that have been played, their score will be submitted to the "latest" scoreboard. And hopefully also to the high score which holds the greatest score the user have achieved during their play session.
+    - The latest scoreboard will flash green if it is greater than the high score and red if it is lower. Same with the high score it will do the same.
+
+(GIF WHEN CHANGING THE LATEST SCORE AND HIGH SCORE)
+
+- Now the user has a choice, either stop playing or continue to try to reach a higher score then before. And to to that they will be meet with a new flashing button that will let them start a new game. And after it's been pressed they will be meet with the choosing of the amount of rounds and onward.
+
+(GIF OF THE PRESSING OF THE NEW GAME BUTTON)
+
+- If the game didn't explain it self, the user has an instructions button that will tell the basic of the game, how it works and how much that will be gain or lost when racing.
+    - The text will automatically appear when entering in an landscape mode, but will only be a button to be pressed when using a portrait mode to save space. It can be closed in both modes if the user decides it to be closed.
+    - The text of the button will also be changed, to utilize the space. "Instructions, press here!" to "Instructions, how to play!"
+
+(GIF OF OPENING THE INSTRUCTIONS BUTTON)
+
+- And last, you may see the copyright text at the bottom of the page. Which holds the Author of the site and the year.
+
+(IMG OF THE COPYRIGHT TEXT)
 
 ## Testing
 
