@@ -53,7 +53,7 @@ The game needed to have a goal, which was declared to be a high score and a late
 For easier reading the developer chose <a href="#" title="Link to google fonts Poppins">Poppins</a> from <a href="#" title="Link to google fonts">Google Fonts</a>, and a backup of sans serif.
 
 ## Color Scheme
-
+The style utilizes a range of colors that contrast each other towards the background but compliments each other.
 <p style="padding: 10px; background-color: #685465">#685465<p>
 <p style="padding: 10px; background-color: #A96C7B">#A96C7B<p>
 <p style="padding: 10px; background-color: #E38C79">#E38C79<p>
@@ -65,6 +65,42 @@ For easier reading the developer chose <a href="#" title="Link to google fonts P
 <p style="padding: 10px; background-color: #393939">#393939<p>
 
 ## Features
+The features holds a number of elements that will guide the user throughout the game, so it's easy to follow along. Even without the explanatory text, you can just follow the blinking lights and get a grasp on how the game works.
+
+With that said, here are the features:
+- The first thing you will see onces entering the site will probably be the pillars of colors. Those represents the racing colors that are help up by a standing progressbar. And onces activated these will restart at their starting line and race towards the bottom of their field.
+
+(GIF OF COLOR PILLARS)
+
+- The second thing you may notice is the blinking buttons that holds numbers on them. And those are the buttons that will let you choose the amount of rounds that will be played. The higher the number chosen then greater the gain or loss.
+    - These will change in opacity onces you press on one, and the one you chose will remain in the same color.
+
+(GIF OF ROUND BUTTONS BLINKING)
+
+- Onces that have been pressed, a new button will start flashing. Thats the submit button that will tell the game that the amount of rounds have been chosen, if it has not been chosen an alert will appear that will tell you that you need to choose a number of rounds before proceeding.
+
+(GIF OF HAND BUTTON BLINKING)
+
+- After the choosing of rounds, the buttons will change to the racing colors so you can pick your champion. The same thing will happen to these buttons, they will flash so you know where to press next to progress the game.
+    - As the rounds choosing buttons these too will change in opacity accordingly to the one pressed.
+
+(GIF OF COLOR BUTTONS BLINKING)
+
+- When the user have chosen their color to be raced, they will be guided to the "Play" button which will start the race. So onces pressed this button will change into a praying figure thats grey and blinking, and the race have commenced.
+
+(GIF OF PLAY BUTTON CHANGING TO THE PRAYING FIGURE)
+
+- The race have now commenced, and the previous mentioned progress bars that are represented by the different colors will start race towards the bottom of their field. Onces they enter the bottom of the field, the winning board to the right / bottom of the racing colors will now change accordingly to their position when finishing.
+    - These will change as mentioned to the color which came first, second, third and forth.
+
+(GIF OF ONE RACE WITH THE WINNING BOARD CHANGING)
+
+- As the race is finished, you can see your score changing. If you won you will see a green flashing light that indicates that you picked the right color to win, and if it lost you will see a red flashing light.
+    - This will give you points of either plus 5, or negative 3 points.
+
+
+
+
 
 ## Testing
 
