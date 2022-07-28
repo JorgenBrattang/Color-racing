@@ -133,29 +133,65 @@ With that said, here are the features:
 
 (IMG OF THE COPYRIGHT TEXT)
 
-## Testing
+<br>
+
+# Testing
 
 ## Unfixed bugs
+One issue that I have not found an answer to is when sometimes when working with the inspect window in chrome, it can suddenly just change the size of the screen without adding or removing code. But it will be fixed with reloading the page, so I will keep research towards getting a clear answer to this problem.
 
-## Technologies used
+# Technologies used
 
 ## Main Language Used
+- HTML
+- CSS
+- Javascript
 
 ## Frameworks, Libraries & Programs Used
+- <a href="https://fonts.google.com/" title="Link to google fonts" rel="nofollow">Google Fonts</a>
+    - Google fonts was used to import the font "Poppins".
+- <a href="https://fontawesome.com/" title="Link to font awesome" rel="nofollow">Font awesome</a>
+    - Font Awesome was used on almost all pages throughout the website to import icons (e.g. play button) for UX purposes.
+- <a href="https://gitpod.io/" title="Link to gitpod" rel="nofollow">GitPod</a>
+    - GitPod was used for writing code, committing, and then pushing to GitHub.
+- <a href="https://github.com/" title="Link to github" rel="nofollow">Github</a>
+    - GitHub was used to store the project after pushing
+- <a href="https://balsamiq.com/" title="Link to balsamiq" rel="nofollow">Balsamiq</a>
+    - Balsamiq was used to create the wireframes during the design phase of the project.
+- <a href="https://amiresponsive.blogspot.com/" title="Link to am I responsive" rel="nofollow">Am I Responsive</a>
+    - Am I Responsive was used in order to see responsive design throughout the process and to generate mockup imagery to be used.
+- <a href="https://www.freeformatter.com/html-formatter.html" title="Link to freeformatter" rel="nofollow">freeformatter</a>
+    - Freeformatter was used to compressed my code to be more readable.
+- <a href="https://gauger.io/fonticon/" title="Link to fonticon" rel="nofollow">Fonticon</a>
+    - Fonticon was used to create a favicon.ico to the title.
+
 
 ## Deployment
+To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken:
+
+1. Log into <a href="https://github.com/login" title="Link to GitHub login" rel="nofollow">GitHub</a> or <a href="(https://github.com/join)" title="Link to GitHub join" rel="nofollow">Create an account</a>.
+2. Locate the <a href="https://github.com/JorgenBrattang/staying-healthy" title="Link to GitHub Repository" rel="nofollow">GitHub Repository</a>.
+3. At the top of the repository, select Settings from the menu items.
+4. Scroll down the Settings page to the "Pages" section.
+5. Under "Source" click the drop-down menu labelled "None" and select "Main".
+6. Upon selection, the page will automatically refresh meaning that the website is now deployed.
+7. Scroll back down to the "Pages" section to retrieve the deployed link.
 
 # Credits
+## Tutorials
+
+- <a href="https://www.youtube.com/watch?v=XF1_MlZ5l6M" title="Learn JavaScript Event Listeners In 18 Minutes">Learn JavaScript Event Listeners In 18 Minutes</a>
+
+- <a href="https://www.w3schools.com/js/default.asp" title="Learn JavaScript on w3schools">Learn JavaScript from w3schools</a>
 
 ## What I learned
+That the developer learned from this project was the understanding of some core concepts how to read and write code, to get a better understanding on how to build up a working code by following some basic rules. Which will be most useful throughout the developers career.
 
 ## Continued development
-
-## Tutorials / used code
-
-- Learn JavaScript Event Listeners In 18 Minutes
-    - https://www.youtube.com/watch?v=XF1_MlZ5l6M
+To further develop this game, it would be to add more features like an online high score list. The ability to change the color scheme of the site by either choosing their own or by presets.
 
 ## Author
+Student of Code Institute, Jörgen Brattäng
 
 ## Acknowledgements
+I would like to acknowledge my mentor <a href="https://github.com/seunkoko" title="Link to GitHub profile" rel="nofollow">Oluwaseun Owonikoko</a> which gave my game a goal, which I did not think about. My family for helping me progress and support me, and not to forget the tutors and community of slack that helped me understand how to understand the concepts of programming.

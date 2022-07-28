@@ -19,6 +19,7 @@
         grid-row: 2;
         justify-self: center;
         width: auto;
+        max-width: 400px;
         display: grid;
         grid-template-rows: 35px auto 100px auto auto 35px;
         row-gap: 15px;
