@@ -14,17 +14,19 @@
         display: grid;
         grid-template-rows: 0px 1fr;
         grid-template-columns: 1fr auto 1fr;
+        padding: 15px;
     }
 
     main {
         grid-column: 2;
         grid-row: 2;
         width: auto;
+        max-width: 300px;
         display: grid;
         justify-self: center;
         grid-template-rows: 35px auto 100px auto auto 35px;
         row-gap: 15px;
-        padding: 15px;
+        margin-top: -15px;
     }
 
     header {
