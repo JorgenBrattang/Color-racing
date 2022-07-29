@@ -440,7 +440,52 @@
 }
 
 @media (orientation: portrait) and (max-width: 360px) {
-    body {
-        background-color: red;
+
+    main {
+        row-gap: 5px;
+        grid-template-rows: 35px auto auto auto auto 35px;
+    }
+
+    .select-container {
+        padding: 5px;
+        border-radius: 15px;
+        height: fit-content;
+    }
+
+    .color-1--select, .color-2--select, .color-3--select, .color-4--select, .play-button--btn {
+        grid-row: 0;
+    }
+
+    .color-1, .color-2, .color-3, .color-4 {
+        width: 100%;
+    }
+
+    .race-container {
+        column-gap: 5px;
+        row-gap: 5px;
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .placement-container {
+        row-gap: 5px;
+        column-gap: 5px;
+        padding: 0;
+        border-radius: 15px;
+    }
+
+    .high-score-container {
+        column-gap: 5px;
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .instruction-container {
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .dropContent--btn {
+        border-radius: 15px;
     }
 }
