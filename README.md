@@ -138,7 +138,14 @@ With that said, here are the features:
 # Testing
 
 ## Unfixed bugs
-One issue that I have not found an answer to is when sometimes when working with the inspect window in chrome, it can suddenly just change the size of the screen without adding or removing code. But it will be fixed with reloading the page, so I will keep research towards getting a clear answer to this problem.
+- One issue that I have not found an answer to is when sometimes when working with the inspect window in chrome, it can suddenly just change the size of the screen without adding or removing code. But it will be fixed with reloading the page, so I will keep research towards getting a clear answer to this problem.
+
+- Am I Responsive bug when using the this code, pulls the page up in the viewport. Could not find a fix for it, it works just fine when browsing normally.
+```
+document.querySelector("#myDropdown").scrollIntoView({
+        behavior: "smooth",
+```
+
 
 # Technologies used
 
@@ -158,8 +165,6 @@ One issue that I have not found an answer to is when sometimes when working with
     - GitHub was used to store the project after pushing
 - <a href="https://balsamiq.com/" title="Link to balsamiq" rel="nofollow">Balsamiq</a>
     - Balsamiq was used to create the wireframes during the design phase of the project.
-- <a href="https://amiresponsive.blogspot.com/" title="Link to am I responsive" rel="nofollow">Am I Responsive</a>
-    - Am I Responsive was used in order to see responsive design throughout the process and to generate mockup imagery to be used.
 - <a href="https://www.freeformatter.com/html-formatter.html" title="Link to freeformatter" rel="nofollow">freeformatter</a>
     - Freeformatter was used to compressed my code to be more readable.
 - <a href="https://gauger.io/fonticon/" title="Link to fonticon" rel="nofollow">Fonticon</a>
