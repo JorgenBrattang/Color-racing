@@ -419,13 +419,9 @@ function toggleInstructions() {
     } else {
         btn.innerHTML = "Instructions, press here!";
     }
-    if (window.matchMedia("(orientation: landscape)").matches) {
-        // Do nothing
-    } else {
-        document.querySelector("#myDropdown").scrollIntoView({
-            behavior: "smooth",
-        });
-    }
+    document.querySelector("#myDropdown").scrollIntoView({
+        behavior: "smooth",
+    });
 }
 
 /**
