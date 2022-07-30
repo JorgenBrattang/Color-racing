@@ -1,3 +1,5 @@
+![Wireframe from balsamiq](assets/images/README-images/PC-color_racing.png)
+
 # Color Racing
 Is where you can get race different colors to see who is the fastest, it's a fun way to just have something to do while you wait for something or just want to have a bit of fun.
 
