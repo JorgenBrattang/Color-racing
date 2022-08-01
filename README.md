@@ -81,11 +81,11 @@ With that said, here are the features:
 - The second thing you may notice is the blinking buttons that holds numbers on them. And those are the buttons that will let you choose the amount of rounds that will be played. The higher the number chosen then greater the gain or loss.
     - These will change in opacity onces you press on one, and the one you chose will remain in the same color.
 
-![colorsBlinking](assets/videos/README-videos/roundsBlinking.webp)
+![roundsBlinking](assets/videos/README-videos/roundsBlinking.webp)
 
 - Onces that have been pressed, a new button will start flashing. Thats the submit button that will tell the game that the amount of rounds have been chosen, if it has not been chosen an alert will appear that will tell you that you need to choose a number of rounds before proceeding.
 
-(GIF OF HAND BUTTON BLINKING)
+![blinkingHand](assets/videos/README-videos/blinkingHand.webp)
 
 - After the choosing of rounds, the buttons will change to the racing colors so you can pick your champion. The same thing will happen to these buttons, they will flash so you know where to press next to progress the game.
     - As the rounds choosing buttons these too will change in opacity accordingly to the one pressed.
@@ -94,32 +94,33 @@ With that said, here are the features:
 
 - When the user have chosen their color to be raced, they will be guided to the "Play" button which will start the race. So onces pressed this button will change into a praying figure thats grey and blinking, and the race have commenced.
 
-(GIF OF PLAY BUTTON CHANGING TO THE PRAYING FIGURE)
+![handBlinking to praying](assets/videos/README-videos/blinkingPlay-praying.webp)
 
 - The race have now commenced, and the previous mentioned progress bars that are represented by the different colors will start race towards the bottom of their field. Onces they enter the bottom of the field, the winning board to the right / bottom of the racing colors will now change accordingly to their position when finishing.
     - These will change as mentioned to the color which came first, second, third and forth.
 
-(GIF OF ONE RACE WITH THE WINNING BOARD CHANGING)
+![colorRacing](assets/videos/README-videos/colorRacing.webp)
 
 - As the race is finished, you can see your score changing. If you won you will see a green flashing light that indicates that you picked the right color to win, and if it lost you will see a red flashing light.
     - This will give you points of either plus 5, or negative 3 points.
 
-(GIF OF CHANGING THE SCOREBOARD, ONE FOR PLUS AND ONE FOR NEGATIVE)
+![scoreNegative](assets/videos/README-videos/scoreNegative.webp)![scorePlus](assets/videos/README-videos/scorePlus.webp)
 
 - After one round is finished, the user will be meet with the restart race button. Which will like the others start flashing, so the user knows where to press next. And onces pressed the user will need to choose a color again.
     - It will not start the whole thing over, so the amount of rounds that will be played it's not changing.
 
-(GIF OF PRESSING THE RESTART BUTTON)
+![resetButton](assets/videos/README-videos/resetButton.webp)
 
 - Onces pressed the restart button, the rounds box will now increase with 1. So the user knows that the have progressed and know how many rounds there are left of the game.
    - Example:  1/5 to 2/5
 
-(GIF OF CHANGING OF THE ROUNDS)
+![changeRounds](assets/videos/README-videos/changeRounds.webp)
 
-- When the player have reached the whole amount of rounds that have been played, their score will be submitted to the "latest" scoreboard. And hopefully also to the high score which holds the greatest score the user have achieved during their play session.
+- When the player have reached the whole amount of rounds that have been played, their score will be submitted to the "latest" scoreboard. And if their score is higher then the current highScore it will also change.
     - The latest scoreboard will flash green if it is greater than the high score and red if it is lower. Same with the high score it will do the same.
 
-(GIF WHEN CHANGING THE LATEST SCORE AND HIGH SCORE)
+![high-latestScore](assets/videos/README-videos/high-latestScore.webp)<br>
+![lowerScore](assets/videos/README-videos/lowerScore.webp)
 
 - Now the user has a choice, either stop playing or continue to try to reach a higher score then before. And to to that they will be meet with a new flashing button that will let them start a new game. And after it's been pressed they will be meet with the choosing of the amount of rounds and onward.
 
