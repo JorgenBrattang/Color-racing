@@ -27,6 +27,13 @@
         padding: 15px;
     }
 
+    @-moz-document url-prefix() {
+        main {
+            width: 800px;
+            background-color: red;
+        }
+      }
+
     header {
         grid-column: 1/3;
         grid-row: 1;
