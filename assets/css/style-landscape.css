@@ -30,7 +30,6 @@
     @-moz-document url-prefix() {
         main {
             width: 800px;
-            background-color: red;
         }
       }
 
