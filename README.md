@@ -6,6 +6,27 @@ Is where you can get race different colors to see who is the fastest, it's a fun
 <a href="https://jorgenbrattang.github.io/Color-racing/" title="Link to live website" rel="nofollow">View live website here!</a>
 
 ## Table of contents
+- [Development](#development)
+- [Strategy](#strategy)
+- [Scope](#scope)
+- [Structure](#structure)
+- [Skeleton](#skeleton)
+- [Surface](#surface)
+- [Changes during the design process](#changes-during-the-design-process)
+- [Typography](#typography)
+- [colorScheme](#colorScheme)
+- [Features](#features)
+- [Testing](#testing)
+    - [unfixedBugs](#unfixed-Bugs)
+- [Technologies used](#technologies-used)
+- [Main Language used](#main-Language-Used)
+- [Frameworks Libraries & Programs Used](#frameworks-Libraries-&-Programs-Used)
+- [Credits](#credits)
+    - [Tutorials](#tutorials)
+- [What I learned](#what-I-learned)
+- [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgements](#acknowledgements)
 
 # Overview
 
@@ -54,7 +75,7 @@ The game needed to have a goal, which was declared to be a high score and a late
 ## Typography
 For easier reading the developer chose <a href="#" title="Link to google fonts Poppins">Poppins</a> from <a href="#" title="Link to google fonts">Google Fonts</a>, and a backup of sans serif.
 
-## Color Scheme
+## colorScheme
 The style utilizes a range of colors that contrast each other towards the background but compliments each other.
 <p style="padding: 10px; background-color: #685465">#685465<p>
 <p style="padding: 10px; background-color: #A96C7B">#A96C7B<p>
@@ -124,23 +145,23 @@ With that said, here are the features:
 
 - Now the user has a choice, either stop playing or continue to try to reach a higher score then before. And to to that they will be meet with a new flashing button that will let them start a new game. And after it's been pressed they will be meet with the choosing of the amount of rounds and onward.
 
-(GIF OF THE PRESSING OF THE NEW GAME BUTTON)
+![newGame](assets/videos/README-videos/newGame.webp)
 
 - If the game didn't explain it self, the user has an instructions button that will tell the basic of the game, how it works and how much that will be gain or lost when racing.
     - The text will automatically appear when entering in an landscape mode, but will only be a button to be pressed when using a portrait mode to save space. It can be closed in both modes if the user decides it to be closed.
     - The text of the button will also be changed, to utilize the space. "Instructions, press here!" to "Instructions, how to play!"
 
-(GIF OF OPENING THE INSTRUCTIONS BUTTON)
+![openInstruction](assets/videos/README-videos/openInstruction.webp)
 
 - And last, you may see the copyright text at the bottom of the page. Which holds the Author of the site and the year.
 
-(IMG OF THE COPYRIGHT TEXT)
+![copyright](assets/images/README-images/copyright.png)
 
 <br>
 
 # Testing
 
-## Unfixed bugs
+## Unfixed Bugs
 - One issue that I have not found an answer to is when sometimes when working with the inspect window in chrome, it can suddenly just change the size of the screen without adding or removing code. But it will be fixed with reloading the page, so I will keep research towards getting a clear answer to this problem.
 
 - Am I Responsive bug when using the this code, pulls the page up in the viewport. Could not find a fix for it, it works just fine when browsing normally.
@@ -157,7 +178,8 @@ document.querySelector("#myDropdown").scrollIntoView({
 - CSS
 - Javascript
 
-## Frameworks, Libraries & Programs Used
+## Frameworks Libraries & Programs Used
+
 - <a href="https://fonts.google.com/" title="Link to google fonts" rel="nofollow">Google Fonts</a>
     - Google fonts was used to import the font "Poppins".
 - <a href="https://fontawesome.com/" title="Link to font awesome" rel="nofollow">Font awesome</a>

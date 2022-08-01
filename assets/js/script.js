@@ -35,13 +35,13 @@ document.onmousedown = disableSelect;
 
 if (window.matchMedia("(orientation: landscape)").matches) {
     toggleInstructions();
+    if(document.documentElement.clientHeight <= 600){
+        alert('You are using a screen height is low, might I suggest using portrait / vertical view?');
+    }
 }
 
 resetColorRounds();
 
-if(document.documentElement.clientHeight <= 600){
-    alert('You are using a screen height is low, might I suggest using portrait / vertical view?');
-}
 
 addGlobalEventListener("click", ".select-container > a", (aEvent) => {
     const targetID = aEvent.target.id;
@@ -341,7 +341,7 @@ function runGame() {
     } while (randomNumberArray.length < 4);
     // Create a function/loop between this ---------->>>
     /* Sets the interval of the time from the random number for each horse */
-    let setColor_0 = setInterval(a, 10);
+    let setColor_0 = setInterval(a, randomNumberArray[0]);
     let setColor_1 = setInterval(b, randomNumberArray[1]);
     let setColor_2 = setInterval(c, randomNumberArray[2]);
     let setColor_3 = setInterval(d, randomNumberArray[3]);
