@@ -99,72 +99,72 @@ With that said, here are the features:
 ### <u>Color pillars</u>
 - The first thing after the welcome text you will see onces entering the site will probably be the pillars of colors. Those represents the racing colors that are help up by a standing progressbar. And onces activated these will restart at their starting line and race towards the bottom of their field.
 
-![colorPillars](assets/videos/README-videos/colorRacing.webp)
+![colorPillars](assets/videos/README-videos/Feature/colorRacing.webp)
 
 ### <u>Rounds Blinking</u>
 - The second thing you may notice is the blinking buttons that holds numbers on them. And those are the buttons that will let you choose the amount of rounds that will be played. The higher the number chosen then greater the gain or loss.
     - These will change in opacity onces you press on one, and the one you chose will remain in the same color.
 
-![roundsBlinking](assets/videos/README-videos/roundsBlinking.webp)
+![roundsBlinking](assets/videos/README-videos/Feature/roundsBlinking.webp)
 
 ### <u>Blinking Hand</u>
 - Onces that have been pressed, a new button will start flashing. Thats the submit button that will tell the game that the amount of rounds have been chosen, if it has not been chosen an alert will appear that will tell you that you need to choose a number of rounds before proceeding.
 
-![blinkingHand](assets/videos/README-videos/blinkingHand.webp)
+![blinkingHand](assets/videos/README-videos/Feature/blinkingHand.webp)
 
 ### <u>Colors blinking</u>
 - After the choosing of rounds, the buttons will change to the racing colors so you can pick your champion. The same thing will happen to these buttons, they will flash so you know where to press next to progress the game.
     - As the rounds choosing buttons these too will change in opacity accordingly to the one pressed.
 
-![colorsBlinking](assets/videos/README-videos/colorsBlinking.webp)
+![colorsBlinking](assets/videos/README-videos/Feature/colorsBlinking.webp)
 
 ### <u>Hand blinking to praying figure</u>
 - When the user have chosen their color to be raced, they will be guided to the "Play" button which will start the race. So onces pressed this button will change into a praying figure thats grey and blinking, and the race have commenced.
 
-![handBlinking to praying](assets/videos/README-videos/blinkingPlay-praying.webp)
+![handBlinking to praying](assets/videos/README-videos/Feature/blinkingPlay-praying.webp)
 
 ### <u>Colors racing</u>
 - The race have now commenced, and the previous mentioned progress bars that are represented by the different colors will start race towards the bottom of their field. Onces they enter the bottom of the field, the winning board to the right / bottom of the racing colors will now change accordingly to their position when finishing.
     - These will change as mentioned to the color which came first, second, third and forth.
 
-![colorRacing](assets/videos/README-videos/colorRacing.webp)
+![colorRacing](assets/videos/README-videos/Feature/colorRacing.webp)
 
 ### <u>Score changing</u>
 - As the race is finished, you can see your score changing. If you won you will see a green flashing light that indicates that you picked the right color to win, and if it lost you will see a red flashing light.
     - This will give you points of either plus 5, or negative 3 points.
 
-![scoreNegative](assets/videos/README-videos/scoreNegative.webp)![scorePlus](assets/videos/README-videos/scorePlus.webp)
+![scoreNegative](assets/videos/README-videos/Feature/scoreNegative.webp)![scorePlus](assets/videos/README-videos/Feature/scorePlus.webp)
 
 ### <u>Reset Button</u>
 - After one round is finished, the user will be meet with the restart race button. Which will like the others start flashing, so the user knows where to press next. And onces pressed the user will need to choose a color again.
     - It will not start the whole thing over, so the amount of rounds that will be played it's not changing.
 
-![resetButton](assets/videos/README-videos/resetButton.webp)
+![resetButton](assets/videos/README-videos/Feature/resetButton.webp)
 
 ### <u>Changing rounds</u>
 - Onces pressed the restart button, the rounds box will now increase with 1. So the user knows that the have progressed and know how many rounds there are left of the game.
    - Example:  1/5 to 2/5
 
-![changeRounds](assets/videos/README-videos/changeRounds.webp)
+![changeRounds](assets/videos/README-videos/Feature/changeRounds.webp)
 
 ### <u>High and latest Score</u>
 - When the player have reached the whole amount of rounds that have been played, their score will be submitted to the "latest" scoreboard. And if their score is higher then the current highScore it will also change.
     - The latest scoreboard will flash green if it is greater than the high score and red if it is lower. Same with the high score it will do the same.
 
-![high-latestScore](assets/videos/README-videos/high-latestScore.webp)<br>
-![lowerScore](assets/videos/README-videos/lowerScore.webp)
+![high-latestScore](assets/videos/README-videos/Feature/high-latestScore.webp)<br>
+![lowerScore](assets/videos/README-videos/Feature/lowerScore.webp)
 
 ### <u>New Game</u>
 - Now the user has a choice, either stop playing or continue to try to reach a higher score then before. And to to that they will be meet with a new flashing button that will let them start a new game. And after it's been pressed they will be meet with the choosing of the amount of rounds and onward.
 
-![newGame](assets/videos/README-videos/newGame.webp)
+![newGame](assets/videos/README-videos/Feature/newGame.webp)
 
 ### <u>Instructions</u>
 - If the game didn't explain it self, the user has an instructions button that will tell the basic of the game, how it works and how much that will be gain or lost when racing.
     - The text will automatically appear when entering in an landscape mode, but will only be a button to be pressed when using a portrait mode to save space. It can be closed in both modes if the user decides it to be closed.
     - The text of the button will also be changed, to utilize the space. "Instructions, press here!" to "Instructions, how to play!"
 
-![openInstruction](assets/videos/README-videos/openInstruction.webp)
+![openInstruction](assets/videos/README-videos/Feature/openInstruction.webp)
 
 ### <u>CopyRight</u>
 - And last, you may see the copyright text at the bottom of the page. Which holds the Author of the site and the year.
