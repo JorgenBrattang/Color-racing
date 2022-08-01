@@ -4,12 +4,20 @@
 
 # Feature testing
 ## <u>Responsive test</u>
-Video shows free resizing and three screens iPhone SE, iPad Air and Nest Hub.
+Video shows free resizing and three screens iPhone XR, iPad Air and Nest Hub Max.
+
+![Test Responsive](assets/videos/README-videos/test-Responsive.webp)
+
 - (It works for all sizes, and gives out an alert if you have less then 600px height to use )
 
+![Test AlertResponse](assets/videos/README-videos/test-alertResponse.webp)
 
 
 ## Features within the website
+
+### <u>Full Round</u>
+![test-fullRound](assets/videos/README-videos/test-fullRound.webp)
+
 ### <u>Color pillars</u>
 ![colorPillars](assets/videos/README-videos/colorRacing.webp)
 
@@ -59,8 +67,8 @@ A few worth mentioning:
 - Resizing the window for horizontal and portrait mode, this gave an unsuspected and unsolved bug within the inspect window in Chrome. As mentioned in Unfixed Bugs within the <a href="https://github.com/JorgenBrattang/color-racing/blob/main/README.md">README.md</a>
 
 
-
 ### <u>Websites on different browsers
+![openInstruction](assets//images/README-images/diffrent_browsers_portrait.png)
 
 
 ## <u>Validator Testing</u>
@@ -71,3 +79,6 @@ Ran through all the code and no errors were found.
 
 **CSS**
 - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)    
+
+**JavaScript**
+- Ask if these are relevant [JS Hint](https://jshint.com/)    
