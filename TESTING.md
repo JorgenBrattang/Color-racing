@@ -37,7 +37,7 @@ Video shows free resizing and three screens iPhone XR, iPad Air and Nest Hub Max
 ![colorRacing](assets/videos/README-videos/Feature/colorRacing.webp)
 
 ### <u>Score changing</u>
-![scoreNegative](assets/videos/README-videos/Feature/scoreNegative.webp)![scorePlus](assets/videos/README-videos/scorePlus.webp)
+![scoreNegative](assets/videos/README-videos/Feature/scoreNegative.webp)![scorePlus](assets/videos/README-videos/Feature/scorePlus.webp)
 
 ### <u>Reset Button</u>
 ![resetButton](assets/videos/README-videos/Feature/resetButton.webp)
