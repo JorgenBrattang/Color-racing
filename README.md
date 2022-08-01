@@ -72,16 +72,16 @@ The features holds a number of elements that will guide the user throughout the 
 With that said, here are the features:
 - The first thing that you may see is the "Welcome to Color Racing! text. Nothing special about this.
 
-(IMG OF THE WELCOME TEXT)
+![welcomeText](assets/images/README-images/welcomeText.png)
 
 - The first thing after the welcome text you will see onces entering the site will probably be the pillars of colors. Those represents the racing colors that are help up by a standing progressbar. And onces activated these will restart at their starting line and race towards the bottom of their field.
 
-(GIF OF COLOR PILLARS)
+![colorPillars](assets/videos/README-videos/colorRacing.webp)
 
 - The second thing you may notice is the blinking buttons that holds numbers on them. And those are the buttons that will let you choose the amount of rounds that will be played. The higher the number chosen then greater the gain or loss.
     - These will change in opacity onces you press on one, and the one you chose will remain in the same color.
 
-(GIF OF ROUND BUTTONS BLINKING)
+![colorsBlinking](assets/videos/README-videos/roundsBlinking.webp)
 
 - Onces that have been pressed, a new button will start flashing. Thats the submit button that will tell the game that the amount of rounds have been chosen, if it has not been chosen an alert will appear that will tell you that you need to choose a number of rounds before proceeding.
 
@@ -90,7 +90,7 @@ With that said, here are the features:
 - After the choosing of rounds, the buttons will change to the racing colors so you can pick your champion. The same thing will happen to these buttons, they will flash so you know where to press next to progress the game.
     - As the rounds choosing buttons these too will change in opacity accordingly to the one pressed.
 
-(GIF OF COLOR BUTTONS BLINKING)
+![colorsBlinking](assets/videos/README-videos/colorsBlinking.webp)
 
 - When the user have chosen their color to be raced, they will be guided to the "Play" button which will start the race. So onces pressed this button will change into a praying figure thats grey and blinking, and the race have commenced.
 

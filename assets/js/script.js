@@ -341,7 +341,7 @@ function runGame() {
     } while (randomNumberArray.length < 4);
     // Create a function/loop between this ---------->>>
     /* Sets the interval of the time from the random number for each horse */
-    let setColor_0 = setInterval(a, 10);
+    let setColor_0 = setInterval(a, randomNumberArray[0]);
     let setColor_1 = setInterval(b, randomNumberArray[1]);
     let setColor_2 = setInterval(c, randomNumberArray[2]);
     let setColor_3 = setInterval(d, randomNumberArray[3]);
