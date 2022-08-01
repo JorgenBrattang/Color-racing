@@ -6,29 +6,28 @@ Is where you can get race different colors to see who is the fastest, it's a fun
 <a href="https://jorgenbrattang.github.io/Color-racing/" title="Link to live website" rel="nofollow">View live website here!</a>
 
 ## Table of contents
-- [Development](#development)
-- [Strategy](#strategy)
-- [Scope](#scope)
-- [Structure](#structure)
-- [Skeleton](#skeleton)
-- [Surface](#surface)
-- [Changes during the design process](#changes-during-the-design-process)
-- [Typography](#typography)
-- [colorScheme](#colorScheme)
-- [Features](#features)
+- [UX](#uX)
+    - [Development](#development)
+    - [Strategy](#strategy)
+    - [Scope](#scope)
+    - [Structure](#structure)
+    - [Skeleton](#skeleton)
+    - [Surface](#surface)
+    - [Changes during the design process](#changes-during-the-design-process)
+    - [Typography](#typography)
+    - [colorScheme](#colorScheme)
+    - [Features](#features)
 - [Testing](#testing)
-    - [unfixedBugs](#unfixed-Bugs)
+       - [unfixedBugs](#unfixed-Bugs)
 - [Technologies used](#technologies-used)
-- [Main Language used](#main-Language-Used)
-- [Frameworks Libraries & Programs Used](#frameworks-Libraries-&-Programs-Used)
+    - [Main Language used](#main-Language-Used)
+    - [Frameworks Libraries & Programs Used](#frameworks-Libraries-&-Programs-Used)
 - [Credits](#credits)
     - [Tutorials](#tutorials)
-- [What I learned](#what-I-learned)
-- [Continued development](#continued-development)
-- [Author](#author)
-- [Acknowledgements](#acknowledgements)
-
-# Overview
+    - [What I learned](#what-I-learned)
+    - [Continued development](#continued-development)
+    - [Author](#author)
+    - [Acknowledgements](#acknowledgements)
 
 # UX
 
@@ -91,68 +90,83 @@ The style utilizes a range of colors that contrast each other towards the backgr
 The features holds a number of elements that will guide the user throughout the game, so it's easy to follow along. Even without the explanatory text, you can just follow the blinking lights and get a grasp on how the game works.
 
 With that said, here are the features:
+
+### <u>Welcome Text</u>
 - The first thing that you may see is the "Welcome to Color Racing! text. Nothing special about this.
 
 ![welcomeText](assets/images/README-images/welcomeText.png)
 
+### <u>Color pillars</u>
 - The first thing after the welcome text you will see onces entering the site will probably be the pillars of colors. Those represents the racing colors that are help up by a standing progressbar. And onces activated these will restart at their starting line and race towards the bottom of their field.
 
 ![colorPillars](assets/videos/README-videos/colorRacing.webp)
 
+### <u>Rounds Blinking</u>
 - The second thing you may notice is the blinking buttons that holds numbers on them. And those are the buttons that will let you choose the amount of rounds that will be played. The higher the number chosen then greater the gain or loss.
     - These will change in opacity onces you press on one, and the one you chose will remain in the same color.
 
 ![roundsBlinking](assets/videos/README-videos/roundsBlinking.webp)
 
+### <u>Blinking Hand</u>
 - Onces that have been pressed, a new button will start flashing. Thats the submit button that will tell the game that the amount of rounds have been chosen, if it has not been chosen an alert will appear that will tell you that you need to choose a number of rounds before proceeding.
 
 ![blinkingHand](assets/videos/README-videos/blinkingHand.webp)
 
+### <u>Colors blinking</u>
 - After the choosing of rounds, the buttons will change to the racing colors so you can pick your champion. The same thing will happen to these buttons, they will flash so you know where to press next to progress the game.
     - As the rounds choosing buttons these too will change in opacity accordingly to the one pressed.
 
 ![colorsBlinking](assets/videos/README-videos/colorsBlinking.webp)
 
+### <u>Hand blinking to praying figure</u>
 - When the user have chosen their color to be raced, they will be guided to the "Play" button which will start the race. So onces pressed this button will change into a praying figure thats grey and blinking, and the race have commenced.
 
 ![handBlinking to praying](assets/videos/README-videos/blinkingPlay-praying.webp)
 
+### <u>Colors racing</u>
 - The race have now commenced, and the previous mentioned progress bars that are represented by the different colors will start race towards the bottom of their field. Onces they enter the bottom of the field, the winning board to the right / bottom of the racing colors will now change accordingly to their position when finishing.
     - These will change as mentioned to the color which came first, second, third and forth.
 
 ![colorRacing](assets/videos/README-videos/colorRacing.webp)
 
+### <u>Score changing</u>
 - As the race is finished, you can see your score changing. If you won you will see a green flashing light that indicates that you picked the right color to win, and if it lost you will see a red flashing light.
     - This will give you points of either plus 5, or negative 3 points.
 
 ![scoreNegative](assets/videos/README-videos/scoreNegative.webp)![scorePlus](assets/videos/README-videos/scorePlus.webp)
 
+### <u>Reset Button</u>
 - After one round is finished, the user will be meet with the restart race button. Which will like the others start flashing, so the user knows where to press next. And onces pressed the user will need to choose a color again.
     - It will not start the whole thing over, so the amount of rounds that will be played it's not changing.
 
 ![resetButton](assets/videos/README-videos/resetButton.webp)
 
+### <u>Changing rounds</u>
 - Onces pressed the restart button, the rounds box will now increase with 1. So the user knows that the have progressed and know how many rounds there are left of the game.
    - Example:  1/5 to 2/5
 
 ![changeRounds](assets/videos/README-videos/changeRounds.webp)
 
+### <u>High and latest Score</u>
 - When the player have reached the whole amount of rounds that have been played, their score will be submitted to the "latest" scoreboard. And if their score is higher then the current highScore it will also change.
     - The latest scoreboard will flash green if it is greater than the high score and red if it is lower. Same with the high score it will do the same.
 
 ![high-latestScore](assets/videos/README-videos/high-latestScore.webp)<br>
 ![lowerScore](assets/videos/README-videos/lowerScore.webp)
 
+### <u>New Game</u>
 - Now the user has a choice, either stop playing or continue to try to reach a higher score then before. And to to that they will be meet with a new flashing button that will let them start a new game. And after it's been pressed they will be meet with the choosing of the amount of rounds and onward.
 
 ![newGame](assets/videos/README-videos/newGame.webp)
 
+### <u>Instructions</u>
 - If the game didn't explain it self, the user has an instructions button that will tell the basic of the game, how it works and how much that will be gain or lost when racing.
     - The text will automatically appear when entering in an landscape mode, but will only be a button to be pressed when using a portrait mode to save space. It can be closed in both modes if the user decides it to be closed.
     - The text of the button will also be changed, to utilize the space. "Instructions, press here!" to "Instructions, how to play!"
 
 ![openInstruction](assets/videos/README-videos/openInstruction.webp)
 
+### <u>CopyRight</u>
 - And last, you may see the copyright text at the bottom of the page. Which holds the Author of the site and the year.
 
 ![copyright](assets/images/README-images/copyright.png)
@@ -160,6 +174,7 @@ With that said, here are the features:
 <br>
 
 # Testing
+To see the testing part, please follow this link: <a href="https://github.com/JorgenBrattang/Color-racing/blob/main/TESTING.md">Testing.md</a>
 
 ## Unfixed Bugs
 - One issue that I have not found an answer to is when sometimes when working with the inspect window in chrome, it can suddenly just change the size of the screen without adding or removing code. But it will be fixed with reloading the page, so I will keep research towards getting a clear answer to this problem.
@@ -194,6 +209,10 @@ document.querySelector("#myDropdown").scrollIntoView({
     - Freeformatter was used to compressed my code to be more readable.
 - <a href="https://gauger.io/fonticon/" title="Link to fonticon" rel="nofollow">Fonticon</a>
     - Fonticon was used to create a favicon.ico to the title.
+- <a href="https://ezgif.com/video-to-webp/" title="Link to fonticon" rel="nofollow">EZGIFs</a>
+    - EZGIFs was used to convert and crop videos for testing and features.
+
+    
 
 
 ## Deployment
@@ -224,4 +243,4 @@ To further develop this game, it would be to add more features like an online hi
 Student of Code Institute, Jörgen Brattäng
 
 ## Acknowledgements
-I would like to acknowledge my mentor <a href="https://github.com/seunkoko" title="Link to GitHub profile" rel="nofollow">Oluwaseun Owonikoko</a> which gave my game a goal, which I did not think about. My family for helping me progress and support me, and not to forget the tutors and community of slack that helped me understand how to understand the concepts of programming.
+I would like to acknowledge my mentor <a href="https://github.com/seunkoko" title="Link to GitHub profile" rel="nofollow">Oluwaseun Owonikoko</a> which gave my game a goal, which I did not think about. My family for helping me progress and support me, and not to forget the tutors and community of slack that helped me understand how to understand the concepts of programming JavaScript.

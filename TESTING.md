@@ -10,10 +10,53 @@ Video shows free resizing and three screens iPhone SE, iPad Air and Nest Hub.
 
 
 ## Features within the website
+### <u>Color pillars</u>
+![colorPillars](assets/videos/README-videos/colorRacing.webp)
+
+### <u>Rounds Blinking</u>
+![roundsBlinking](assets/videos/README-videos/roundsBlinking.webp)
+
+### <u>Blinking Hand</u>
+![blinkingHand](assets/videos/README-videos/blinkingHand.webp)
+
+### <u>Colors blinking</u>
+![colorsBlinking](assets/videos/README-videos/colorsBlinking.webp)
+
+### <u>Hand blinking to praying figure</u>
+![handBlinking to praying](assets/videos/README-videos/blinkingPlay-praying.webp)
+
+### <u>Colors racing</u>
+![colorRacing](assets/videos/README-videos/colorRacing.webp)
+
+### <u>Score changing</u>
+![scoreNegative](assets/videos/README-videos/scoreNegative.webp)![scorePlus](assets/videos/README-videos/scorePlus.webp)
+
+### <u>Reset Button</u>
+![resetButton](assets/videos/README-videos/resetButton.webp)
+
+### <u>Changing rounds</u>
+![changeRounds](assets/videos/README-videos/changeRounds.webp)
+
+### <u>High and latest Score</u>
+![high-latestScore](assets/videos/README-videos/high-latestScore.webp)<br>
+![lowerScore](assets/videos/README-videos/lowerScore.webp)
+
+### <u>New Game</u>
+![newGame](assets/videos/README-videos/newGame.webp)
+
+### <u>Instructions</u>
+![openInstruction](assets/videos/README-videos/openInstruction.webp)
 
 
 ## Bug reports
+The developer encounter a number of bugs throughout the development of this game, there were hurdles to overcome but those were fixed with either help from tutors, slack community or researching the internet.
 
+A few worth mentioning:
+- When starting the race, the colors would not start onces pressed.
+    - Solution the progress bar was not working properly, which gave the if statement false information.
+- Using the same button twice for different purpose, this gave the developer a headache.
+    - Solutions changing the ID's and using if statements to check for information given and not given.
+- Resizing the window for horizontal and portrait mode, this gave an unsuspected and unsolved bug within the inspect window in Chrome. As mentioned in Unfixed Bugs within the <a href="https://github.com/JorgenBrattang/color-racing/blob/main/README.md">README.md</a>
 
 
 
