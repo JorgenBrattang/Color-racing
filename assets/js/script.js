@@ -40,36 +40,11 @@ if (window.matchMedia("(orientation: landscape)").matches) {
     }
 }
 
+
 setAllBaseColors();
 
-/**
- * Sets all the base Colors of the game
- */
-function setAllBaseColors() {
-document.querySelector("body").style.backgroundColor = blackColor;
-document.querySelector("header").style.color = whiteColor;
-document.querySelector(".instruction-container").style.backgroundColor = whiteColor;
-document.querySelector(".high-score-container").style.backgroundColor = whiteColor;
-document.querySelector(".select-container").style.backgroundColor = whiteColor;
-document.querySelector(".race-container ").style.backgroundColor = whiteColor;
-document.querySelector(".color-0").style.backgroundColor = color_0;
-document.querySelector(".color-1").style.backgroundColor = color_1;
-document.querySelector(".color-2").style.backgroundColor = color_2;
-document.querySelector(".color-3").style.backgroundColor = color_3;
-document.querySelector(".dropContent--btn").style.color = whiteColor;
-// Checks if the user has landscape or portrait view, and changes the color accordingly.
-if (window.matchMedia("(orientation: landscape)").matches) {
-    const btn = document.querySelector(".dropContent--btn");
-    btn.style.backgroundColor = blackColor;
-    btn.style.color = whiteColor;
 
-} else {
-    const btn = document.querySelector(".dropContent--btn");
-    btn.style.backgroundColor = playColor;
-    btn.style.color = 'black';
-}
-document.querySelector("footer").style.color = whiteColor;
-}
+
 
 resetColorRounds();
 
@@ -343,12 +318,13 @@ function runGame() {
     for (id of buttonNumber) {
         document.getElementById(id).style.pointerEvents = "none";
     }
-    // Create a function/loop between this ---------->>>
+
     /* Gets the colors from the HTML */
-    const getColor_0 = document.getElementById("racer_0");
-    const getColor_1 = document.getElementById("racer_1");
-    const getColor_2 = document.getElementById("racer_2");
-    const getColor_3 = document.getElementById("racer_3");
+        const getColor_0 = document.getElementById("racer_0");
+        const getColor_1 = document.getElementById("racer_1");
+        const getColor_2 = document.getElementById("racer_2");
+        const getColor_3 = document.getElementById("racer_3");
+
     /* Lets the colorHeight to be 10% of 100%, so you can see where your colors starts */
     let colorHeight_0 = 10;
     getColor_0.style.height = colorHeight_0 + "%";
@@ -598,4 +574,33 @@ function addGlobalEventListener(type, selector, callback) {
     document.addEventListener(type, (e) => {
         if (e.target.matches(selector)) callback(e);
     });
+}
+
+/**
+ * Sets all the colors for the game to begin, they will change in other functions
+ */
+ function setAllBaseColors() {
+    document.querySelector("body").style.backgroundColor = blackColor;
+    document.querySelector("header").style.color = whiteColor;
+    document.querySelector(".instruction-container").style.backgroundColor = whiteColor;
+    document.querySelector(".high-score-container").style.backgroundColor = whiteColor;
+    document.querySelector(".select-container").style.backgroundColor = whiteColor;
+    document.querySelector(".race-container ").style.backgroundColor = whiteColor;
+    document.querySelector(".color-0").style.backgroundColor = color_0;
+    document.querySelector(".color-1").style.backgroundColor = color_1;
+    document.querySelector(".color-2").style.backgroundColor = color_2;
+    document.querySelector(".color-3").style.backgroundColor = color_3;
+    document.querySelector(".dropContent--btn").style.color = whiteColor;
+    // Checks if the user has landscape or portrait view, and changes the color accordingly.
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        const btn = document.querySelector(".dropContent--btn");
+        btn.style.backgroundColor = blackColor;
+        btn.style.color = whiteColor;
+    
+    } else {
+        const btn = document.querySelector(".dropContent--btn");
+        btn.style.backgroundColor = playColor;
+        btn.style.color = 'black';
+    }
+    document.querySelector("footer").style.color = whiteColor;
 }
