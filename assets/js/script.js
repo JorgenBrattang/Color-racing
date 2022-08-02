@@ -40,10 +40,10 @@ if (window.matchMedia("(orientation: landscape)").matches) {
     }
 }
 
-document.querySelector(".color-1").style.backgroundColor = color_0;
-document.querySelector(".color-2").style.backgroundColor = color_1;
-document.querySelector(".color-3").style.backgroundColor = color_2;
-document.querySelector(".color-4").style.backgroundColor = color_3;
+document.querySelector(".color-0").style.backgroundColor = color_0;
+document.querySelector(".color-1").style.backgroundColor = color_1;
+document.querySelector(".color-2").style.backgroundColor = color_2;
+document.querySelector(".color-3").style.backgroundColor = color_3;
 document.querySelector(".dropContent--btn").style.backgroundColor = playColor;
 
 resetColorRounds();
@@ -79,10 +79,10 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
         if (limitRounds != null) {
             if (targetID == "play") {
                 /* Sets the color to racing select */
-                document.querySelector(".color-1--select").style.backgroundColor = color_0;
-                document.querySelector(".color-2--select").style.backgroundColor = color_1;
-                document.querySelector(".color-3--select").style.backgroundColor = color_2;
-                document.querySelector(".color-4--select").style.backgroundColor = color_3;
+                document.querySelector(".color-0--select").style.backgroundColor = color_0;
+                document.querySelector(".color-1--select").style.backgroundColor = color_1;
+                document.querySelector(".color-2--select").style.backgroundColor = color_2;
+                document.querySelector(".color-3--select").style.backgroundColor = color_3;
 
                 selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>';
                 roundChosen = true;
@@ -188,19 +188,19 @@ function resetGame() {
  * Sets the background color of the buttons to be ROUNDS color
  */
 function resetColorRounds() {
-    const color1 = document.querySelector(".color-1--select");
+    const color1 = document.querySelector(".color-0--select");
     color1.style.backgroundColor = playColor;
     color1.style.animation = "selection 1000ms infinite";
 
-    const color2 = document.querySelector(".color-2--select");
+    const color2 = document.querySelector(".color-1--select");
     color2.style.backgroundColor = playColor;
     color2.style.animation = "selection 1000ms infinite";
 
-    const color3 = document.querySelector(".color-3--select");
+    const color3 = document.querySelector(".color-2--select");
     color3.style.backgroundColor = playColor;
     color3.style.animation = "selection 1000ms infinite";
 
-    const color4 = document.querySelector(".color-4--select");
+    const color4 = document.querySelector(".color-3--select");
     color4.style.backgroundColor = playColor;
     color4.style.animation = "selection 1000ms infinite";
 
@@ -212,16 +212,16 @@ function resetColorRounds() {
  * Sets the background color of the buttons to be RACING color
  */
 function resetColorRaces() {
-    const color1 = document.querySelector(".color-1--select");
+    const color1 = document.querySelector(".color-0--select");
     color1.style.backgroundColor = color_0;
 
-    const color2 = document.querySelector(".color-2--select");
+    const color2 = document.querySelector(".color-1--select");
     color2.style.backgroundColor = color_1;
 
-    const color3 = document.querySelector(".color-3--select");
+    const color3 = document.querySelector(".color-2--select");
     color3.style.backgroundColor = color_2;
 
-    const color4 = document.querySelector(".color-4--select");
+    const color4 = document.querySelector(".color-3--select");
     color4.style.backgroundColor = color_3;
 }
 
@@ -229,16 +229,16 @@ function resetColorRaces() {
  * Sets the blinking on all buttons except PlayButton
  */
 function colorBlinkingActive() {
-    const color1 = document.querySelector(".color-1--select");
+    const color1 = document.querySelector(".color-0--select");
     color1.style.animation = "selection 1000ms infinite";
 
-    const color2 = document.querySelector(".color-2--select");
+    const color2 = document.querySelector(".color-1--select");
     color2.style.animation = "selection 1000ms infinite";
 
-    const color3 = document.querySelector(".color-3--select");
+    const color3 = document.querySelector(".color-2--select");
     color3.style.animation = "selection 1000ms infinite";
 
-    const color4 = document.querySelector(".color-4--select");
+    const color4 = document.querySelector(".color-3--select");
     color4.style.animation = "selection 1000ms infinite";
 
     const selectBtn = document.querySelector(".play-button--btn");
@@ -250,16 +250,16 @@ function colorBlinkingActive() {
  * Sets blinking to PlayButton except for color/round buttons
  */
 function colorBlinkingNone() {
-    const color1 = document.querySelector(".color-1--select");
+    const color1 = document.querySelector(".color-0--select");
     color1.style.animation = "none";
 
-    const color2 = document.querySelector(".color-2--select");
+    const color2 = document.querySelector(".color-1--select");
     color2.style.animation = "none";
 
-    const color3 = document.querySelector(".color-3--select");
+    const color3 = document.querySelector(".color-2--select");
     color3.style.animation = "none";
 
-    const color4 = document.querySelector(".color-4--select");
+    const color4 = document.querySelector(".color-3--select");
     color4.style.animation = "none";
 
     const selectBtn = document.querySelector(".play-button--btn");
