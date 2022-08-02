@@ -4,7 +4,7 @@ const color_1 = "#FFB400";
 const playColor = "#029111";
 const color_2 = "#00A6ED";
 const color_3 = "#7FB800";
-const textColor = "#393939";
+const blackColor = "#393939";
 const resetColor = "#8685EF";
 const whiteColor = "#FAF7FF";
 /* Selects all the buttons (<a>) in the DOM */
@@ -24,6 +24,7 @@ var colorID = null;
 var limitRounds = null;
 var roundChosen = null;
 var highScore = [];
+var colorScheme = [color_0, color_1, color_2, color_3];
 
 /* Disables the entire document's option to select text */
 const disableSelect = (e) => {
@@ -43,6 +44,7 @@ document.querySelector(".color-1").style.backgroundColor = color_0;
 document.querySelector(".color-2").style.backgroundColor = color_1;
 document.querySelector(".color-3").style.backgroundColor = color_2;
 document.querySelector(".color-4").style.backgroundColor = color_3;
+document.querySelector(".dropContent--btn").style.backgroundColor = playColor;
 
 resetColorRounds();
 
@@ -61,14 +63,14 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
             colorNumbers.splice(targetID, 1);
             /* Selects every other color and change their opacity to 0.5 (not selected) */
             for (number of colorNumbers) {
-                targetOthers = document.getElementById(number);
+                targetOthers = document.getElementById(number)
                 targetOthers.style.opacity = "0.5";
             }
             /* Changes the background color of the current chosen color */
             aEvent.target.style.cssText = 'background-color:' + playColor + '; opacity: 1;';
             selectedRounds.innerHTML = limitRounds;
 
-            selectBtn = document.querySelector(".play-button--btn");
+            selectBtn = document.querySelector(".play-button--btn")
             selectBtn.style.backgroundColor = playColor;
 
             colorBlinkingNone();
@@ -105,6 +107,7 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
         if (targetID != "play") {
             resetColorRaces();
             colorID = targetID;
+
             /* Takes away the current target ID from the array colorNumbers */
             colorNumbers.splice(targetID, 1);
             /* Selects every other color and change their opacity to 0.5 (not selected) */
@@ -114,6 +117,7 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
             }
             /* Changes the background color of the current chosen color */
             aEvent.target.style.cssText = `opacity: 1;`;
+            aEvent.target.style.cssText = "background-color: " + colorScheme[colorID];
 
             colorBlinkingNone();
         }
@@ -201,7 +205,7 @@ function resetColorRounds() {
     color4.style.animation = "selection 1000ms infinite";
 
     const selectBtn = document.querySelector(".play-button--btn");
-    selectBtn.style.backgroundColor = textColor;
+    selectBtn.style.backgroundColor = blackColor;
 }
 
 /**
@@ -238,7 +242,7 @@ function colorBlinkingActive() {
     color4.style.animation = "selection 1000ms infinite";
 
     const selectBtn = document.querySelector(".play-button--btn");
-    selectBtn.style.backgroundColor = textColor;
+    selectBtn.style.backgroundColor = blackColor;
     selectBtn.style.animation = "none";
 }
 
@@ -332,7 +336,7 @@ function runGame() {
     // Create a function/loop between this <<<----------
     /* Adds the praying person icon and changes the play button color */
     selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>';
-    selectPlay.style.backgroundColor = textColor;
+    selectPlay.style.backgroundColor = blackColor;
     selectPlay.style.color = whiteColor;
 
     // Creates an empty array
@@ -429,8 +433,10 @@ function toggleInstructions() {
     btn.classList.toggle("buttonColor");
     if (btn.innerHTML === "Instructions, press here!") {
         btn.innerHTML = "Instructions how to play!";
+        btn.style.backgroundColor = blackColor;
     } else {
         btn.innerHTML = "Instructions, press here!";
+        btn.style.backgroundColor = playColor;
     }
     document.querySelector("#myDropdown").scrollIntoView({
         behavior: "smooth",
