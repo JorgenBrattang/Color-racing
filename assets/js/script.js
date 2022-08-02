@@ -502,6 +502,7 @@ function maxRounds(rounds, score) {
         /* Sets the reset button back to ID of play */
         document.getElementById("reset").setAttribute("id", "newGame");
 
+        /* NewGame button */
         selectPlay.innerHTML = '<i class="fa-solid fa-gamepad"></i>';
         selectPlay.style.backgroundColor = playColor;
         selectPlay.style.color = whiteColor;
