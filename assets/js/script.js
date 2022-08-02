@@ -47,21 +47,21 @@ resetColorRounds();
 
 
 addGlobalEventListener("click", ".select-container > a", (aEvent) => {
-    const targetID = aEvent.target.id;
+    let targetID = aEvent.target.id;
     const limitRoundsArray = [2, 5, 10, 15];
-    const colorNumbers = [0, 1, 2, 3];
+    let colorNumbers = [0, 1, 2, 3];
 
     /* IF no round have been chosen, do this! */
     if (roundChosen == null) {
         if (targetID != "play") {
+            /* Gets the number of rounds from array with the targetID */
             limitRounds = limitRoundsArray[targetID];
+
             /* Takes away the current target ID from the array colorNumbers */
             colorNumbers.splice(targetID, 1);
-            /* Selects every other color and change their opacity to 0.5 (not selected) */
-            for (let number of colorNumbers) {
-                let targetOthers = document.getElementById(number);
-                targetOthers.style.opacity = "0.5";
-            }
+
+            notSelectedOpacity(colorNumbers);
+            
             /* Changes the background color of the current chosen color */
             aEvent.target.style.cssText = 'background-color:' + playColor + '; opacity: 1;';
             selectedRounds.innerHTML = limitRounds;
@@ -74,21 +74,8 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
 
         if (limitRounds != null) {
             if (targetID == "play") {
-                /* Sets the color to racing select */
-
                 setButtonsForPlayID();
-                
-                
-
-                /* Sets all the colors back to 100% opacity */
-                const colorNumbers = [0, 1, 2, 3];
-                for (let number of colorNumbers) {
-                    let changeNumber = document.getElementById(number);
-                    changeNumber.style.opacity = "1";
-                    changeNumber.innerHTML = "";
-                    colorFinish[number].style.cssText = "background-color: white;";
-                }
-
+                resetColorOpacity(colorNumbers);
                 colorBlinkingActive();
             }
         } else {
@@ -108,6 +95,7 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
                 let targetOthers = document.getElementById(number);
                 targetOthers.style.opacity = "0.5";
             }
+
             /* Changes the background color of the current chosen color */
             aEvent.target.style.cssText = `opacity: 1;`;
             aEvent.target.style.cssText = "background-color: " + colorScheme[colorID];
@@ -125,7 +113,7 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
         }
 
         if (targetID == "reset") {
-            resetGame();
+            resetGame(colorNumbers);
             colorBlinkingActive();
             resetColorRaces();
         }
@@ -143,15 +131,22 @@ addGlobalEventListener("click", ".instruction-container > button", (buttonEvent)
     toggleInstructions();
 });
 
+function notSelectedOpacity(colorNumbers) {
+    /* Selects every other color and change their opacity to 0.5 (not selected) */
+    for (let number of colorNumbers) {
+        let targetOthers = document.getElementById(number);
+        targetOthers.style.opacity = "0.5";
+    }
+}
+
 /**
  * This will reset the game, so you can play a new round
  */
-function resetGame() {
+function resetGame(colorNumbers) {
     /* Deselects the color chosen */
     colorID = null;
 
     /* Sets all the colors back to 100% opacity */
-    const colorNumbers = [0, 1, 2, 3];
     for (let number of colorNumbers) {
         document.getElementById(number).style.opacity = "1";
         colorFinish[number].style.cssText = "background-color: white";
@@ -178,6 +173,21 @@ function resetGame() {
 }
 
 /**
+ * - Sets all the colors back to 100% opacity
+ * - Sets the placements to base color (white)
+ */
+function resetColorOpacity(colorNumbers) {
+     colorNumbers = [0, 1, 2, 3];
+    for (let number of colorNumbers) {
+        let changeNumber = document.getElementById(number);
+        changeNumber.style.opacity = "1";
+        changeNumber.innerHTML = "";
+        // Resets the placements back to base color (white)
+        colorFinish[number].style.cssText = "background-color: white;";
+    }
+}
+
+/**
  * - Sets the basic background color to the buttons.
  * - Play button changes icon to Play
  * - And RoundChosen is equal to true
@@ -192,27 +202,37 @@ function setButtonsForPlayID() {
     roundChosen = true;
 }
 
+function buttonSelect() {
+    // LOOK THIS UP, AND MAKE IT WORK!
+}
+
 /**
  * Sets the background color of the buttons to be ROUNDS color
  */
 function resetColorRounds() {
+    buttonSelect();
     const color1 = document.querySelector(".color-0--select");
+    const color2 = document.querySelector(".color-1--select");
+    const color3 = document.querySelector(".color-2--select");
+    const color4 = document.querySelector(".color-3--select");
+    const selectBtn = document.querySelector(".play-button--btn");
+
     color1.style.backgroundColor = playColor;
     color1.style.animation = "selection 1000ms infinite";
 
-    const color2 = document.querySelector(".color-1--select");
+    
     color2.style.backgroundColor = playColor;
     color2.style.animation = "selection 1000ms infinite";
 
-    const color3 = document.querySelector(".color-2--select");
+    
     color3.style.backgroundColor = playColor;
     color3.style.animation = "selection 1000ms infinite";
 
-    const color4 = document.querySelector(".color-3--select");
+    
     color4.style.backgroundColor = playColor;
     color4.style.animation = "selection 1000ms infinite";
 
-    const selectBtn = document.querySelector(".play-button--btn");
+    
     selectBtn.style.backgroundColor = blackColor;
 }
 
