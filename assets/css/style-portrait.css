@@ -6,7 +6,6 @@
     }
 
     body {
-        background: #393939;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         line-height: 1.5;
@@ -29,7 +28,6 @@
         grid-row: 1;
         text-align: center;
         padding: 10px;
-        color: #faf7ff;
     }
 
     i {
@@ -46,16 +44,11 @@
         letter-spacing: 3px;
     }
 
-    .active {
-        background-color: #393939;
-    }
-
     /* ------ Race container ------ */
     .race-container {
         grid-row: 2;
         padding: 10px;
         border-radius: 20px;
-        background: #faf7ff;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 230px 1fr;
@@ -274,7 +267,6 @@
         grid-row: 3;
         padding: 10px;
         border-radius: 20px;
-        background: #faf7ff;
         display: grid;
         grid-template-columns: 50px 50px 75px 50px 50px;
         column-gap: 10px;
@@ -299,7 +291,6 @@
         height: 50px;
         margin-top: 16px;
         border-radius: 10px;
-        /* background-color: #91d346; */
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         border: none;
         padding-top: 13px;
@@ -309,7 +300,6 @@
         height: 50px;
         margin-top: 16px;
         border-radius: 10px;
-        /* background-color: #b13a58; */
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         border: none;
         padding-top: 13px;
@@ -319,7 +309,6 @@
         height: 50px;
         margin-top: 16px;
         border-radius: 10px;
-        /* background-color: #3739b4; */
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         border: none;
         padding-top: 13px;
@@ -329,7 +318,6 @@
         height: 50px;
         margin-top: 16px;
         border-radius: 10px;
-        /* background-color: #da9226; */
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         border: none;
         padding-top: 13px;
@@ -343,7 +331,6 @@
         border: none;
         text-align: center;
         color: #eee;
-        background-color: #235e1d;
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
     }
 
@@ -354,7 +341,6 @@
         height: auto;
         padding: 10px;
         border-radius: 20px;
-        background-color: #faf7ff;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 16px 1fr;
@@ -392,7 +378,6 @@
         grid-row: 5;
         padding: 10px;
         border-radius: 20px;
-        background: #faf7ff;
     }
 
     /* Button instruction */
@@ -405,7 +390,6 @@
         border-radius: 15px;
         border: none;
         text-align: center;
-        color: #faf7ff;
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         font-family: "Poppins", sans-serif;
     }
@@ -424,13 +408,8 @@
         display: block;
     }
 
-    .buttonColor {
-        background-color: #393939;
-    }
-
     footer {
         grid-row: 6;
-        color: #faf7ff;
         font-size: 12px;
         text-align: center;
     }

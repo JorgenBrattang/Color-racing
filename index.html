@@ -11,8 +11,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/b66a8a8811.js" crossorigin="anonymous"></script>
-
+        <!-- Creates the favicon -->
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <!-- Gets the CSS stylesheets -->
         <link rel="stylesheet" href="assets/css/style-portrait.css" />
         <link rel="stylesheet" href="assets/css/style-landscape.css" />
         <title>Color Racing!</title>
@@ -22,34 +23,43 @@
             <header>
                 <h3>Welcome to Color Racing!</h3>
             </header>
+            <!-- Racing area -->
             <div class="race-container">
                 <div class="color-0" id="racer_0"></div>
                 <div class="color-1" id="racer_1"></div>
                 <div class="color-2" id="racer_2"></div>
                 <div class="color-3" id="racer_3"></div>
+                <!-- Placement Area -->
                 <div class="placement-container">
+                    <!-- 1st place -->
                     <div class="first">
                         <p>1st</p>
                         <div class="first--box"></div>
                     </div>
+                    <!-- 2nd place -->
                     <div class="second">
                         <p>2nd</p>
                         <div class="second--box"></div>
                     </div>
+                    <!-- 3rd place -->
                     <div class="third">
                         <p>3rd</p>
                         <div class="third--box"></div>
                     </div>
+                    <!-- 4th place -->
                     <div class="fourth">
                         <p>4th</p>
                         <div class="fourth--box"></div>
                     </div>
+                    <!-- Score area -->
                     <div class="score">
                         <p>Score:</p>
                         <div class="score--box">0</div>
                     </div>
+                    <!-- Rounds Area -->
                     <div class="rounds">
                         <p>round:</p>
+                        <!-- Creates the 1/0 selected rounds, that will be for example 1/5 rounds -->
                         <div class="rounds--box">
                             <p id="currentRound">1</p>
                             <p id="slash">/</p>
@@ -58,6 +68,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Select colors / amount of rounds area -->
             <div class="select-container" id="wrapper-button">
                 <a href="#" class="color-0--select" id="0">2</a>
                 <a href="#" class="color-1--select" id="1">5</a>
@@ -65,14 +76,17 @@
                 <a href="#" class="color-2--select" id="2">10</a>
                 <a href="#" class="color-3--select" id="3">15</a>
             </div>
+            <!-- High Score area -->
             <div class="high-score-container">
                 <p id="hS">High Score:</p>
                 <div class="high-score--box">0</div>
                 <p id="lS">Latest Score:</p>
                 <div class="latest-score--box">0</div>
             </div>
+            <!-- Instructions Area -->
             <div class="instruction-container">
                 <button class="dropContent--btn">Instructions, press here!</button>
+                <!-- This will show on landscape by default and hidden on portrait -->
                 <div id="myDropdown" class="dropdown-content">
                     <p>First pick the amount of rounds. Higher amount of rounds the higher the risk, but greater the score.
                         Select a color from the four blinking colors.
@@ -84,11 +98,13 @@
                     </p>
                 </div>
             </div>
+            <!-- Footer Area -->
             <footer>
                 <p>Color Racing Copyright © 2022</p>
                 <p>Jörgen Brattäng</p>
             </footer>
         </main>
+        <!-- javaScripts -->
         <script src="assets/js/script.js"></script>
     </body>
 </html>

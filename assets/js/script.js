@@ -40,11 +40,31 @@ if (window.matchMedia("(orientation: landscape)").matches) {
     }
 }
 
+setAllBaseColors();
+
+/**
+ * Sets all the base Colors of the game
+ */
+function setAllBaseColors() {
+document.querySelector("body").style.backgroundColor = blackColor;
+document.querySelector("header").style.color = whiteColor;
+document.querySelector(".instruction-container").style.backgroundColor = whiteColor;
+document.querySelector(".high-score-container").style.backgroundColor = whiteColor;
+document.querySelector(".select-container").style.backgroundColor = whiteColor;
+document.querySelector(".race-container ").style.backgroundColor = whiteColor;
 document.querySelector(".color-0").style.backgroundColor = color_0;
 document.querySelector(".color-1").style.backgroundColor = color_1;
 document.querySelector(".color-2").style.backgroundColor = color_2;
 document.querySelector(".color-3").style.backgroundColor = color_3;
-document.querySelector(".dropContent--btn").style.backgroundColor = playColor;
+document.querySelector(".dropContent--btn").style.color = whiteColor;
+// Checks if the user has landscape or portrait view, and changes the color accordingly.
+if (window.matchMedia("(orientation: landscape)").matches) {
+    document.querySelector(".dropContent--btn").style.backgroundColor = blackColor;
+} else {
+    document.querySelector(".dropContent--btn").style.backgroundColor = playColor;
+}
+document.querySelector("footer").style.color = whiteColor;
+}
 
 resetColorRounds();
 
