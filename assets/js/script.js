@@ -59,9 +59,14 @@ document.querySelector(".color-3").style.backgroundColor = color_3;
 document.querySelector(".dropContent--btn").style.color = whiteColor;
 // Checks if the user has landscape or portrait view, and changes the color accordingly.
 if (window.matchMedia("(orientation: landscape)").matches) {
-    document.querySelector(".dropContent--btn").style.backgroundColor = blackColor;
+    const btn = document.querySelector(".dropContent--btn");
+    btn.style.backgroundColor = blackColor;
+    btn.style.color = whiteColor;
+
 } else {
-    document.querySelector(".dropContent--btn").style.backgroundColor = playColor;
+    const btn = document.querySelector(".dropContent--btn");
+    btn.style.backgroundColor = playColor;
+    btn.style.color = 'black';
 }
 document.querySelector("footer").style.color = whiteColor;
 }
@@ -113,7 +118,7 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
                     changeNumber = document.getElementById(number);
                     changeNumber.style.opacity = "1";
                     changeNumber.innerHTML = "";
-                    colorFinish[number].style.cssText = "background-color: white";
+                    colorFinish[number].style.cssText = "background-color: white;";
                 }
 
                 colorBlinkingActive();
@@ -449,8 +454,7 @@ function toggleInstructions() {
     /* Toggle the instructions open and close */
     document.querySelector("#myDropdown").classList.toggle("show");
     const btn = document.querySelector(".dropContent--btn");
-    /* Toggle the button's color with CSS .buttonColor */
-    btn.classList.toggle("buttonColor");
+
     if (btn.innerHTML === "Instructions, press here!") {
         btn.innerHTML = "Instructions how to play!";
         btn.style.backgroundColor = blackColor;
