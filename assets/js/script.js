@@ -1,10 +1,9 @@
 /* Sets all the color that are used throughout the code */
-const color_0 = "#91d346";
-const color_1 = "#b13a58";
-const playColor = "#235e1d";
-const color_2 = "#3739b4";
-const color_3 = "#da9226";
-const waitColor = "#C9C9C9";
+const color_0 = "#F6511D";
+const color_1 = "#FFB400";
+const playColor = "#029111";
+const color_2 = "#00A6ED";
+const color_3 = "#7FB800";
 const textColor = "#393939";
 const resetColor = "#8685EF";
 const whiteColor = "#FAF7FF";
@@ -40,6 +39,11 @@ if (window.matchMedia("(orientation: landscape)").matches) {
     }
 }
 
+document.querySelector(".color-1").style.backgroundColor = color_0;
+document.querySelector(".color-2").style.backgroundColor = color_1;
+document.querySelector(".color-3").style.backgroundColor = color_2;
+document.querySelector(".color-4").style.backgroundColor = color_3;
+
 resetColorRounds();
 
 
@@ -61,11 +65,11 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
                 targetOthers.style.opacity = "0.5";
             }
             /* Changes the background color of the current chosen color */
-            aEvent.target.style.cssText = "background-color: #235e1d; opacity: 1;";
+            aEvent.target.style.cssText = 'background-color:' + playColor + '; opacity: 1;';
             selectedRounds.innerHTML = limitRounds;
 
             selectBtn = document.querySelector(".play-button--btn");
-            selectBtn.style.backgroundColor = "#235e1d";
+            selectBtn.style.backgroundColor = playColor;
 
             colorBlinkingNone();
         }
@@ -181,20 +185,23 @@ function resetGame() {
  */
 function resetColorRounds() {
     const color1 = document.querySelector(".color-1--select");
-    color1.style.backgroundColor = "#235e1d";
+    color1.style.backgroundColor = playColor;
     color1.style.animation = "selection 1000ms infinite";
 
     const color2 = document.querySelector(".color-2--select");
-    color2.style.backgroundColor = "#235e1d";
+    color2.style.backgroundColor = playColor;
     color2.style.animation = "selection 1000ms infinite";
 
     const color3 = document.querySelector(".color-3--select");
-    color3.style.backgroundColor = "#235e1d";
+    color3.style.backgroundColor = playColor;
     color3.style.animation = "selection 1000ms infinite";
 
     const color4 = document.querySelector(".color-4--select");
-    color4.style.backgroundColor = "#235e1d";
+    color4.style.backgroundColor = playColor;
     color4.style.animation = "selection 1000ms infinite";
+
+    const selectBtn = document.querySelector(".play-button--btn");
+    selectBtn.style.backgroundColor = textColor;
 }
 
 /**
@@ -230,7 +237,8 @@ function colorBlinkingActive() {
     const color4 = document.querySelector(".color-4--select");
     color4.style.animation = "selection 1000ms infinite";
 
-    selectBtn = document.querySelector(".play-button--btn");
+    const selectBtn = document.querySelector(".play-button--btn");
+    selectBtn.style.backgroundColor = textColor;
     selectBtn.style.animation = "none";
 }
 
@@ -250,7 +258,8 @@ function colorBlinkingNone() {
     const color4 = document.querySelector(".color-4--select");
     color4.style.animation = "none";
 
-    selectBtn = document.querySelector(".play-button--btn");
+    const selectBtn = document.querySelector(".play-button--btn");
+    selectBtn.style.backgroundColor = playColor;
     selectBtn.style.animation = "selection 1000ms infinite";
 }
 
@@ -323,8 +332,8 @@ function runGame() {
     // Create a function/loop between this <<<----------
     /* Adds the praying person icon and changes the play button color */
     selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>';
-    selectPlay.style.backgroundColor = waitColor;
-    selectPlay.style.color = textColor;
+    selectPlay.style.backgroundColor = textColor;
+    selectPlay.style.color = whiteColor;
 
     // Creates an empty array
     const randomNumberArray = [];
@@ -415,7 +424,7 @@ function runGame() {
 function toggleInstructions() {
     /* Toggle the instructions open and close */
     document.querySelector("#myDropdown").classList.toggle("show");
-    btn = document.querySelector(".dropContent--btn");
+    const btn = document.querySelector(".dropContent--btn");
     /* Toggle the button's color with CSS .buttonColor */
     btn.classList.toggle("buttonColor");
     if (btn.innerHTML === "Instructions, press here!") {
@@ -456,8 +465,8 @@ function winnerColor(winnerArray) {
         document.getElementById("play").style.pointerEvents = "auto";
 
         selectPlay.innerHTML = '<i class="fa-solid fa-rotate-left"></i>';
-        selectPlay.style.backgroundColor = resetColor;
-        selectPlay.style.color = textColor;
+        selectPlay.style.backgroundColor = playColor;
+        selectPlay.style.color = whiteColor;
 
         /* Changes the play buttons ID to reset */
         document.getElementById("play").setAttribute("id", "reset");
