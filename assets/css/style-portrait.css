@@ -63,7 +63,7 @@
     .color-1 {
         grid-row: 1;
         grid-column: 1;
-        background-color: #685465;
+        background-color: #91d346;
         width: 100%;
         justify-self: center;
         border-radius: 10px;
@@ -73,7 +73,7 @@
     .color-2 {
         grid-row: 1;
         grid-column: 2;
-        background-color: #a96c7b;
+        background-color: #b13a58;
         width: 100%;
         justify-self: center;
         border-radius: 10px;
@@ -83,7 +83,7 @@
     .color-3 {
         grid-row: 1;
         grid-column: 3;
-        background-color: #e38c79;
+        background-color: #3739b4;
         width: 100%;
         justify-self: center;
         border-radius: 10px;
@@ -93,7 +93,7 @@
     .color-4 {
         grid-row: 1;
         grid-column: 4;
-        background-color: #ffbc6c;
+        background-color: #da9226;
         width: 100%;
         justify-self: center;
         border-radius: 10px;
@@ -299,7 +299,7 @@
         height: 50px;
         margin-top: 16px;
         border-radius: 10px;
-        background-color: #685465;
+        background-color: #91d346;
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         border: none;
         padding-top: 13px;
@@ -309,7 +309,7 @@
         height: 50px;
         margin-top: 16px;
         border-radius: 10px;
-        background-color: #a96c7b;
+        background-color: #b13a58;
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         border: none;
         padding-top: 13px;
@@ -319,7 +319,7 @@
         height: 50px;
         margin-top: 16px;
         border-radius: 10px;
-        background-color: #e38c79;
+        background-color: #3739b4;
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         border: none;
         padding-top: 13px;
@@ -329,7 +329,7 @@
         height: 50px;
         margin-top: 16px;
         border-radius: 10px;
-        background-color: #ffbc6c;
+        background-color: #da9226;
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         border: none;
         padding-top: 13px;
@@ -343,7 +343,7 @@
         border: none;
         text-align: center;
         color: #eee;
-        background-color: #00a97f;
+        background-color: #235e1d;
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
     }
 
@@ -406,7 +406,7 @@
         border: none;
         text-align: center;
         color: #faf7ff;
-        background-color: #00a97f;
+        background-color: #235e1d;
         box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
         font-family: "Poppins", sans-serif;
     }

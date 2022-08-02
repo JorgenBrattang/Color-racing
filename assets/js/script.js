@@ -1,9 +1,9 @@
 /* Sets all the color that are used throughout the code */
-const color_0 = "#685465";
-const color_1 = "#A96C7B";
-const playColor = "#00A97F";
-const color_2 = "#E38C79";
-const color_3 = "#FFBC6C";
+const color_0 = "#91d346";
+const color_1 = "#b13a58";
+const playColor = "#235e1d";
+const color_2 = "#3739b4";
+const color_3 = "#da9226";
 const waitColor = "#C9C9C9";
 const textColor = "#393939";
 const resetColor = "#8685EF";
@@ -61,11 +61,11 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
                 targetOthers.style.opacity = "0.5";
             }
             /* Changes the background color of the current chosen color */
-            aEvent.target.style.cssText = "background-color: #00A97F; opacity: 1;";
+            aEvent.target.style.cssText = "background-color: #235e1d; opacity: 1;";
             selectedRounds.innerHTML = limitRounds;
 
             selectBtn = document.querySelector(".play-button--btn");
-            selectBtn.style.backgroundColor = "#00A97F";
+            selectBtn.style.backgroundColor = "#235e1d";
 
             colorBlinkingNone();
         }
@@ -73,10 +73,10 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
         if (limitRounds != null) {
             if (targetID == "play") {
                 /* Sets the color to racing select */
-                document.querySelector(".color-1--select").style.backgroundColor = "#685465";
-                document.querySelector(".color-2--select").style.backgroundColor = "#A96C7B";
-                document.querySelector(".color-3--select").style.backgroundColor = "#E38C79";
-                document.querySelector(".color-4--select").style.backgroundColor = "#FFBC6C";
+                document.querySelector(".color-1--select").style.backgroundColor = color_0;
+                document.querySelector(".color-2--select").style.backgroundColor = color_1;
+                document.querySelector(".color-3--select").style.backgroundColor = color_2;
+                document.querySelector(".color-4--select").style.backgroundColor = color_3;
 
                 selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>';
                 roundChosen = true;
@@ -181,19 +181,19 @@ function resetGame() {
  */
 function resetColorRounds() {
     const color1 = document.querySelector(".color-1--select");
-    color1.style.backgroundColor = "#00A97F";
+    color1.style.backgroundColor = "#235e1d";
     color1.style.animation = "selection 1000ms infinite";
 
     const color2 = document.querySelector(".color-2--select");
-    color2.style.backgroundColor = "#00A97F";
+    color2.style.backgroundColor = "#235e1d";
     color2.style.animation = "selection 1000ms infinite";
 
     const color3 = document.querySelector(".color-3--select");
-    color3.style.backgroundColor = "#00A97F";
+    color3.style.backgroundColor = "#235e1d";
     color3.style.animation = "selection 1000ms infinite";
 
     const color4 = document.querySelector(".color-4--select");
-    color4.style.backgroundColor = "#00A97F";
+    color4.style.backgroundColor = "#235e1d";
     color4.style.animation = "selection 1000ms infinite";
 }
 
@@ -202,16 +202,16 @@ function resetColorRounds() {
  */
 function resetColorRaces() {
     const color1 = document.querySelector(".color-1--select");
-    color1.style.backgroundColor = "#685465";
+    color1.style.backgroundColor = color_0;
 
     const color2 = document.querySelector(".color-2--select");
-    color2.style.backgroundColor = "#A96C7B";
+    color2.style.backgroundColor = color_1;
 
     const color3 = document.querySelector(".color-3--select");
-    color3.style.backgroundColor = "#E38C79";
+    color3.style.backgroundColor = color_2;
 
     const color4 = document.querySelector(".color-4--select");
-    color4.style.backgroundColor = "#FFBC6C";
+    color4.style.backgroundColor = color_3;
 }
 
 /**
