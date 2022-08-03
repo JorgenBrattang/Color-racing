@@ -92,15 +92,7 @@ For easier reading the developer chose <a href="#" title="Link to google fonts P
 
 ## colorScheme
 The style utilizes a range of colors that contrast each other towards the background but compliments each other.
-<p style="padding: 10px; background-color: #685465">#685465<p>
-<p style="padding: 10px; background-color: #A96C7B">#A96C7B<p>
-<p style="padding: 10px; background-color: #E38C79">#E38C79<p>
-<p style="padding: 10px; background-color: #FFBC6C">#FFBC6C<p>
-<p style="padding: 10px; background-color: #00A97F">#00A97F<p>
-<p style="padding: 10px; background-color: #8685EF">#8685EF<p>
-<p style="padding: 10px; background-color: #FAF7FF; color: black">#FAF7FF<p>
-<p style="padding: 10px; background-color: #C9C9C9">#C9C9C9<p>
-<p style="padding: 10px; background-color: #393939">#393939<p>
+
 
 ## Features
 The features holds a number of elements that will guide the user throughout the game, so it's easy to follow along. Even without the explanatory text, you can just follow the blinking lights and get a grasp on how the game works.

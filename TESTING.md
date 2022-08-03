@@ -57,6 +57,20 @@ Video shows free resizing and three screens iPhone XR, iPad Air and Nest Hub Max
 ![openInstruction](assets/videos/README-videos/Feature/openInstruction-Mobile.webp)
 
 
+## LightHouse report
+![lightHouseReport](assets//images/TESTING-images/lightHouseReport.png)
+
+To explain why I didn't get 100 on Accessibility, is that I sacrificed that for UX. As you can see here, I had this made like this:
+
+```
+<a href="#" ...>
+```
+Thats because if I did not I would not get the same feedback from when hovering the buttons, it didn't feel right for the user and I could't fix that in time for the project to finish. Will research it in the future to so how to fix it.
+
+![lightHouseWarning](assets//images/TESTING-images/lightHouseWarning.png)
+
+
+
 ## Bug reports
 The developer encounter a number of bugs throughout the development of this game, there were hurdles to overcome but those were fixed with either help from tutors, slack community or researching the internet.
 
