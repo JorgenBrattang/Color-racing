@@ -1,122 +1,19 @@
-// Sets all the color that are used throughout the code
-const color_0 = "#F6511D";
-const color_1 = "#FFB400";
-const playColor = "#029111";
-const color_2 = "#00A6ED";
-const color_3 = "#7FB800";
-const blackColor = "#393939";
-const whiteColor = "#FAF7FF";
-// Selects all the class="first--box" (<div>) in the DOM
-const colorFinish = document.querySelectorAll(".placement-container > div > div");
-
-const selectPlay = document.querySelector("#play");
-selectPlay.innerHTML = '<i class="fa-regular fa-hand"></i>';
-const currentRound = document.getElementById("currentRound");
-const selectedRounds = document.getElementById("selectedRounds");
-const scoreBox = document.querySelector(".score--box");
-const highScoreBox = document.querySelector(".high-score--box");
-const latestScoreBox = document.querySelector(".latest-score--box");
-
-
-// Declares the global variables
-var colorID = null;
-var limitRounds = null;
-var roundChosen = null;
-var highScore = [];
-var colorScheme = [color_0, color_1, color_2, color_3];
-
-// Disables the entire document's option to select text
-const disableSelect = (e) => {
-    return false;
-};
-
-document.onselectstart = disableSelect;
-document.onmousedown = disableSelect;
-
-
-windowLandscapeCheck();
-setAllBaseColors();
-resetColorRounds();
-
-addGlobalEventListener("click", ".select-container > a", (aEvent) => {
-    let targetID = aEvent.target.id;
-    const limitRoundsArray = [2, 5, 10, 15];
-    let colorNumbers = [0, 1, 2, 3];
-
-    /* IF no round have been chosen, do this! */
-    if (roundChosen == null) {
-        if (targetID != "play") {
-            /* Gets the number of rounds from array with the targetID */
-            limitRounds = limitRoundsArray[targetID];
-
-            /* Takes away the current target ID from the array colorNumbers */
-            colorNumbers.splice(targetID, 1);
-
-            notSelectedOpacity(colorNumbers);
-            
-            /* Changes the background color of the current chosen color */
-            aEvent.target.style.cssText = 'background-color:' + playColor + '; opacity: 1;';
-            selectedRounds.innerHTML = limitRounds;
-
-            let selectBtn = document.querySelector(".play-button--btn");
-            selectBtn.style.backgroundColor = playColor;
-
-            colorBlinkingNone();
-        }
-
-        if (limitRounds != null) {
-            if (targetID == "play") {
-                setButtonsForPlayID();
-                resetColorOpacity(colorNumbers);
-                colorBlinkingActive();
-            }
-        } else {
-            alert("Choose the amount of rounds first!");
-        }
-    } else if (roundChosen == true) {
-    /* IF a round have been chosen, do this! */
-        /* Checks if you pressed a color instead of play button */
-        if (targetID != "play") {
-            resetColorRaces();
-            colorID = targetID;
-            
-            /* Takes away the current target ID from the array colorNumbers */
-            colorNumbers.splice(targetID, 1);
-            /* Selects every other color and change their opacity to 0.5 (not selected) */
-            for (let number of colorNumbers) {
-                let targetOthers = document.getElementById(number);
-                targetOthers.style.opacity = "0.5";
-            }
-
-            /* Changes the background color of the current chosen color */
-            aEvent.target.style.cssText = `opacity: 1;`;
-            aEvent.target.style.cssText = "box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.75); background-color: " + colorScheme[colorID];
-
-            colorBlinkingNone();
-        }
-
-        /* Checks if the colorID holds an ID or not. */
-        if (colorID != null) {
-            if (targetID == "play") {
-                runGame(limitRounds);
-            }
-        } else {
-            alert("Choose a color to race with first, then press the big green button!");
-        }
-
-        if (targetID == "reset") {
-            resetGame(colorNumbers);
-            colorBlinkingActive();
-            resetColorRaces();
-        }
-
-        if (targetID == "newGame") {
-            newGame(limitRoundsArray);
-            colorBlinkingActive();
-            limitRounds = null;
-        }
-    }
-});
+/**
+ * Sets all the colors for the game to begin, they will change in other functions
+ */
+ function setAllBaseColors() {
+    document.querySelector("body").style.backgroundColor = blackColor;
+    document.querySelector("header").style.color = whiteColor;
+    document.querySelector(".instruction-container").style.backgroundColor = whiteColor;
+    document.querySelector(".high-score-container").style.backgroundColor = whiteColor;
+    document.querySelector(".select-container").style.backgroundColor = whiteColor;
+    document.querySelector(".race-container ").style.backgroundColor = whiteColor;
+    document.querySelector(".color-0").style.backgroundColor = color_0;
+    document.querySelector(".color-1").style.backgroundColor = color_1;
+    document.querySelector(".color-2").style.backgroundColor = color_2;
+    document.querySelector(".color-3").style.backgroundColor = color_3;
+    document.querySelector("footer").style.color = whiteColor;
+}
 
 /* Toggles the instructions to show and hide */
 addGlobalEventListener("click", ".instruction-container > button", (buttonEvent) => {
@@ -140,7 +37,7 @@ addGlobalEventListener("click", ".instruction-container > button", (buttonEvent)
  * Changes all the color numbers expect the one chosen, and changes the rest to 50% opacity
  * @param {*} colorNumbers - Gets this array from global
  */
-function notSelectedOpacity(colorNumbers) {
+ function notSelectedOpacity(colorNumbers) {
     /* Selects every other color and change their opacity to 0.5 (not selected) */
     for (let number of colorNumbers) {
         let targetOthers = document.getElementById(number);
@@ -152,8 +49,9 @@ function notSelectedOpacity(colorNumbers) {
  * Changes all the color numbers back to 100% opacity
  * @param {*} colorNumbers - Gets this array from global
  */
- function fullSelectedOpacity(colorNumbers) {
+ function fullSelectedOpacity() {
     /* Sets all the colors back to 100% opacity */
+    colorNumbers = [0, 1, 2, 3];
     for (let number of colorNumbers) {
         document.getElementById(number).style.opacity = "1";
         colorFinish[number].style.cssText = "background-color: white";
@@ -200,7 +98,7 @@ function resetGame(colorNumbers) {
  * - Sets the placements to base color (white)
  */
 function resetColorOpacity(colorNumbers) {
-     colorNumbers = [0, 1, 2, 3];
+    colorNumbers = [0, 1, 2, 3];
     for (let number of colorNumbers) {
         let changeNumber = document.getElementById(number);
         changeNumber.style.opacity = "1";
@@ -499,126 +397,6 @@ function toggleInstructions() {
 }
 
 /**
- * This will give you the outPut where your color is and change the appropriate
- * fields to let you reset the game after you play.
- * @param {*} winnerArray Gets the array of winners, first color is the first input.
- */
-function winnerColor(winnerArray) {
-    if (winnerArray.length === 1) {
-        colorFinish[0].style.cssText = "background-color: " + winnerArray[0];
-        if (color_0 == winnerArray[0]) {
-            announceWinner(0);
-        } else if (color_1 == winnerArray[0]) {
-            announceWinner(1);
-        } else if (color_2 == winnerArray[0]) {
-            announceWinner(2);
-        } else if (color_3 == winnerArray[0]) {
-            announceWinner(3);
-        }
-    } else if (winnerArray.length === 2) {
-        colorFinish[1].style.cssText = "background-color: " + winnerArray[1];
-    } else if (winnerArray.length === 3) {
-        colorFinish[2].style.cssText = "background-color: " + winnerArray[2];
-    } else if (winnerArray.length === 4) {
-        colorFinish[3].style.cssText = "background-color: " + winnerArray[3];
-
-        // This will enable click event on the div 
-        document.getElementById("play").style.pointerEvents = "auto";
-
-        selectPlay.innerHTML = '<i class="fa-solid fa-rotate-left"></i>';
-        selectPlay.style.backgroundColor = playColor;
-        selectPlay.style.color = whiteColor;
-
-        // Changes the play buttons ID to reset
-        document.getElementById("play").setAttribute("id", "reset");
-
-        const rounds = parseInt(currentRound.innerHTML);
-        const score = parseInt(scoreBox.innerHTML);
-        maxRounds(rounds, score);
-    }
-}
-
-/**
- * This will let you decide what to do when you win or lose the game.
- * @param {*} winID Gets the winner's ID
- */
-function announceWinner(winID) {
-    if (winID == colorID) {
-        const score = parseInt(scoreBox.innerHTML);
-        plusScore(score);
-    } else {
-        const score = parseInt(scoreBox.innerHTML);
-        minusScore(score);
-    }
-}
-
-/**
- * Limits the amount of rounds to be played
- * @param {*} rounds - Amount of rounds that you want to play
- * @param {*} score - This is your score count
- */
-function maxRounds(rounds, score) {
-    if (rounds == limitRounds) {
-        if (score > highScore) {
-            highScore.push(score);
-            highScoreBox.innerHTML = score;
-            highScoreBox.style.animation = "glowingWin 250ms 3";
-            latestScoreBox.style.animation = "glowingWin 250ms 3";
-        }
-        latestScoreBox.innerHTML = score;
-        if (score < highScore) {
-            latestScoreBox.style.animation = "glowingLose 250ms 3";
-        }
-        // Sets the reset button back to ID of play
-        document.getElementById("reset").setAttribute("id", "newGame");
-
-        // Changes to newGame Button
-        selectPlay.innerHTML = '<i class="fa-solid fa-gamepad"></i>';
-        selectPlay.style.backgroundColor = playColor;
-        selectPlay.style.color = whiteColor;
-    }
-}
-
-/**
- * This will increase the rounds by 1
- * @param {*} rounds - Gets the amount of rounds from the DOM
- * @returns
- */
-function plusRounds(rounds) {
-    if (rounds == limitRounds) {
-        // Do nothing
-    } else {
-        rounds += 1;
-        currentRound.innerHTML = rounds;
-    }
-    return rounds;
-}
-
-/**
- * This will increase the score by 5
- * @param {*} score - Gets the score from the from the DOM
- * @returns
- */
-function plusScore(score) {
-    score += 5;
-    scoreBox.innerHTML = score;
-    scoreBox.style.animation = "glowingWin 250ms 3";
-    return score;
-}
-
-/**
- * This will decrease the score by 3
- * @param {*} score - Gets the score from the from the DOM
- * @returns
- */
-function minusScore(score) {
-    score -= 3;
-    scoreBox.innerHTML = score;
-    scoreBox.style.animation = "glowingLose 250ms 3";
-    return score;
-}
-
-/**
  * This function add eventListener to your code.
  * Follow the instructions below to make it work.
  * @param {*} type What type do you want? "click", "mouseover" etc.
@@ -629,21 +407,4 @@ function addGlobalEventListener(type, selector, callback) {
     document.addEventListener(type, (e) => {
         if (e.target.matches(selector)) callback(e);
     });
-}
-
-/**
- * Sets all the colors for the game to begin, they will change in other functions
- */
- function setAllBaseColors() {
-    document.querySelector("body").style.backgroundColor = blackColor;
-    document.querySelector("header").style.color = whiteColor;
-    document.querySelector(".instruction-container").style.backgroundColor = whiteColor;
-    document.querySelector(".high-score-container").style.backgroundColor = whiteColor;
-    document.querySelector(".select-container").style.backgroundColor = whiteColor;
-    document.querySelector(".race-container ").style.backgroundColor = whiteColor;
-    document.querySelector(".color-0").style.backgroundColor = color_0;
-    document.querySelector(".color-1").style.backgroundColor = color_1;
-    document.querySelector(".color-2").style.backgroundColor = color_2;
-    document.querySelector(".color-3").style.backgroundColor = color_3;
-    document.querySelector("footer").style.color = whiteColor;
 }
