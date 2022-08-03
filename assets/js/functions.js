@@ -83,16 +83,23 @@ function resetColorOpacity(colorNumbers) {
     }
 }
 
+// Declaring color select and play button to fetch from the DOM
+const colorID_0 = document.querySelector(".color-0--select");
+const colorID_1 = document.querySelector(".color-1--select");
+const colorID_2 = document.querySelector(".color-2--select");
+const colorID_3 = document.querySelector(".color-3--select");
+const selectBtn = document.querySelector(".play-button--btn");
+
 /**
  * - Sets the basic background color to the buttons.
  * - Play button changes icon to Play
  * - And RoundChosen is equal to true
  */
 function setButtonsForPlayID() {
-    document.querySelector(".color-0--select").style.backgroundColor = color_0;
-    document.querySelector(".color-1--select").style.backgroundColor = color_1;
-    document.querySelector(".color-2--select").style.backgroundColor = color_2;
-    document.querySelector(".color-3--select").style.backgroundColor = color_3;
+    colorID_0.style.backgroundColor = color_0;
+    colorID_1.style.backgroundColor = color_1;
+    colorID_2.style.backgroundColor = color_2;
+    colorID_3.style.backgroundColor = color_3;
 
     selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>';
     roundChosen = true;
@@ -100,57 +107,38 @@ function setButtonsForPlayID() {
 
 /**
  * Sets the background color of the buttons to be ROUNDS color
+ * And adds an flashing animation
  */
 function resetColorRounds() {
-    const color1 = document.querySelector(".color-0--select");
-    const color2 = document.querySelector(".color-1--select");
-    const color3 = document.querySelector(".color-2--select");
-    const color4 = document.querySelector(".color-3--select");
-    const selectBtn = document.querySelector(".play-button--btn");
-
-    color1.style.backgroundColor = playColor;
-    color1.style.animation = "selection 1000ms infinite";
-
-    
-    color2.style.backgroundColor = playColor;
-    color2.style.animation = "selection 1000ms infinite";
-
-    
-    color3.style.backgroundColor = playColor;
-    color3.style.animation = "selection 1000ms infinite";
-
-    
-    color4.style.backgroundColor = playColor;
-    color4.style.animation = "selection 1000ms infinite";
-
-    
+    colorID_0.style.backgroundColor = playColor;
+    colorID_0.style.animation = "selection 1000ms infinite";
+    colorID_1.style.backgroundColor = playColor;
+    colorID_1.style.animation = "selection 1000ms infinite";
+    colorID_2.style.backgroundColor = playColor;
+    colorID_2.style.animation = "selection 1000ms infinite";
+    colorID_3.style.backgroundColor = playColor;
+    colorID_3.style.animation = "selection 1000ms infinite";
     selectBtn.style.backgroundColor = blackColor;
 }
-
-const color1 = document.querySelector(".color-0--select");
-const color2 = document.querySelector(".color-1--select");
-const color3 = document.querySelector(".color-2--select");
-const color4 = document.querySelector(".color-3--select");
-const selectBtn = document.querySelector(".play-button--btn");
 
 /**
  * Sets the background color of the buttons to be RACING color
  */
 function resetColorRaces() {
-    color1.style.backgroundColor = color_0;
-    color2.style.backgroundColor = color_1;
-    color3.style.backgroundColor = color_2;
-    color4.style.backgroundColor = color_3;
+    colorID_0.style.backgroundColor = color_0;
+    colorID_1.style.backgroundColor = color_1;
+    colorID_2.style.backgroundColor = color_2;
+    colorID_3.style.backgroundColor = color_3;
 }
 
 /**
  * Sets the blinking on all buttons except PlayButton
  */
 function colorBlinkingActive() {
-    color1.style.animation = "selection 1000ms infinite";
-    color2.style.animation = "selection 1000ms infinite";
-    color3.style.animation = "selection 1000ms infinite";
-    color4.style.animation = "selection 1000ms infinite";
+    colorID_0.style.animation = "selection 1000ms infinite";
+    colorID_1.style.animation = "selection 1000ms infinite";
+    colorID_2.style.animation = "selection 1000ms infinite";
+    colorID_3.style.animation = "selection 1000ms infinite";
     selectBtn.style.backgroundColor = blackColor;
     selectBtn.style.animation = "none";
 }
@@ -159,10 +147,10 @@ function colorBlinkingActive() {
  * Sets blinking to PlayButton except for color/round buttons
  */
 function colorBlinkingNone() {
-    color1.style.animation = "none";
-    color2.style.animation = "none";
-    color3.style.animation = "none";
-    color4.style.animation = "none";
+    colorID_0.style.animation = "none";
+    colorID_1.style.animation = "none";
+    colorID_2.style.animation = "none";
+    colorID_3.style.animation = "none";
     selectBtn.style.backgroundColor = playColor;
     selectBtn.style.animation = "selection 1000ms infinite";
 }
