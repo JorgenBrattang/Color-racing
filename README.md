@@ -1,7 +1,7 @@
 # Color Racing
-Is a game where you can race colors against other colors, it's a fun and a bit addictive. The project was aimed towards giving the user a fun time and for the developer to learn concepts and how to put things together.
+Is a game where you can race colors against other, it's a fun and a bit addictive. The project is aimed towards giving the user a fun time and for the developer to learn concepts and how to put things together.
 
-This game is made to target all ages from 3-100+. So the game is easy to follow along, with the blinking buttons that will guide you through the game and at the same time giving you the satisfaction of goal of the game which is to try to get as high as possible score. But be warned it is a game of chance, so the more rounds that are chosen the higher the risk.
+This game is made for all ages from +3. So the game is easy to follow along, with the blinking buttons that will guide you through the game and at the same time giving you the satisfaction of goal of the game which is to try to get as high as possible score. But be warned it is a game of chance, so the more rounds that are chosen the higher the risk.
 
 <a href="https://jorgenbrattang.github.io/Color-racing/" title="Link to live website" rel="nofollow">View live website here!</a>
 
@@ -19,16 +19,16 @@ This game is made to target all ages from 3-100+. So the game is easy to follow 
     - [Surface](#surface)
     - [Changes during the design process](#changes-during-the-design-process)
     - [Typography](#typography)
-    - [colorScheme](#colorScheme)
+    - [Color scheme](#color-scheme)
     - [Features](#features)
 - [Testing](#testing)
-    - [unfixedBugs](#unfixed-Bugs)
+    - [unfixedBugs](#unfixed-bugs)
 - [Technologies used](#technologies-used)
     - [Main Language used](#main-language-used)
     - [Frameworks Libraries and Programs Used](#frameworks-libraries-and-programs-used)
 - [Credits](#credits)
     - [Tutorials](#tutorials)
-    - [What I learned](#what-I-learned)
+    - [What I learned](#what-i-learned)
     - [Continued development](#continued-development)
     - [Author](#author)
     - [Acknowledgements](#acknowledgements)
@@ -36,9 +36,9 @@ This game is made to target all ages from 3-100+. So the game is easy to follow 
 # User experience UX
 
 ## User stories
-- Want to have the game to be simple enough to play without much thought.
-- The game should be satisfying and a feel of accomplishment.
-- The color scheme should be please to look at.
+- The game should be simple enough to play without much thought.
+- The game should be satisfying and give a feel of accomplishment.
+- The color scheme should be pleasing to look at.
 - The game should be able to play on mobile, tablet and PC.
 
 [Back to top](#table-of-content)
@@ -54,12 +54,12 @@ This game is made to target all ages from 3-100+. So the game is easy to follow 
 [Back to top](#table-of-content)
 
 # Development
-The development of this website started with getting a feel for how that could manage to get colors to race each other, and the logical thing was gravity simulated with a progressbar that goes for 10% to 100%. And for the user to be able to choose which color to race with, and how many tries to try to get it the highest score possible.
+To develop this website, the developer had to think of a way colors moved and the easy answer is with gravity which could be simulated with a progressbar that goes for 10% to 100%. The user should be able to choose the number of rounds that should be played, to set the chances of getting a greater highscore. Choose their color for each round and watch it slowly make it towards the finishline. Where the colors would line up and from first to last. And give the user a score for each round. And finally a high score and latest score.
 
 [Back to top](#table-of-content)
 
 ## Strategy
-To achieve this the developer have to first learn how to do a progressbar and how to control it's movements with control, once that is achieved the developer need a way to randomize the movement of the progress bar and how to get so there is always one winner and no one with the same number. 
+To achieve this the developer have to first learn how to make a progressbar and how to control it's movements with control, once that is achieved the developer need a way to randomize the movement of the progress bar and how to get so there is always one winner and no one with the same number. 
 
 After that it's straight forward on just placing buttons and get them to control first, how many rounds there is to be played. After that which color to be raced and a loading phase where you have to wait until the race is over. And then start the whole thing over until the chosen number of rounds is achieved so we can get a latest score and possible a high score if that was achieved.
 
@@ -73,7 +73,7 @@ To achieve the scope of this project the game has to have these criteria:
 - Alerts if something the user did in advance, and how to guide them to the right path
 - The achievement when the user finished the game, high score and a latest score
 
-Onces these criteria has been meet the game will function well and have achieved the purpose.
+Onces these criteria has been meet the game will function well and have achieved its purpose.
 
 [Back to top](#table-of-content)
 
@@ -100,7 +100,7 @@ The surface was made using the skeleton, just with some better graphics.
 [Back to top](#table-of-content)
 
 ## Changes during the design process
-The surface was changed a lot during the development of this project due to feedback from mentor and family, for example the game lacked a goal at first. That came to mind quite quickly after the skeleton was made and what came to be the basic coding of the game. 
+The surface was changed a lot during the development of this project due to feedback from mentor and family, for example the game lacked a goal at first. That came to mind quite quickly after the skeleton was made and what came to be the basic code of the game. 
 
 The game needed to have a goal, which was declared to be a high score and a latest score. To let the user see what their recent achievements had been, and a way to let the user choose the number of difficulty to gain a higher score which introduced the round selection. After those changes the user feedback needed a simpler way to go about the game which lead to flashing buttons to guide the user towards pressing the right button at the right time.
 
@@ -111,7 +111,7 @@ For easier reading the developer chose <a href="#" title="Link to google fonts P
 
 [Back to top](#table-of-content)
 
-## colorScheme
+## Color scheme
 The style utilizes a range of colors that contrast each other towards the background but compliments each other.
 
 #000000<br>
