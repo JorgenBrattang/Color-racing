@@ -575,6 +575,11 @@ function announceWinner(winID) {
  * Sets the blinking on all buttons except PlayButton
  */
  function colorBlinkingActive() {
+    const colorID_0 = document.querySelector(".color-0--select");
+    const colorID_1 = document.querySelector(".color-1--select");
+    const colorID_2 = document.querySelector(".color-2--select");
+    const colorID_3 = document.querySelector(".color-3--select");
+    const selectBtn = document.querySelector(".play-button--btn");
     colorID_0.style.animation = "selection 1000ms infinite";
     colorID_1.style.animation = "selection 1000ms infinite";
     colorID_2.style.animation = "selection 1000ms infinite";
@@ -587,6 +592,11 @@ function announceWinner(winID) {
  * Sets blinking to PlayButton except for color/round buttons
  */
 function colorBlinkingNone() {
+    const colorID_0 = document.querySelector(".color-0--select");
+    const colorID_1 = document.querySelector(".color-1--select");
+    const colorID_2 = document.querySelector(".color-2--select");
+    const colorID_3 = document.querySelector(".color-3--select");
+    const selectBtn = document.querySelector(".play-button--btn");
     colorID_0.style.animation = "none";
     colorID_1.style.animation = "none";
     colorID_2.style.animation = "none";
