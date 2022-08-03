@@ -93,6 +93,23 @@ For easier reading the developer chose <a href="#" title="Link to google fonts P
 ## colorScheme
 The style utilizes a range of colors that contrast each other towards the background but compliments each other.
 
+#000000<br>
+![000000](assets/images/README-images/colorScheme/000000.png)<br>
+#00A6ED<br>
+![00A6ED](assets/images/README-images/colorScheme/00A6ED.png)<br>
+#7FB800<br>
+![7FB800](assets/images/README-images/colorScheme/7FB800.png)<br>
+#029111<br>
+![029111](assets/images/README-images/colorScheme/029111.png)<br>
+#393939<br>
+![393939](assets/images/README-images/colorScheme/393939.png)<br>
+#f6511d<br>
+![f6511d](assets/images/README-images/colorScheme/f6511d.png)<br>
+#FAF7FF<br>
+![FAF7FF](assets/images/README-images/colorScheme/FAF7FF.png)<br>
+#FFB400<br>
+![FFB400](assets/images/README-images/colorScheme/FFB400.png)<br>
+
 
 ## Features
 The features holds a number of elements that will guide the user throughout the game, so it's easy to follow along. Even without the explanatory text, you can just follow the blinking lights and get a grasp on how the game works.
@@ -189,9 +206,10 @@ To see the testing part, please follow this link: <a href="https://github.com/Jo
 - One issue that I have not found an answer to is when sometimes when working with the inspect window in chrome, it can suddenly just change the size of the screen without adding or removing code. But it will be fixed with reloading the page, so I will keep research towards getting a clear answer to this problem.
 
 - Am I Responsive bug when using the this code, pulls the page up in the viewport. Could not find a fix for it, it works just fine when browsing normally.
-```
+```java
 document.querySelector("#myDropdown").scrollIntoView({
-        behavior: "smooth",
+        behavior: "smooth"
+    });
 ```
 
 
