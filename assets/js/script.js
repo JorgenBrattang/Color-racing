@@ -17,6 +17,8 @@ const scoreBox = document.querySelector(".score--box");
 const highScoreBox = document.querySelector(".high-score--box");
 const latestScoreBox = document.querySelector(".latest-score--box");
 
+
+
 var colorID = null;
 var limitRounds = null;
 var roundChosen = null;
@@ -202,15 +204,10 @@ function setButtonsForPlayID() {
     roundChosen = true;
 }
 
-function buttonSelect() {
-    // LOOK THIS UP, AND MAKE IT WORK!
-}
-
 /**
  * Sets the background color of the buttons to be ROUNDS color
  */
 function resetColorRounds() {
-    buttonSelect();
     const color1 = document.querySelector(".color-0--select");
     const color2 = document.querySelector(".color-1--select");
     const color3 = document.querySelector(".color-2--select");
@@ -461,10 +458,12 @@ function toggleInstructions() {
 
     if (btn.innerHTML === "Instructions, press here!") {
         btn.innerHTML = "Instructions how to play!";
-        btn.style.backgroundColor = blackColor;
+        // btn.style.backgroundColor = blackColor;
+        // btn.style.color = whiteColor;
+        btn.style.cssText = 'font-weight: 400; color: ' + whiteColor + '; background-color: ' + blackColor + ';'
     } else {
         btn.innerHTML = "Instructions, press here!";
-        btn.style.backgroundColor = playColor;
+        btn.style.cssText = 'font-weight: 600; color: black; background-color: ' + playColor + ';'
     }
     document.querySelector("#myDropdown").scrollIntoView({
         behavior: "smooth",
@@ -618,17 +617,5 @@ function addGlobalEventListener(type, selector, callback) {
     document.querySelector(".color-1").style.backgroundColor = color_1;
     document.querySelector(".color-2").style.backgroundColor = color_2;
     document.querySelector(".color-3").style.backgroundColor = color_3;
-    document.querySelector(".dropContent--btn").style.color = whiteColor;
-    // Checks if the user has landscape or portrait view, and changes the color accordingly.
-    if (window.matchMedia("(orientation: landscape)").matches) {
-        const btn = document.querySelector(".dropContent--btn");
-        btn.style.backgroundColor = blackColor;
-        btn.style.color = whiteColor;
-    
-    } else {
-        const btn = document.querySelector(".dropContent--btn");
-        btn.style.backgroundColor = playColor;
-        btn.style.color = 'black';
-    }
     document.querySelector("footer").style.color = whiteColor;
 }
