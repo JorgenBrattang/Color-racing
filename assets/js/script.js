@@ -1,4 +1,4 @@
-/* Sets all the color that are used throughout the code */
+// Sets all the color that are used throughout the code
 const color_0 = "#F6511D";
 const color_1 = "#FFB400";
 const playColor = "#029111";
@@ -6,7 +6,7 @@ const color_2 = "#00A6ED";
 const color_3 = "#7FB800";
 const blackColor = "#393939";
 const whiteColor = "#FAF7FF";
-/* Selects all the class="first--box" (<div>) in the DOM */
+// Selects all the class="first--box" (<div>) in the DOM
 const colorFinish = document.querySelectorAll(".placement-container > div > div");
 
 const selectPlay = document.querySelector("#play");
@@ -18,35 +18,25 @@ const highScoreBox = document.querySelector(".high-score--box");
 const latestScoreBox = document.querySelector(".latest-score--box");
 
 
-
+// Declares the global variables
 var colorID = null;
 var limitRounds = null;
 var roundChosen = null;
 var highScore = [];
 var colorScheme = [color_0, color_1, color_2, color_3];
 
-/* Disables the entire document's option to select text */
+// Disables the entire document's option to select text
 const disableSelect = (e) => {
     return false;
 };
+
 document.onselectstart = disableSelect;
 document.onmousedown = disableSelect;
 
-if (window.matchMedia("(orientation: landscape)").matches) {
-    toggleInstructions();
-    if(document.documentElement.clientHeight <= 600){
-        alert('You are using a screen height is low, might I suggest using portrait / vertical view?');
-    }
-}
 
-
+windowLandscapeCheck();
 setAllBaseColors();
-
-
-
-
 resetColorRounds();
-
 
 addGlobalEventListener("click", ".select-container > a", (aEvent) => {
     let targetID = aEvent.target.id;
@@ -133,11 +123,50 @@ addGlobalEventListener("click", ".instruction-container > button", (buttonEvent)
     toggleInstructions();
 });
 
+/**
+ * Checks if the orientation is landscape, if so checks the height.
+ * If lower then 600px, give an alert to change view to portrait
+ */
+ function windowLandscapeCheck() {
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        toggleInstructions();
+        if(document.documentElement.clientHeight <= 600){
+            alert('You are using a screen height is low, might I suggest using portrait / vertical view?');
+        }
+    }
+}
+
+/**
+ * Changes all the color numbers expect the one chosen, and changes the rest to 50% opacity
+ * @param {*} colorNumbers - Gets this array from global
+ */
 function notSelectedOpacity(colorNumbers) {
     /* Selects every other color and change their opacity to 0.5 (not selected) */
     for (let number of colorNumbers) {
         let targetOthers = document.getElementById(number);
         targetOthers.style.opacity = "0.5";
+    }
+}
+
+/**
+ * Changes all the color numbers back to 100% opacity
+ * @param {*} colorNumbers - Gets this array from global
+ */
+ function fullSelectedOpacity(colorNumbers) {
+    /* Sets all the colors back to 100% opacity */
+    for (let number of colorNumbers) {
+        document.getElementById(number).style.opacity = "1";
+        colorFinish[number].style.cssText = "background-color: white";
+    }
+}
+
+/**
+ * Reset the buttons, so you can click them again.
+ */
+function resetButtons() {
+    const buttonNumber = [0, 1, 2, 3, "play"];
+    for (let id of buttonNumber) {
+        document.getElementById(id).style.pointerEvents = "auto";
     }
 }
 
@@ -148,20 +177,12 @@ function resetGame(colorNumbers) {
     /* Deselects the color chosen */
     colorID = null;
 
-    /* Sets all the colors back to 100% opacity */
-    for (let number of colorNumbers) {
-        document.getElementById(number).style.opacity = "1";
-        colorFinish[number].style.cssText = "background-color: white";
-    }
+    fullSelectedOpacity(colorNumbers);
 
     /* Sets the reset button back to ID of play */
     document.getElementById("reset").setAttribute("id", "play");
 
-    /* Reset the buttons, so you can click them */
-    const buttonNumber = [0, 1, 2, 3, "play"];
-    for (let id of buttonNumber) {
-        document.getElementById(id).style.pointerEvents = "auto";
-    }
+    resetButtons();
 
     /* Sets the icon on Play button */
     selectPlay.innerHTML = '<i class="fa-solid fa-play"></i>';
@@ -293,17 +314,23 @@ function colorBlinkingNone() {
 }
 
 /**
+     * Resets the rounds innerHTML to base value
+     */
+ function roundReset() {
+    const roundReset = [0, 1, 2, 3];
+    for (let round of roundReset) {
+        let changeNumber = document.getElementById(round);
+        return changeNumber.innerHTML = `${limitRoundsArray[round]}`;
+    }
+}
+
+/**
  * This will start a new game, by resetting everything (like reloading page)
  */
 function newGame(limitRoundsArray) {
     resetColorRounds();
 
-    /* Resets the rounds innerHTML to base value */
-    const roundReset = [0, 1, 2, 3];
-    for (let round of roundReset) {
-        let changeNumber = document.getElementById(round);
-        changeNumber.innerHTML = `${limitRoundsArray[round]}`;
-    }
+    roundReset();
 
     roundChosen = null;
 
