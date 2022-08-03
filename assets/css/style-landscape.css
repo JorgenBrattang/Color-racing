@@ -278,7 +278,7 @@
     .color-0--select {
         grid-row: 2;
         border-radius: 10px;
-        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.75);
         border: none;
         padding-top: 10px;
     }
@@ -286,7 +286,7 @@
     .color-1--select {
         grid-row: 2;
         border-radius: 10px;
-        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.75);
         border: none;
         padding-top: 10px;
     }
@@ -294,7 +294,7 @@
     .color-2--select {
         grid-row: 2;
         border-radius: 10px;
-        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.75);
         border: none;
         padding-top: 10px;
     }
@@ -302,7 +302,7 @@
     .color-3--select {
         grid-row: 2;
         border-radius: 10px;
-        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.75);
         border: none;
         padding-top: 10px;
     }
@@ -314,7 +314,7 @@
         font-size: 32px;
         text-align: center;
         color: #faf7ff;
-        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.75);
     }
 
     /* ------ highScore container ------ */
@@ -385,7 +385,7 @@
         border-radius: 25px;
         border: none;
         text-align: center;
-        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.75);
         font-family: "Poppins", sans-serif;
     }
 

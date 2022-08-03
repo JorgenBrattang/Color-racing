@@ -89,7 +89,7 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
         if (targetID != "play") {
             resetColorRaces();
             colorID = targetID;
-
+            
             /* Takes away the current target ID from the array colorNumbers */
             colorNumbers.splice(targetID, 1);
             /* Selects every other color and change their opacity to 0.5 (not selected) */
@@ -100,7 +100,7 @@ addGlobalEventListener("click", ".select-container > a", (aEvent) => {
 
             /* Changes the background color of the current chosen color */
             aEvent.target.style.cssText = `opacity: 1;`;
-            aEvent.target.style.cssText = "background-color: " + colorScheme[colorID];
+            aEvent.target.style.cssText = "box-shadow: inset -2px -2px 0px 5px rgba(0, 0, 0, 0.75); background-color: " + colorScheme[colorID];
 
             colorBlinkingNone();
         }
@@ -458,8 +458,6 @@ function toggleInstructions() {
 
     if (btn.innerHTML === "Instructions, press here!") {
         btn.innerHTML = "Instructions how to play!";
-        // btn.style.backgroundColor = blackColor;
-        // btn.style.color = whiteColor;
         btn.style.cssText = 'font-weight: 400; color: ' + whiteColor + '; background-color: ' + blackColor + ';'
     } else {
         btn.innerHTML = "Instructions, press here!";

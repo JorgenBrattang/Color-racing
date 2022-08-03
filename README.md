@@ -116,7 +116,8 @@ With that said, here are the features:
 - After the choosing of rounds, the buttons will change to the racing colors so you can pick your champion. The same thing will happen to these buttons, they will flash so you know where to press next to progress the game.
     - As the rounds choosing buttons these too will change in opacity accordingly to the one pressed.
 
-![colorsBlinking](assets/videos/README-videos/Feature/colorsBlinking.webp)
+![colorsBlinking](assets/videos/README-videos/Feature/colorsBlinking.webp)<br>
+![colorsBlinking](assets/videos/README-videos/Feature/colorsBlinkingPressed.webp)
 
 ### <u>Hand blinking to praying figure</u>
 - When the user have chosen their color to be raced, they will be guided to the "Play" button which will start the race. So onces pressed this button will change into a praying figure thats grey and blinking, and the race have commenced.
