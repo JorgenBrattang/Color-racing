@@ -314,13 +314,13 @@ function colorBlinkingNone() {
 }
 
 /**
-     * Resets the rounds innerHTML to base value
+     * Sets all the Round buttons back to 100% opacity
      */
- function roundReset() {
-    const roundReset = [0, 1, 2, 3];
-    for (let round of roundReset) {
-        let changeNumber = document.getElementById(round);
-        return changeNumber.innerHTML = `${limitRoundsArray[round]}`;
+ function resetRoundButtonOpacity() {
+    const colorNumbers = [0, 1, 2, 3];
+    for (let number of colorNumbers) {
+        document.getElementById(number).style.opacity = "1";
+        colorFinish[number].style.cssText = "background-color: white";
     }
 }
 
@@ -330,33 +330,35 @@ function colorBlinkingNone() {
 function newGame(limitRoundsArray) {
     resetColorRounds();
 
-    roundReset();
+    // Resets the rounds innerHTML to base value 
+    const roundReset = [0, 1, 2, 3];
+    for (let round of roundReset) {
+        let changeNumber = document.getElementById(round);
+        changeNumber.innerHTML = `${limitRoundsArray[round]}`;
+    }
 
+    // sets the amount of rounds back to null
     roundChosen = null;
 
     /* Deselects the color chosen */
     colorID = null;
 
-    /* Sets all the colors back to 100% opacity */
-    const colorNumbers = [0, 1, 2, 3];
-    for (let number of colorNumbers) {
-        document.getElementById(number).style.opacity = "1";
-        colorFinish[number].style.cssText = "background-color: white";
-    }
+    resetRoundButtonOpacity();
 
-    /* Sets the reset button back to ID of play */
+
+    // Sets the reset button back to ID of play
     document.getElementById("newGame").setAttribute("id", "play");
 
-    /* Reset the buttons, so you can click them */
+    // Reset the buttons, so you can click them
     const buttonNumber = [0, 1, 2, 3, "play"];
     for (let id of buttonNumber) {
         document.getElementById(id).style.pointerEvents = "auto";
     }
 
-    /* Sets the icon on Hand button */
+    // Sets the icon on Hand button
     selectPlay.innerHTML = '<i class="fa-regular fa-hand"></i>';
 
-    /* Resets the score */
+    // Resets the score
     currentRound.innerHTML = 1;
     scoreBox.innerHTML = 0;
 }
@@ -365,19 +367,19 @@ function newGame(limitRoundsArray) {
  * This will start the process of the game.
  */
 function runGame() {
-    /* This will disable all click events on the divs */
+    // This will disable all click events on the divs
     const buttonNumber = [0, 1, 2, 3, "play"];
     for (let id of buttonNumber) {
         document.getElementById(id).style.pointerEvents = "none";
     }
 
-    /* Gets the colors from the HTML */
+    // Gets the colors from the HTML
         const getColor_0 = document.getElementById("racer_0");
         const getColor_1 = document.getElementById("racer_1");
         const getColor_2 = document.getElementById("racer_2");
         const getColor_3 = document.getElementById("racer_3");
 
-    /* Lets the colorHeight to be 10% of 100%, so you can see where your colors starts */
+    // Lets the colorHeight to be 10% of 100%, so you can see where your colors starts
     let colorHeight_0 = 10;
     getColor_0.style.height = colorHeight_0 + "%";
     let colorHeight_1 = 10;
@@ -386,8 +388,8 @@ function runGame() {
     getColor_2.style.height = colorHeight_2 + "%";
     let colorHeight_3 = 10;
     getColor_3.style.height = colorHeight_3 + "%";
-    // Create a function/loop between this <<<----------
-    /* Adds the praying person icon and changes the play button color */
+
+    // Adds the praying person icon and changes the play button color
     selectPlay.innerHTML = '<i class="fa-solid fa-person-praying"></i>';
     selectPlay.style.backgroundColor = blackColor;
     selectPlay.style.color = whiteColor;
@@ -405,39 +407,41 @@ function runGame() {
         }
         // create 4 numbers for the array
     } while (randomNumberArray.length < 4);
-    // Create a function/loop between this ---------->>>
-    /* Sets the interval of the time from the random number for each horse */
+
+    // Sets the interval of the time from the random number for each horse
     let setColor_0 = setInterval(a, randomNumberArray[0]);
     let setColor_1 = setInterval(b, randomNumberArray[1]);
     let setColor_2 = setInterval(c, randomNumberArray[2]);
     let setColor_3 = setInterval(d, randomNumberArray[3]);
     const winnerArray = [];
+
     /**
      * Gets the interval speed for colors and checks if its not 100% keep going.
      */
     function a() {
-        /* Checks if the length of the race is finished (100%) */
+        // Checks if the length of the race is finished (100%)
         if (colorHeight_0 >= 100) {
             clearInterval(setColor_0);
             winnerArray.push(color_0);
             winnerColor(winnerArray);
         } else {
-            /* if it isn't finished, keep on going. */
+            // If it isn't finished, keep on going.
             colorHeight_0++;
             getColor_0.style.height = colorHeight_0 + "%";
         }
     }
+
     /**
      * Gets the interval speed for colors and checks if its not 100% keep going.
      */
     function b() {
-        /* Checks if the length of the race is finished (100%) */
+        // Checks if the length of the race is finished (100%)
         if (colorHeight_1 >= 100) {
             clearInterval(setColor_1);
             winnerArray.push(color_1);
             winnerColor(winnerArray);
         } else {
-            /* if it isn't finished, keep on going. */
+            // If it isn't finished, keep on going.
             colorHeight_1++;
             getColor_1.style.height = colorHeight_1 + "%";
         }
@@ -446,13 +450,13 @@ function runGame() {
      * Gets the interval speed for colors and checks if its not 100% keep going.
      */
     function c() {
-        /* Checks if the length of the race is finished (100%) */
+        // Checks if the length of the race is finished (100%)
         if (colorHeight_2 >= 100) {
             clearInterval(setColor_2);
             winnerArray.push(color_2);
             winnerColor(winnerArray);
         } else {
-            /* if it isn't finished, keep on going. */
+            // If it isn't finished, keep on going.
             colorHeight_2++;
             getColor_2.style.height = colorHeight_2 + "%";
         }
@@ -461,25 +465,24 @@ function runGame() {
      * Gets the interval speed for colors and checks if its not 100% keep going.
      */
     function d() {
-        /* Checks if the length of the race is finished (100%) */
+        // Checks if the length of the race is finished (100%)
         if (colorHeight_3 >= 100) {
             clearInterval(setColor_3);
             winnerArray.push(color_3);
             winnerColor(winnerArray);
         } else {
-            /* if it isn't finished, keep on going. */
+            // if it isn't finished, keep on going.
             colorHeight_3++;
             getColor_3.style.height = colorHeight_3 + "%";
         }
     }
-    // Create a function/loop between this <<<----------
 }
 
 /**
  * Makes the instruction's text and button change color
  */
 function toggleInstructions() {
-    /* Toggle the instructions open and close */
+    // Toggle the instructions open and close
     document.querySelector("#myDropdown").classList.toggle("show");
     const btn = document.querySelector(".dropContent--btn");
 
@@ -519,14 +522,14 @@ function winnerColor(winnerArray) {
     } else if (winnerArray.length === 4) {
         colorFinish[3].style.cssText = "background-color: " + winnerArray[3];
 
-        /* This will enable click event on the div */
+        // This will enable click event on the div 
         document.getElementById("play").style.pointerEvents = "auto";
 
         selectPlay.innerHTML = '<i class="fa-solid fa-rotate-left"></i>';
         selectPlay.style.backgroundColor = playColor;
         selectPlay.style.color = whiteColor;
 
-        /* Changes the play buttons ID to reset */
+        // Changes the play buttons ID to reset
         document.getElementById("play").setAttribute("id", "reset");
 
         const rounds = parseInt(currentRound.innerHTML);
@@ -566,10 +569,10 @@ function maxRounds(rounds, score) {
         if (score < highScore) {
             latestScoreBox.style.animation = "glowingLose 250ms 3";
         }
-        /* Sets the reset button back to ID of play */
+        // Sets the reset button back to ID of play
         document.getElementById("reset").setAttribute("id", "newGame");
 
-        /* NewGame button */
+        // Changes to newGame Button
         selectPlay.innerHTML = '<i class="fa-solid fa-gamepad"></i>';
         selectPlay.style.backgroundColor = playColor;
         selectPlay.style.color = whiteColor;
