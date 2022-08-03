@@ -2,57 +2,80 @@
 - <a href="https://github.com/JorgenBrattang/color-racing/blob/main/README.md">README.md</a>
 - <a href="https://jorgenbrattang.github.io/color-racing/" title="Link to live website" rel="nofollow">View live website here!</a>
 
+# Table of content
+- <strong>[Feature testing](#feature-testing)</strong>
+    - [Responsive test](#responsive-test)
+    - [Features within the website](#features-within-the-website)
+        - [Full round](#full-round)
+        - [Color pillars](#color-pillars)
+        - [Rounds blinking](#rounds-blinking)
+        - [Blinking hand](#blinking-hand)
+        - [Colors blinking](#colors-blinking)
+        - [Hand blinking to praying figure](#hand-blinking-to-praying-figure)
+        - [Colors racing](#colors-racing)
+        - [Score changing](#score-changing)
+        - [Reset Button](#reset-button)
+        - [Changing rounds](#changing-rounds)
+        - [High and latest Score](#high-and-latest-score)
+        - [New Game](#new-game)
+        - [Instructions](#instructions)
+- [LightHouse report](#lighthouse-report)
+- [Bug reports](#bug-reports)
+- [Websites on different browsers](#websites-on-different-browsers)
+- [Validator testing](#validator-testing)
+
 # Feature testing
-## <u>Responsive test</u>
+## Responsive test
 Video shows free resizing and three screens iPhone XR, iPad Air and Nest Hub Max.
 
 ![Test Responsive](assets/videos/README-videos/Testing/test-Responsive.webp)
 
-- (It works for all sizes, and gives out an alert if you have less then 600px height to use )
+<u>It works for all sizes, and gives out an alert if you have less then 600px height to use.</u>
 
 ![Test AlertResponse](assets/videos/README-videos/Testing/test-alertResponse.webp)
 
+[Back to top](#table-of-content)
 
 ## Features within the website
 
-### <u>Full Round</u>
+### Full round
 ![test-fullRound](assets/videos/README-videos/Testing/test-fullRound.webp)
 
-### <u>Color pillars</u>
+### Color pillars
 ![colorPillars](assets/videos/README-videos/Feature/colorRacing.webp)
 
-### <u>Rounds Blinking</u>
+### Rounds blinking
 ![roundsBlinking](assets/videos/README-videos/Feature/roundsBlinking.webp)
 
-### <u>Blinking Hand</u>
+### Blinking hand
 ![blinkingHand](assets/videos/README-videos/Feature/blinkingHand.webp)
 
-### <u>Colors blinking</u>
+### Colors blinking
 ![colorsBlinking](assets/videos/README-videos/Feature/colorsBlinking.webp)
 
-### <u>Hand blinking to praying figure</u>
+### Hand blinking to praying figure
 ![handBlinking to praying](assets/videos/README-videos/Feature/blinkingPlay-praying.webp)
 
-### <u>Colors racing</u>
+### Colors racing
 ![colorRacing](assets/videos/README-videos/Feature/colorRacing.webp)
 
-### <u>Score changing</u>
+### Score changing
 ![scoreNegative](assets/videos/README-videos/Feature/scoreNegative.webp)![scorePlus](assets/videos/README-videos/Feature/scorePlus.webp)
 
-### <u>Reset Button</u>
+### Reset Button
 ![resetButton](assets/videos/README-videos/Feature/resetButton.webp)
 
-### <u>Changing rounds</u>
+### Changing rounds
 ![changeRounds](assets/videos/README-videos/Feature/changeRounds.webp)
 
-### <u>High and latest Score</u>
+### High and latest Score
 ![high-latestScore](assets/videos/README-videos/Feature/high-latestScore.webp)<br>
 ![lowerScore](assets/videos/README-videos/Feature/lowerScore.webp)
 
-### <u>New Game</u>
+### New Game
 ![newGame](assets/videos/README-videos/Feature/newGame.webp)
 
-### <u>Instructions</u>
+### Instructions
 ![openInstruction](assets/videos/README-videos/Feature/openInstruction.webp)<br>
 ![openInstruction](assets/videos/README-videos/Feature/openInstruction-Mobile.webp)
 
@@ -69,7 +92,7 @@ Thats because if I did not I would not get the same feedback from when hovering 
 
 ![lightHouseWarning](assets//images/TESTING-images/lightHouseWarning.png)
 
-
+[Back to top](#table-of-content)
 
 ## Bug reports
 The developer encounter a number of bugs throughout the development of this game, there were hurdles to overcome but those were fixed with either help from tutors, slack community or researching the internet.
@@ -81,8 +104,9 @@ A few worth mentioning:
     - Solutions changing the ID's and using if statements to check for information given and not given.
 - Resizing the window for horizontal and portrait mode, this gave an unsuspected and unsolved bug within the inspect window in Chrome. As mentioned in Unfixed Bugs within the <a href="https://github.com/JorgenBrattang/color-racing/blob/main/README.md">README.md</a>
 
+[Back to top](#table-of-content)
 
-### <u>Websites on different browsers
+## Websites on different browsers
 Testing were done on Opera, Firefox and Chrome. The game works as intended.
 
 - Issue was found on firefox, landscape mode was using 100% instead of a smaller window, implemented this to fix it.
@@ -99,8 +123,9 @@ Testing were done on Opera, Firefox and Chrome. The game works as intended.
 
 ![landscape Window](assets//images/README-images/diffrent_browsers_landscape.png)
 
+[Back to top](#table-of-content)
 
-## <u>Validator Testing</u>
+## Validator Testing
 Ran through all the code and no errors were found.
     
 **HTML**
@@ -122,3 +147,5 @@ Ran through all the code and no errors were found.
 
 **JavaScript**
 - Ask if these are relevant [JS Hint](https://jshint.com/)    
+
+[Back to top](#table-of-content)
