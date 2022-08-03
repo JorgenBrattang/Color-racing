@@ -5,6 +5,7 @@
  */
  function maxRounds(rounds, score) {
     if (rounds == limitRounds) {
+        // Checks if the score is higher then the highScore and if it is, the win animation activates
         if (score > highScore) {
             highScore.push(score);
             highScoreBox.innerHTML = score;
@@ -12,6 +13,7 @@
             latestScoreBox.style.animation = "glowingWin 250ms 3";
         }
         latestScoreBox.innerHTML = score;
+        // Checks if the score is less then the highScore and if it is, the loss animation activates
         if (score < highScore) {
             latestScoreBox.style.animation = "glowingLose 250ms 3";
         }

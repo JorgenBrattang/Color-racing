@@ -11,6 +11,7 @@ function toggleInstructions() {
     document.querySelector("#myDropdown").classList.toggle("show");
     const btn = document.querySelector(".dropContent--btn");
 
+    // Checks what the HTML of the instructions button is and changes it accordingly.
     if (btn.innerHTML === "Instructions, press here!") {
         btn.innerHTML = "Instructions how to play!";
         btn.style.cssText = 'font-weight: 400; color: ' + whiteColor + '; background-color: ' + blackColor + ';'
@@ -18,6 +19,7 @@ function toggleInstructions() {
         btn.innerHTML = "Instructions, press here!";
         btn.style.cssText = 'font-weight: 600; color: black; background-color: ' + playColor + ';'
     }
+    // When you press the button, if your not in view of the content. This moves you down.
     document.querySelector("#myDropdown").scrollIntoView({
         behavior: "smooth",
     });
