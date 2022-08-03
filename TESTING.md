@@ -53,7 +53,8 @@ Video shows free resizing and three screens iPhone XR, iPad Air and Nest Hub Max
 ![newGame](assets/videos/README-videos/Feature/newGame.webp)
 
 ### <u>Instructions</u>
-![openInstruction](assets/videos/README-videos/Feature/openInstruction.webp)
+![openInstruction](assets/videos/README-videos/Feature/openInstruction.webp)<br>
+![openInstruction](assets/videos/README-videos/Feature/openInstruction-Mobile.webp)
 
 
 ## Bug reports

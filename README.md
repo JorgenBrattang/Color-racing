@@ -1,7 +1,9 @@
 ![Wireframe from balsamiq](assets/images/README-images/PC-color_racing.png)
 
 # Color Racing
-Is where you can get race different colors to see who is the fastest, it's a fun way to just have something to do while you wait for something or just want to have a bit of fun.
+Is a game where you can race colors against other colors, it's a fun and a bit addictive. The project was aimed towards giving the user a fun time and for the developer to learn concepts and how to put things together.
+
+This game is made to target all ages from 3-100+. So the game is easy to follow along, with the blinking buttons that will guide you through the game and at the same time giving you the satisfaction of goal of the game which is to try to get as high as possible score. But be warned it is a game of chance, so the more rounds that are chosen the higher the risk.
 
 <a href="https://jorgenbrattang.github.io/Color-racing/" title="Link to live website" rel="nofollow">View live website here!</a>
 
@@ -29,9 +31,23 @@ Is where you can get race different colors to see who is the fastest, it's a fun
     - [Author](#author)
     - [Acknowledgements](#acknowledgements)
 
-# UX
+# User Experience UX
 
-## Development
+## User Stories
+- Want to have the game to be simple enough to play without much thought.
+- The game should be satisfying and a feel of accomplishment.
+- The color scheme should be please to look at.
+- The game should be able to play on mobile, tablet and PC.
+
+## User Feedback
+- Wife, the game doesn't have much intuitive game play. Where do I press now?
+    - To please my wife, I put up clear instructions with flashing buttons so even my toddler at home could play the game which he enjoyed very much.
+- Mom, The colors are nice... but.. I can see that some people might have an issue with this.
+    - The color scheme was changed to be as good as possible, but it could still be better. But I ran out of time for that.
+
+"Important note, include user feedback early in the development."
+
+# Development
 The development of this website started with getting a feel for how that could manage to get colors to race each other, and the logical thing was gravity simulated with a progressbar that goes for 10% to 100%. And for the user to be able to choose which color to race with, and how many tries to try to get it the highest score possible.
 
 ## Strategy
