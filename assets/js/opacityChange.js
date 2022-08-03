@@ -22,3 +22,18 @@
         colorFinish[number].style.cssText = "background-color: white";
     }
 }
+
+/**
+ * - Sets all the colors back to 100% opacity
+ * - Sets the placements to base color (white)
+ */
+ function resetColorOpacity(colorNumbers) {
+    colorNumbers = [0, 1, 2, 3];
+    for (let number of colorNumbers) {
+        let changeNumber = document.getElementById(number);
+        changeNumber.style.opacity = "1";
+        changeNumber.innerHTML = "";
+        // Resets the placements back to base color (white)
+        colorFinish[number].style.cssText = "background-color: white;";
+    }
+}
