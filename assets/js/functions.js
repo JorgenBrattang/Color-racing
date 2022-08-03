@@ -34,31 +34,6 @@ addGlobalEventListener("click", ".instruction-container > button", (buttonEvent)
 }
 
 /**
- * Changes all the color numbers expect the one chosen, and changes the rest to 50% opacity
- * @param {*} colorNumbers - Gets this array from global
- */
- function notSelectedOpacity(colorNumbers) {
-    /* Selects every other color and change their opacity to 0.5 (not selected) */
-    for (let number of colorNumbers) {
-        let targetOthers = document.getElementById(number);
-        targetOthers.style.opacity = "0.5";
-    }
-}
-
-/**
- * Changes all the color numbers back to 100% opacity
- * @param {*} colorNumbers - Gets this array from global
- */
- function fullSelectedOpacity() {
-    /* Sets all the colors back to 100% opacity */
-    colorNumbers = [0, 1, 2, 3];
-    for (let number of colorNumbers) {
-        document.getElementById(number).style.opacity = "1";
-        colorFinish[number].style.cssText = "background-color: white";
-    }
-}
-
-/**
  * Reset the buttons, so you can click them again.
  */
 function resetButtons() {
@@ -152,20 +127,19 @@ function resetColorRounds() {
     selectBtn.style.backgroundColor = blackColor;
 }
 
+const color1 = document.querySelector(".color-0--select");
+const color2 = document.querySelector(".color-1--select");
+const color3 = document.querySelector(".color-2--select");
+const color4 = document.querySelector(".color-3--select");
+const selectBtn = document.querySelector(".play-button--btn");
+
 /**
  * Sets the background color of the buttons to be RACING color
  */
 function resetColorRaces() {
-    const color1 = document.querySelector(".color-0--select");
     color1.style.backgroundColor = color_0;
-
-    const color2 = document.querySelector(".color-1--select");
     color2.style.backgroundColor = color_1;
-
-    const color3 = document.querySelector(".color-2--select");
     color3.style.backgroundColor = color_2;
-
-    const color4 = document.querySelector(".color-3--select");
     color4.style.backgroundColor = color_3;
 }
 
@@ -173,19 +147,10 @@ function resetColorRaces() {
  * Sets the blinking on all buttons except PlayButton
  */
 function colorBlinkingActive() {
-    const color1 = document.querySelector(".color-0--select");
     color1.style.animation = "selection 1000ms infinite";
-
-    const color2 = document.querySelector(".color-1--select");
     color2.style.animation = "selection 1000ms infinite";
-
-    const color3 = document.querySelector(".color-2--select");
     color3.style.animation = "selection 1000ms infinite";
-
-    const color4 = document.querySelector(".color-3--select");
     color4.style.animation = "selection 1000ms infinite";
-
-    const selectBtn = document.querySelector(".play-button--btn");
     selectBtn.style.backgroundColor = blackColor;
     selectBtn.style.animation = "none";
 }
@@ -194,19 +159,10 @@ function colorBlinkingActive() {
  * Sets blinking to PlayButton except for color/round buttons
  */
 function colorBlinkingNone() {
-    const color1 = document.querySelector(".color-0--select");
     color1.style.animation = "none";
-
-    const color2 = document.querySelector(".color-1--select");
     color2.style.animation = "none";
-
-    const color3 = document.querySelector(".color-2--select");
     color3.style.animation = "none";
-
-    const color4 = document.querySelector(".color-3--select");
     color4.style.animation = "none";
-
-    const selectBtn = document.querySelector(".play-button--btn");
     selectBtn.style.backgroundColor = playColor;
     selectBtn.style.animation = "selection 1000ms infinite";
 }

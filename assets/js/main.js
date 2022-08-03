@@ -17,7 +17,6 @@ const scoreBox = document.querySelector(".score--box");
 const highScoreBox = document.querySelector(".high-score--box");
 const latestScoreBox = document.querySelector(".latest-score--box");
 
-
 // Declares the global variables
 var colorID = null;
 var limitRounds = null;
