@@ -98,9 +98,11 @@ Ran through all the code and no errors were found.
 - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)    
 
 <u>CSS Portrait Validator</u>
+
 ![CSS Portrait Validator](assets/videos/README-videos/Validator/CSS-Validator-portrait.webp)
 
-<u>CSS Portrait landscape</u>
+<u>CSS Landscape Validator</u>
+
 ![CSS Landscape Validator](assets/videos/README-videos/Validator/CSS-Validator-landscape.webp)
 
 **JavaScript**
